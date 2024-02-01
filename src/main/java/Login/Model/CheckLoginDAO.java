@@ -1,13 +1,13 @@
-package DAL;
+package Login.Model;
 
 import java.sql.*;
 
-public class TestDAO {
+public class CheckLoginDAO {
     private String jdbcUrl;
     private String dbUsername;
     private String dbPassword;
 
-    public TestDAO() {
+    public CheckLoginDAO() {
         // Mặc định, bạn có thể thiết lập các giá trị kết nối ở đây.
         this.jdbcUrl = "jdbc:sqlserver://localhost:1433;databaseName=EventManagement;encrypt=true;trustServerCertificate=true";
         this.dbUsername = "cnpm";

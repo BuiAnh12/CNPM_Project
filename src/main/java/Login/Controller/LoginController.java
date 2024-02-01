@@ -1,15 +1,8 @@
-package Controller;
-
-import DAL.TestDAO;
+package Login.Controller;
+import Login.Model.CheckLoginDAO;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.stage.Stage;
 
-import java.io.IOException;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -34,8 +27,8 @@ public class LoginController {
         String password = si_password.getText();
 
         // Sử dụng UserDao để kiểm tra đăng nhập
-        TestDAO testDAO = new TestDAO();
-        int result = testDAO.checkLogin(username, password);
+        CheckLoginDAO checkLoginDAO = new CheckLoginDAO();
+        int result = checkLoginDAO.checkLogin(username, password);
 
         // Kiểm tra kết quả
         if (result == 1) {

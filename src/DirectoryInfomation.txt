@@ -1,0 +1,23 @@
+Java:
+	User
+	Login
+	Admin
+		Controller:
+			- Chứa các file Controller cho view bên resoures
+			- Tên controller cùng tên với view để dễ quản lý
+		Model:
+			- Chứa 2 file: model và modelDAO
+			- model chứa java class tạo đối tượng
+			- modelDAO gọi các tác vụ lên db -> nếu truyền về hàm sẽ truyền vào list
+
+resources:
+	Login
+	User
+	Admin:
+		Chứa các view và phân hoạch view dựa trên chức năng
+		- AdminDetail
+	    - Dashboard
+	    - Event
+	    - Staff
+	    - Student
+
