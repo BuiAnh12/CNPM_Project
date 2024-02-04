@@ -5,18 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DirectoryInfomation.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/CSS/MainAdminForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/MainAdminForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Circled Menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Male User.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Name.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Search.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Login/Controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/TestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Login/Model/CheckLoginDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Mainscript/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Login/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,6 +35,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2bkXGC48Mf59kdtZrAcOQGSQbod" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,14 +51,21 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Java_learning/NMCNPM/src/lib/mssql-jdbc-12.4.2.jre11-javadoc.jar",
+    "last_opened_file_path": "E:/Java_learning/NMCNPM/src/main/java/Admin/Controller",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Java_learning\NMCNPM\src\main\java\Admin\Controller" />
+      <recent name="E:\Java_learning\NMCNPM\src\main\resources" />
+      <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Student" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Student\StudentForm" />
+      <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Student\CSS" />
       <recent name="E:\Java_learning\NMCNPM\src\main\resources\Login" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
