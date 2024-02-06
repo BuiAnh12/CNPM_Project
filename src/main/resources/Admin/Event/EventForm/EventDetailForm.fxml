@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="white-form" stylesheets="@../CSS/EventDetailForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.Event.EventDetailController">
+    <children>
+        <AnchorPane prefHeight="800.0" prefWidth="90.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
+            <children>
+            <Button layoutX="18.0" layoutY="291.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
+               <graphic>
+                      <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../../../Images/Circled%20Menu.png" />
+                          </image>
+                      </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="18.0" layoutY="349.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/Name.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="18.0" layoutY="728.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/Logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="18.0" layoutY="670.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/Male%20User.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            </children>
+        </AnchorPane>
+      <Pane layoutX="90.0" prefHeight="800.0" prefWidth="400.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5c9ae9" height="800.0" stroke="#5c9ae9" strokeType="INSIDE" width="400.0" />
+            <Text fill="WHITE" layoutX="46.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Details" wrappingWidth="307.7367401123047">
+               <font>
+                  <Font size="96.0" />
+               </font>
+            </Text>
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="90.0" layoutY="691.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #5c9ae9;" textAlignment="CENTER">
+               <graphic>
+                  <AnchorPane>
+                     <children>
+                        <ImageView fitHeight="44.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/Rectangle%2035.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#5c9ae9" layoutX="77.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Back">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/Back%20To.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="539.0" layoutY="58.0">
+         <children>
+            <AnchorPane layoutY="0.1015625">
+               <children>
+                  <TextField fx:id="txtName" editable="false" layoutY="38.8984375" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="200.00000000000023">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="316.0">
+               <children>
+                  <TextField fx:id="txtOganization" editable="false" layoutY="38.8984375" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Organization" wrappingWidth="200.00000000000023">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="85.0">
+               <children>
+                  <TextField fx:id="txtPlace" editable="false" layoutY="38.8984375" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Place" wrappingWidth="200.00000000000023">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="316.0" layoutY="85.0">
+               <children>
+                  <TextField fx:id="txtTime" editable="false" layoutY="38.8984375" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" wrappingWidth="200.00000000000023">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="StudentTable" layoutX="535.0" layoutY="287.0" prefHeight="342.0" prefWidth="602.0">
+        <columns>
+          <TableColumn fx:id="colName" editable="false" prefWidth="245.5999755859375" text="Name" />
+          <TableColumn fx:id="colStudentId" editable="false" prefWidth="160.800048828125" text="StudentID" />
+            <TableColumn fx:id="colClass" editable="false" prefWidth="198.39996337890625" text="Class" />
+        </columns>
+      </TableView>
+      <Text layoutX="539.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participant List">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="1077.0" layoutY="629.0">
+         <children>
+            <TextField fx:id="txtTotal" editable="false" layoutX="-1.0" layoutY="35.0" prefHeight="46.0" prefWidth="65.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="64.80004882812523">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Text layoutX="539.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detail" wrappingWidth="193.60009765625023">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="txtDetail" editable="false" layoutX="539.0" layoutY="664.0" prefHeight="106.0" prefWidth="490.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font></TextArea>
+    </children>
+</AnchorPane>

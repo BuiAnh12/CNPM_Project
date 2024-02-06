@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/CSS/MainAdminForm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/MainAdminForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Circled Menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Logout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Male User.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Name.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/EventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/EventDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/EventDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/InsertCotroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/UpdateController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Model/Event/EventModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Model/Event/StudentEventModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Event/CSS/EventDetailForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Event/CSS/EventMainForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Event/EventForm/EventDetailForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Event/EventForm/InsertForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Event/EventForm/MainForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Event/EventForm/UpdateForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
@@ -24,6 +30,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -51,7 +58,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Java_learning/NMCNPM/src/main/java/Admin/Controller",
+    "last_opened_file_path": "E:/Java_learning/NMCNPM/src/main/resources/Admin/Event/EventForm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -59,6 +66,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Event\EventForm" />
+      <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Event" />
       <recent name="E:\Java_learning\NMCNPM\src\main\java\Admin\Controller" />
       <recent name="E:\Java_learning\NMCNPM\src\main\resources" />
       <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Student" />

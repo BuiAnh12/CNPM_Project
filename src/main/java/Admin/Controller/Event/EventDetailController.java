@@ -1,0 +1,93 @@
+package Admin.Controller.Event;
+
+import Admin.Model.Event.EventModel;
+import Admin.Model.Event.StudentEventModel;
+import javafx.collections.FXCollections;
+import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
+import javafx.fxml.Initializable;
+import javax.management.modelmbean.ModelMBean;
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class EventDetailController implements Initializable{
+    private Scene previousScene;
+
+    private EventModel object;
+    @FXML
+    private TableView<StudentEventModel> StudentTable;
+
+    @FXML
+    private TextField txtName;
+
+    @FXML
+    private TextField txtOganization;
+
+    @FXML
+    private TextField txtPlace;
+
+    @FXML
+    private TextField txtTime;
+
+    @FXML
+    private TextField txtTotal;
+
+    @FXML
+    private TextArea txtDetail;
+
+    @FXML
+    private TableColumn<StudentEventModel, String> colClass;
+
+    @FXML
+    private TableColumn<StudentEventModel, String> colName;
+
+    @FXML
+    private TableColumn<StudentEventModel, String> colStudentId;
+    @FXML
+    void goBack(MouseEvent event) {
+        // Show the previous stage
+        if (previousScene != null) {
+            Stage currentStage = (Stage) StudentTable.getScene().getWindow();
+            currentStage.setScene(previousScene);
+        }
+
+    }
+
+    public void setPreviousStage(Scene scene) {
+        this.previousScene = scene;
+    }
+
+    public void setObject(EventModel object){
+        this.object = object;
+    }
+
+    public void refresh(){
+        this.txtName.setText(object.getEventName());
+        this.txtOganization.setText(object.getOrganizationName());
+        this.txtPlace.setText(object.getPlace());
+        this.txtTime.setText(object.getOccurDate().toString());
+        this.txtTotal.setText(String.valueOf(object.getNumberOfAttendance()));
+        this.txtDetail.setText(object.getDetail());
+        EventDAO eventDAO = new EventDAO();
+        List<StudentEventModel> tableList = new ArrayList<>();
+//        tableList = eventDAO.getTable(Filter.getSelectionModel().getSelectedIndex(), FilterSort.getSelectionModel().getSelectedIndex(), SearchField.getText());
+        tableList = eventDAO.getTable(object.getEventId());
+        colName.setCellValueFactory(new PropertyValueFactory<StudentEventModel, String>("studentName"));
+        colStudentId.setCellValueFactory(new PropertyValueFactory<StudentEventModel, String>("studentId"));
+        colClass.setCellValueFactory(new PropertyValueFactory<StudentEventModel, String>("studentClass"));
+        StudentTable.setItems(FXCollections.observableArrayList(tableList));
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+}
