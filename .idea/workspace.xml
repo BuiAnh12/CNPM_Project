@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/InsertController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/UpdateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/InsertForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/UpdateForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/InsertCotroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/InsertCotroller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Login/Model/CheckLoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Login/Model/CheckLoginDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin/Student/CSS/MainAdminForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/CSS/MainAdminForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/MainAdminForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/MainAdminForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +115,8 @@
       <workItem from="1708097958413" duration="15000" />
       <workItem from="1708149077840" duration="11630000" />
       <workItem from="1708229760892" duration="2926000" />
-      <workItem from="1708249927001" duration="314000" />
+      <workItem from="1708249927001" duration="660000" />
+      <workItem from="1708250664727" duration="410000" />
     </task>
     <servers />
   </component>
