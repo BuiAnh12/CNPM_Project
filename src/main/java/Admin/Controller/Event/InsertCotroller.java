@@ -53,31 +53,31 @@ public class InsertCotroller {
 
     @FXML
     void AcceptClickBtn(MouseEvent event) {
-        String name = txtName.getText();
-        LocalDate occurDate = LocalDate.parse(txtDate.getText()); // Assuming date format is correct
-        String place = txtPlace.getText();
-        int organizationId = Integer.parseInt(txtOrganization.getText());
-        int maxSlot = Integer.parseInt(txtMaxSlot.getText());
-        LocalDate deadline = LocalDate.parse(txtDeadline.getText()); // Assuming date format is correct
-        String detail = txtDetail.getText();
-
-        // Call the insertEvent method
-        EventDAO eventDAO = new EventDAO();
-        boolean success = eventDAO.insertEvent(name, occurDate, place, organizationId, maxSlot, deadline, detail);
-        if (success) {
-            try {
-                AnchorPane currentContainer = (AnchorPane) this.insertForm.getParent();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/MainForm.fxml"));
-                Parent page = fxmlLoader.load();
-                currentContainer.getChildren().add(page);
-            } catch (IOException e) {
-                System.out.println("Open Fail");
-                e.printStackTrace();
-            }
-        }
-        else{
-            System.out.println("Call Fail");
-        }
+//        String name = txtName.getText();
+//        LocalDate occurDate = LocalDate.parse(txtDate.getText()); // Assuming date format is correct
+//        String place = txtPlace.getText();
+//        int organizationId = Integer.parseInt(txtOrganization.getText());
+//        int maxSlot = Integer.parseInt(txtMaxSlot.getText());
+//        LocalDate deadline = LocalDate.parse(txtDeadline.getText()); // Assuming date format is correct
+//        String detail = txtDetail.getText();
+//
+//        // Call the insertEvent method
+//        EventDAO eventDAO = new EventDAO();
+//        boolean success = eventDAO.insertEvent(name, occurDate, place, organizationId, maxSlot, deadline, detail);
+//        if (success) {
+//            try {
+//                AnchorPane currentContainer = (AnchorPane) this.insertForm.getParent();
+//                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/MainForm.fxml"));
+//                Parent page = fxmlLoader.load();
+//                currentContainer.getChildren().add(page);
+//            } catch (IOException e) {
+//                System.out.println("Open Fail");
+//                e.printStackTrace();
+//            }
+//        }
+//        else{
+//            System.out.println("Call Fail");
+//        }
     }
 
     @FXML

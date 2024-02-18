@@ -13,13 +13,13 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="white-form" stylesheets="@../CSS/MainAdminForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.Student.StudentController">
     <children>
-        <AnchorPane prefHeight="800.0" prefWidth="90.0" styleClass="grey-form" stylesheets="@../CSS/MainAdminForm.css">
+        <AnchorPane fx:id="DashbaordForm" prefHeight="800.0" prefWidth="90.0" styleClass="grey-form" stylesheets="@../CSS/MainAdminForm.css">
             <children>
             <Button layoutX="18.0" layoutY="291.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/MainAdminForm.css">
                <graphic>
                       <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                           <image>
-                              <Image url="@../../../Images/Circled%20Menu.png" />
+<!--                              <Image url="@../../../Images/Circled%20Menu.png" />-->
                           </image>
                       </ImageView>
                </graphic>
@@ -46,7 +46,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../Images/Male%20User.png" />
+<!--                        <Image url="@../../../Images/Male%20User.png" />-->
                      </image>
                   </ImageView>
                </graphic>
@@ -62,13 +62,13 @@
                 </Label>
             </children>
         </AnchorPane>
-        <TableView layoutX="193.0" layoutY="197.0" prefHeight="543.0" prefWidth="907.0" stylesheets="@../CSS/MainAdminForm.css">
+        <TableView fx:id="mainTable" layoutX="193.0" layoutY="197.0" prefHeight="543.0" prefWidth="907.0" stylesheets="@../CSS/MainAdminForm.css">
             <columns>
-                <TableColumn prefWidth="262.0" text="Name" />
-                <TableColumn prefWidth="162.0" text="StudentID" />
-                <TableColumn prefWidth="147.0" text="Class" />
-                <TableColumn prefWidth="201.0" text="Phonenumber" />
-                <TableColumn prefWidth="132.0" text="Username" />
+                <TableColumn fx:id="nameColumn" prefWidth="262.0" text="Name" />
+                <TableColumn fx:id="idColumn" prefWidth="162.0" text="StudentID" />
+                <TableColumn fx:id="classColumn" prefWidth="147.0" text="Class" />
+                <TableColumn fx:id="phoneColumn" prefWidth="201.0" text="Phonenumber" />
+                <TableColumn fx:id="usernameColumn" prefWidth="132.0" text="Username" />
             </columns>
         </TableView>
         <TextField layoutX="193.0" layoutY="133.0" prefHeight="39.0" prefWidth="263.0" promptText="Search" styleClass="label" stylesheets="@../CSS/MainAdminForm.css">
@@ -85,17 +85,17 @@
                 </ImageView>
             </graphic>
         </Button>
-        <Button layoutX="718.0" layoutY="133.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="90.0" styleClass="green-form" stylesheets="@../CSS/MainAdminForm.css" text="Insert User" textFill="WHITE">
+        <Button layoutX="610.0" mnemonicParsing="false" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="green-form" text="Insert User" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button layoutX="972.0" layoutY="133.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" styleClass="red-form" stylesheets="@../CSS/MainAdminForm.css" text="Delete User" textFill="WHITE">
+        <Button layoutX="806.0" mnemonicParsing="false" onMouseClicked="#DeleteBtnClickEvent" prefHeight="39.0" prefWidth="99.0" style="-fx-background-radius: 9;" styleClass="red-form"  text="Delete User" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button layoutX="846.0" layoutY="133.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="90.0" styleClass="blue-form" stylesheets="@../CSS/MainAdminForm.css" text="Edit User" textFill="WHITE">
+        <Button layoutX="709.0" mnemonicParsing="false" onMouseClicked="#EditBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="blue-form"  text="Edit User" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
