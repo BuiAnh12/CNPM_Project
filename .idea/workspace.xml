@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/InsertCotroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/InsertCotroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/InsertController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/UpdateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Model/Event/StudentEventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Model/Event/StudentEventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Login/Model/CheckLoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Login/Model/CheckLoginDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin/Event/CSS/EventMainForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin/Event/CSS/EventMainForm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/UpdateForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/UpdateForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +27,7 @@
       <list>
         <option value="Class" />
         <option value="FxmlFile" />
+        <option value="JavaFXApplication" />
       </list>
     </option>
   </component>
@@ -44,7 +55,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/LÊ TRUNG NGUYÊN/QLHDSV/CNPM_Project/src/main/resources/Admin/Student/StudentForm&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/LÊ TRUNG NGUYÊN/QLKH/app&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -116,7 +127,28 @@
       <workItem from="1708149077840" duration="11630000" />
       <workItem from="1708229760892" duration="2926000" />
       <workItem from="1708249927001" duration="660000" />
-      <workItem from="1708250664727" duration="410000" />
+      <workItem from="1708250664727" duration="1124000" />
+      <workItem from="1708388123662" duration="192000" />
+      <workItem from="1708391723713" duration="1404000" />
+      <workItem from="1708393244340" duration="79000" />
+      <workItem from="1708393339054" duration="18000" />
+      <workItem from="1708483889729" duration="17000" />
+      <workItem from="1708497657523" duration="686000" />
+      <workItem from="1708499534462" duration="606000" />
+      <workItem from="1708502807623" duration="93000" />
+      <workItem from="1708503665793" duration="130000" />
+      <workItem from="1708503810705" duration="1207000" />
+      <workItem from="1708573267860" duration="334000" />
+      <workItem from="1708582183338" duration="1740000" />
+      <workItem from="1708585287112" duration="669000" />
+      <workItem from="1708585982895" duration="323000" />
+      <workItem from="1708586428386" duration="631000" />
+      <workItem from="1708588643083" duration="53000" />
+      <workItem from="1708651616577" duration="17000" />
+      <workItem from="1708689559958" duration="2179000" />
+      <workItem from="1708764021561" duration="3762000" />
+      <workItem from="1708768223220" duration="2384000" />
+      <workItem from="1708779420411" duration="3605000" />
     </task>
     <servers />
   </component>

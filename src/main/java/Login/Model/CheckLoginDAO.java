@@ -9,6 +9,10 @@ public class CheckLoginDAO {
 
     public CheckLoginDAO() {
         // Mặc định, bạn có thể thiết lập các giá trị kết nối ở đây.
+//        this.jdbcUrl =
+//                "jdbc:sqlserver://localhost:1433;" +
+//                        "databaseName=EventManagement;integratedSecurity=true;" +
+//                        "encrypt=true;trustServerCertificate=true";
         this.jdbcUrl = "jdbc:sqlserver://localhost:1433;databaseName=EventManagement;encrypt=true;trustServerCertificate=true";
 //       this.jdbcUrl = "Data Source=DESKTOP-IL0B7TN\\MSSQLSERVER02;Initial Catalog=EventManagement;Integrated Security=True" ;
         this.dbUsername = "sa1";

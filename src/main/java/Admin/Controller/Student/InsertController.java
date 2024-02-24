@@ -68,4 +68,11 @@ import java.time.LocalDate;
 
     }
 
-}
+        public TextField getTxtClass() {
+            return txtClass;
+        }
+
+        public void setTxtClass(TextField txtClass) {
+            this.txtClass = txtClass;
+        }
+    }

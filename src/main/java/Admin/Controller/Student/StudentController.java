@@ -1,8 +1,5 @@
 package Admin.Controller.Student;
 
-import Admin.Controller.Student.InsertController;
-import Admin.Controller.Student.UpdateController;
-import Admin.Model.Event.EventModel;
 import Admin.Model.Event.StudentEventModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -52,19 +49,40 @@ public class StudentController implements Initializable {
 
     }
 
+//    @FXML
+//    void EditBtnClickEvent(MouseEvent event) {
+//
+//        try{
+//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/UpdateForm.fxml"));
+//            Parent page = fxmlLoader.load();
+//
+//            Scene currentScene = mainTable.getScene();
+//            Stage currentStage = (Stage) mainTable.getScene().getWindow();
+//
+//            UpdateController updateController = fxmlLoader.getController();
+//            updateController.setObject(mainTable.getSelectionModel().getSelectedItem());
+//            updateController.updateFields();
+//            AnchorPane Container = (AnchorPane) DashbaordForm.getParent();
+//            Container.getChildren().clear();
+//            Container.getChildren().add(page);
+//
+//        } catch (IOException e) {
+//            System.out.println("Open Fail");
+//            e.printStackTrace();
+//        }
+//    }
+
     @FXML
     void EditBtnClickEvent(MouseEvent event) {
 
-        try{
+        try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/UpdateForm.fxml"));
             Parent page = fxmlLoader.load();
 
-            Scene currentScene = mainTable.getScene();
-            Stage currentStage = (Stage) mainTable.getScene().getWindow();
-
             UpdateController updateController = fxmlLoader.getController();
             updateController.setObject(mainTable.getSelectionModel().getSelectedItem());
-            updateController.updateFields();
+            //updateController.updateFields();
+
             AnchorPane Container = (AnchorPane) DashbaordForm.getParent();
             Container.getChildren().clear();
             Container.getChildren().add(page);
@@ -75,8 +93,10 @@ public class StudentController implements Initializable {
         }
     }
 
+
     @FXML
     void InsertBtnClickEvent(MouseEvent event) {
+
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/InsertForm.fxml"));
             Parent page = fxmlLoader.load();
@@ -103,9 +123,9 @@ public class StudentController implements Initializable {
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("studentName"));
         classColumn.setCellValueFactory(new PropertyValueFactory<>("studentClass"));
 
-        mainTable.getColumns().add(idColumn);
-        mainTable.getColumns().add(nameColumn);
-        mainTable.getColumns().add(classColumn);
+//        mainTable.getColumns().add(idColumn);
+//        mainTable.getColumns().add(nameColumn);
+//        mainTable.getColumns().add(classColumn);
 
         ObservableList<StudentEventModel> data = FXCollections.observableArrayList(studentEventModels);
         mainTable.setItems(data);
