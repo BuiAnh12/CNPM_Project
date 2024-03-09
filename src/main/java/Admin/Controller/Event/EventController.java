@@ -19,7 +19,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import jdk.jfr.Event;
 
 import java.io.IOException;
 import java.net.URL;

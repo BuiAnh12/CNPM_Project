@@ -1,0 +1,40 @@
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: 700;
+}
+.form {
+    -fx-pref-width: 360px;
+    -fx-background-color: #f3f3f3;
+}
+.label {
+    -fx-font-size: 16px;
+}
+.delete-button {
+    -fx-background-color: #f41b6a;
+}
+.button {
+    -fx-text-fill: #fff;
+    -fx-font-weight: 700;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8px;
+}
+.delete-button:hover {
+    -fx-cursor: hand;
+}
+.delete-button:hover {
+    -fx-background-color: #d30f5b; /* Màu nền khi hover */
+}
+
+.delete-button:pressed {
+    -fx-background-color: #d30f5b; /* Màu nền khi nhấn */
+}
+.input {
+    -fx-background-color: #fff;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 0.25em;
+    -fx-font-size: 16px;
+}
+.input:focused {
+    -fx-border-color: #80bdff;
+    -fx-box-shadow: none;
+}
