@@ -1,4 +1,4 @@
-package Dao;
+package Admin.Controller.Staff;
 
 import java.sql.*;
 
@@ -8,11 +8,11 @@ public class DBConnection {
     private ResultSet resultSet;
     private int ok;
     public Connection getConnection() {
-        String url = "jdbc:mysql://localhost:3306/EventManagement";
-        String user = "root";
-        String password = "271201";
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=EventManagement;encrypt=true;trustServerCertificate=true";
+        String user = "cnpm";
+        String password = "123";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+//            Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(url, user, password);
             System.out.println("Connected");
         } catch (Exception e) {

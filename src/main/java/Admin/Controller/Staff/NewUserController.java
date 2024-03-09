@@ -1,7 +1,6 @@
 package Admin.Controller.Staff;
 
-import Dao.StaffIpml;
-import Entity.Staff;
+import Admin.Model.Staff.Staff;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

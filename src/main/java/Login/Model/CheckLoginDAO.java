@@ -11,8 +11,8 @@ public class CheckLoginDAO {
         // Mặc định, bạn có thể thiết lập các giá trị kết nối ở đây.
         this.jdbcUrl = "jdbc:sqlserver://localhost:1433;databaseName=EventManagement;encrypt=true;trustServerCertificate=true";
 //       this.jdbcUrl = "Data Source=DESKTOP-IL0B7TN\\MSSQLSERVER02;Initial Catalog=EventManagement;Integrated Security=True" ;
-        this.dbUsername = "sa1";
-        this.dbPassword = "123456";
+        this.dbUsername = "cnpm";
+        this.dbPassword = "123";
     }
 
     // Có thể thêm phương thức khởi tạo khác hoặc sử dụng setter

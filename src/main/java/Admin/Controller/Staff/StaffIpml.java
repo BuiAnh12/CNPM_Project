@@ -1,6 +1,6 @@
-package Dao;
+package Admin.Controller.Staff;
 
-import Entity.Staff;
+import Admin.Model.Staff.Staff;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.CheckBox;
@@ -62,7 +62,7 @@ public class StaffIpml implements IStaff {
                 });
                 staff.setPhoneNumber(resultSet.getString("PhoneNumber"));
                 staff.setPermissionId(resultSet.getInt("PermissionId"));
-                staff.setName(resultSet.getString("Name"));
+                staff.setName(resultSet.getString("Fullname"));
                 staffList.add(staff);
             }
         } catch (Exception e) {

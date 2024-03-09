@@ -5,64 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/EventController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/EventDAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/EventDetailController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/InsertCotroller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/MainController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/UpdateController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/DateUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/DeleteController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/EditController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/EditController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/NewUserController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/NewUserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/StaffDAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/UserManagementApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/UserModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Student/InsertController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Student/StudentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Student/UpdateController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Model/Event/EventModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Model/Event/StudentEventModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Dao/DBConnection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Dao/IStaff.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Dao/StaffIpml$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Dao/StaffIpml.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Entity/Staff.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Login/Controller/LoginController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Login/Model/CheckLoginDAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/NMCNPM/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/DateUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/DeleteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/EditController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/NewUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/StaffDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/UserManagementApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/UserModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Model/Staff/StaffModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/IStaff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/StaffIpml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entity/Staff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Staff/CSS/delete.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Staff/CSS/edit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Staff/CSS/new-user.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Staff/CSS/staffs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Staff/StaffForm/delete.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Staff/StaffForm/edit-user.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Staff/StaffForm/new-user.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Staff/StaffForm/staffs-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/test.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/EventController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/EventDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/EventDetailController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/InsertCotroller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/UpdateController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/DateUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/DeleteController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/EditController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/EditController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/NewUserController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/NewUserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/StaffDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/UserManagementApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/UserModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Student/InsertController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Student/StudentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Student/UpdateController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Model/Event/EventModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Model/Event/StudentEventModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Dao/DBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Dao/IStaff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Dao/StaffIpml$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Dao/StaffIpml.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Entity/Staff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Login/Controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Login/Model/CheckLoginDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/DeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/DeleteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/EditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/EditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/NewUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/NewUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/IStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/IStaff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/StaffIpml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/StaffIpml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Model/Staff/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Login/Model/CheckLoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Login/Model/CheckLoginDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,6 +87,7 @@
   "keyToString": {
     "Application.Just Run .executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.TomConfig.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -112,7 +96,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "staff",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
@@ -122,7 +106,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.32815734",
     "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
@@ -148,13 +132,21 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TomConfig">
     <configuration name="Just Run " type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Java/jdk-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="NMCNPM" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\KhiemJP\Downloads\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TomConfig" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="NMCNPM" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -172,6 +164,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Just Run " />
+      <item itemvalue="Application.TomConfig" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -210,21 +206,21 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/EditController.java</url>
-          <line>121</line>
+          <line>120</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Dao/StaffIpml.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/StaffIpml.java</url>
           <line>195</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/NewUserController.java</url>
-          <line>114</line>
+          <line>113</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Dao/StaffIpml.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/StaffIpml.java</url>
           <line>223</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>

@@ -1,8 +1,6 @@
-import Admin.Controller.Staff.User;
-import Dao.DBConnection;
-import Dao.IStaff;
-import Dao.StaffIpml;
-import Entity.Staff;
+import Admin.Controller.Staff.IStaff;
+import Admin.Controller.Staff.StaffIpml;
+import Admin.Model.Staff.Staff;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,8 +21,7 @@ public class Main extends Application {
 //        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Student/StudentForm/MainAdminForm.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Staff/StaffForm/staffs-view.fxml"));
-            System.out.println(Main.class.getResource(""));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Admin/Staff/StaffForm/staffs-view.fxml"));
             Parent content = fxmlLoader.load();
             Scene scene = new Scene(content, 900, 600);
             scene.getStylesheets().add(getClass().getResource("/Admin/Staff/CSS/staffs.css").toExternalForm());

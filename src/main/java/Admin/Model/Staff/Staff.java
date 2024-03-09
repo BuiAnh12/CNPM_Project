@@ -1,4 +1,4 @@
-package Entity;
+package Admin.Model.Staff;
 
 import javafx.scene.control.CheckBox;
 

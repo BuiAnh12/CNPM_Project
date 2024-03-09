@@ -1,6 +1,6 @@
-package Dao;
+package Admin.Controller.Staff;
 
-import Entity.Staff;
+import Admin.Model.Staff.Staff;
 
 import java.util.List;
 
