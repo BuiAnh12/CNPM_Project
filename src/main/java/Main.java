@@ -18,13 +18,14 @@ public class Main extends Application {
 //            System.out.println(getClass().getResource(""));
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Student/StudentForm/MainAdminForm.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Admin/Staff/StaffForm/staffs-view.fxml"));
-            Parent content = fxmlLoader.load();
-            Scene scene = new Scene(content, 900, 600);
-            scene.getStylesheets().add(getClass().getResource("/Admin/Staff/CSS/staffs.css").toExternalForm());
+//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Admin/Staff/StaffForm/staffs-view.fxml"));
+//            Parent content = fxmlLoader.load();
+//            Scene scene = new Scene(content, 900, 600);
+//            scene.getStylesheets().add(getClass().getResource("/Admin/Staff/CSS/staffs.css").toExternalForm());
             stage.setTitle("Quản lí hoạt động sinh viên");
             stage.setScene(scene);
             stage.setResizable(false);

@@ -7,52 +7,8 @@
     <list default="true" id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/src/main/java/Login/Model/CheckLoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Login/Model/CheckLoginDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-||||||| 231a128
-=======
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/EventController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/EventDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/EventDetailController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/InsertCotroller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Event/UpdateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/DateUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/DeleteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/EditController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/EditController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/NewUserController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/NewUserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/StaffDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/UserManagementApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Staff/UserModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Student/InsertController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Student/StudentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Controller/Student/UpdateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Model/Event/EventModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Admin/Model/Event/StudentEventModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Dao/DBConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Dao/IStaff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Dao/StaffIpml$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Dao/StaffIpml.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Entity/Staff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Login/Controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Login/Model/CheckLoginDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NMCNPM/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/DeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/DeleteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/EditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/EditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/NewUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/NewUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/IStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/IStaff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/StaffIpml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/StaffIpml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Model/Staff/Staff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Login/Model/CheckLoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Login/Model/CheckLoginDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
->>>>>>> staff
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,13 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-<<<<<<< HEAD
         <option value="JavaFXApplication" />
-||||||| 231a128
-=======
-        <option value="Class" />
-        <option value="Interface" />
->>>>>>> staff
       </list>
     </option>
   </component>
@@ -94,7 +44,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Just Run .executor": "Run",
@@ -108,7 +57,7 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Java_learning/NMCNPM",
+    "last_opened_file_path": "E:/Java_learning/NMCNPM/src/lib/javafx-sdk-21.0.2/lib/javafx.web.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,57 +67,6 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.32815734",
     "vue.rearranger.settings.migration": "true"
-||||||| 231a128
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Just Run .executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/LÊ TRUNG NGUYÊN/QLHDSV/CNPM_Project/src/main/resources/Admin/Student/StudentForm&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-=======
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Just Run .executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.TomConfig.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "staff",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/CNPM_Project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.32815734",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
-    "vue.rearranger.settings.migration": "true"
->>>>>>> staff
   }
 }]]></component>
   <component name="RecentsManager">
@@ -190,9 +88,8 @@
       <recent name="" />
     </key>
   </component>
-<<<<<<< HEAD
   <component name="RunManager" selected="Application.TomConfig">
-    <configuration name="TomConfig" type="Application" factoryName="Application">
+    <configuration name="TomConfig" type="Application" factoryName="Application" activateToolWindowBeforeRun="false">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="NMCNPM" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
@@ -201,15 +98,6 @@
       </method>
     </configuration>
     <configuration name="TrungNguyenConfig" type="Application" factoryName="Application">
-||||||| 231a128
-  <component name="RunManager">
-    <configuration name="Just Run " type="Application" factoryName="Application">
-=======
-  <component name="RunManager" selected="Application.TomConfig">
-    <configuration name="Just Run " type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Java/jdk-21" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
->>>>>>> staff
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="NMCNPM" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\KhiemJP\Downloads\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
@@ -217,39 +105,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-    <list>
-      <item itemvalue="Application.TrungNguyenConfig" />
-      <item itemvalue="Application.TomConfig" />
-    </list>
-||||||| 231a128
-=======
-    <configuration name="TomConfig" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="NMCNPM" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
-      <module name="CNPM_Project" />
+      <module name="NMCNPM" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="CNPM_Project" />
+      <module name="NMCNPM" />
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Just Run " />
+      <item itemvalue="Application.TrungNguyenConfig" />
       <item itemvalue="Application.TomConfig" />
     </list>
->>>>>>> staff
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -267,7 +139,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706759952788</updated>
-<<<<<<< HEAD
       <workItem from="1707915918138" duration="2693000" />
       <workItem from="1707921426041" duration="3313000" />
       <workItem from="1708075710927" duration="1013000" />
@@ -303,38 +174,14 @@
       <workItem from="1708764021561" duration="3762000" />
       <workItem from="1708768223220" duration="2384000" />
       <workItem from="1708779420411" duration="3605000" />
-||||||| 231a128
-      <workItem from="1707915918138" duration="2693000" />
-      <workItem from="1707921426041" duration="3313000" />
-      <workItem from="1708075710927" duration="1013000" />
-      <workItem from="1708077448364" duration="94000" />
-      <workItem from="1708077686418" duration="1323000" />
-      <workItem from="1708079141537" duration="652000" />
-      <workItem from="1708086831680" duration="8352000" />
-      <workItem from="1708095237014" duration="17000" />
-      <workItem from="1708096272219" duration="1666000" />
-      <workItem from="1708097958413" duration="15000" />
-      <workItem from="1708149077840" duration="11630000" />
-      <workItem from="1708229760892" duration="2926000" />
-      <workItem from="1708249927001" duration="660000" />
-      <workItem from="1708250664727" duration="410000" />
-=======
-      <workItem from="1708863869463" duration="1040000" />
-      <workItem from="1708864919237" duration="3891000" />
-      <workItem from="1708868877721" duration="1927000" />
-      <workItem from="1708870818227" duration="1664000" />
-      <workItem from="1708872506210" duration="5303000" />
-      <workItem from="1708877834262" duration="745000" />
-      <workItem from="1708878588015" duration="3817000" />
-      <workItem from="1708882418289" duration="1786000" />
-      <workItem from="1708884225040" duration="16821000" />
-      <workItem from="1708935481045" duration="338000" />
->>>>>>> staff
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -365,5 +212,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/NMCNPM$TomConfig.ic" NAME="TomConfig Coverage Results" MODIFIED="1709957569449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
