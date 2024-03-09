@@ -5,10 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Event/EventController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Event/EventDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Event/EventDetailController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Event/InsertCotroller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Event/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Event/UpdateController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/DBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/DateUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/DeleteController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/EditController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/EditController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/IStaff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/NewUserController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/NewUserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/StaffDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/StaffIpml$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/StaffIpml.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/UserManagementApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/UserModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Student/InsertController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Student/StudentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Student/UpdateController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Model/Event/EventModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Model/Event/StudentEventModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Model/Staff/Staff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Login/Controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Login/Model/CheckLoginDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Main.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,15 +86,15 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Java_learning/NMCNPM/src/lib/javafx-sdk-21.0.2/lib/javafx.web.jar",
+    "last_opened_file_path": "E:/Java_learning/NMCNPM/src/test",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.32815734",
+    "project.structure.side.proportion": "0.33333334",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -101,19 +130,6 @@
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="NMCNPM" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\KhiemJP\Downloads\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="NMCNPM" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="NMCNPM" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
