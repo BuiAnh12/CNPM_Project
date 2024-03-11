@@ -5,39 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_7_46_PM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_7_46_PM__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_3_2024_7_56_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_3_2024_7_56_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_3_2024_8_08_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_3_2024_8_08_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Event/EventController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Event/EventDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Event/EventDetailController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Event/InsertCotroller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Event/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Event/UpdateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/DBConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/DateUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/DeleteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/EditController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/EditController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/IStaff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/NewUserController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/NewUserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/StaffDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/StaffIpml$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/StaffIpml.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/UserManagementApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Staff/UserModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Student/InsertController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Student/StudentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Controller/Student/UpdateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Model/Event/EventModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Model/Event/StudentEventModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Admin/Model/Staff/Staff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Login/Controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Login/Model/CheckLoginDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/production/NMCNPM/Main.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +40,9 @@
       </map>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -76,17 +57,24 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Just Run .executor": "Run",
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "Application.TomConfig.executor": "Run",
-    "Application.TrungNguyenConfig.executor": "Run",
+    "Application.TrungNguyenConfig.executor": "Debug",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Maven.NMCNPM [clean].executor": "Run",
+    "Maven.NMCNPM [install].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Java_learning/NMCNPM/src/test",
+    "last_opened_file_path": "E:/Java_learning/NMCNPM",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,6 +83,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.33333334",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -134,9 +123,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk-21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="NMCNPM" />
+      <option name="PROGRAM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.TrungNguyenConfig" />
       <item itemvalue="Application.TomConfig" />
+      <item itemvalue="Application.Unnamed" />
     </list>
   </component>
   <component name="SharedIndexes">

@@ -11,10 +11,12 @@ import java.io.IOException;
 import java.util.List;
 
 public class Main extends Application {
+    //maven no mac dinh coppy code và fxml vao file target ma cac ong cu di cònig cho no coppy lung tung
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Login/Login.fxml"));
+            System.out.println(getClass().getResource(""));
+            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/Login/Login.fxml"));
             System.out.println(Main.class.getResource(""));
             Scene scene = new Scene(fxmlLoader.load(), 900, 600);
         //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
