@@ -88,7 +88,7 @@
             </Button>
          </children>
       </Pane>
-      <AnchorPane layoutX="539.0" layoutY="58.0">
+      <AnchorPane layoutX="539.0" layoutY="11.0" prefHeight="368.0" prefWidth="598.0">
          <children>
             <AnchorPane layoutY="0.1015625">
                <children>
@@ -121,7 +121,8 @@
                   <TextField fx:id="txtPlace" editable="false" layoutY="38.8984375" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
                      <font>
                         <Font size="18.0" />
-                     </font></TextField>
+                     </font>
+                  </TextField>
                   <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Place" wrappingWidth="200.00000000000023">
                      <font>
                         <Font size="24.0" />
@@ -142,41 +143,79 @@
                   </Text>
                </children>
             </AnchorPane>
-         </children>
-      </AnchorPane>
-      <TableView fx:id="StudentTable" layoutX="535.0" layoutY="287.0" prefHeight="342.0" prefWidth="602.0">
-        <columns>
-          <TableColumn fx:id="colName" editable="false" prefWidth="245.5999755859375" text="Name" />
-          <TableColumn fx:id="colStudentId" editable="false" prefWidth="160.800048828125" text="StudentID" />
-            <TableColumn fx:id="colClass" editable="false" prefWidth="198.39996337890625" text="Class" />
-        </columns>
-      </TableView>
-      <Text layoutX="539.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participant List">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <AnchorPane layoutX="1077.0" layoutY="629.0">
-         <children>
-            <TextField fx:id="txtTotal" editable="false" layoutX="-1.0" layoutY="35.0" prefHeight="46.0" prefWidth="65.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+            <TextField fx:id="txtDeadline" editable="false" layoutY="220.0" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
                <font>
                   <Font size="18.0" />
-               </font></TextField>
-            <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="64.80004882812523">
+               </font>
+            </TextField>
+            <Text layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reg. Deadline" wrappingWidth="200.00000000000023">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtCreateBy" editable="false" layoutX="316.0" layoutY="220.0" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Text layoutX="316.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create by" wrappingWidth="200.00000000000023">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtStatus" editable="false" layoutX="317.0" layoutY="302.0" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Text layoutX="320.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="81.60003662109398">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtCheckBy" editable="false" layoutY="302.0" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Text layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check by " wrappingWidth="138.40002441406273">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
+      <TableView fx:id="StudentTable" layoutX="535.0" layoutY="423.0" prefHeight="206.0" prefWidth="587.0">
+        <columns>
+          <TableColumn fx:id="colName" editable="false" prefWidth="193.60003662109375" text="Name" />
+          <TableColumn fx:id="colStudentId" editable="false" prefWidth="213.5999755859375" text="StudentID" />
+            <TableColumn fx:id="colClass" editable="false" prefWidth="198.39996337890625" text="Class" />
+        </columns>
+      </TableView>
+      <Text layoutX="535.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participant List">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="1077.0" layoutY="629.0" />
       <Text layoutX="539.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detail" wrappingWidth="193.60009765625023">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextArea fx:id="txtDetail" editable="false" layoutX="539.0" layoutY="664.0" prefHeight="106.0" prefWidth="490.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;" wrapText="true">
+      <TextArea fx:id="txtDetail" editable="false" layoutX="539.0" layoutY="664.0" prefHeight="106.0" prefWidth="502.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;" wrapText="true">
          <font>
             <Font size="18.0" />
          </font></TextArea>
+      <TextField fx:id="txtTotal" editable="false" layoutX="1102.0" layoutY="696.0" prefHeight="46.0" prefWidth="65.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Text layoutX="1103.0" layoutY="687.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="64.80004882812523">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>

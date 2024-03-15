@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javax.management.modelmbean.ModelMBean;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -42,6 +43,19 @@ public class EventDetailController implements Initializable{
 
     @FXML
     private TextArea txtDetail;
+
+
+    @FXML
+    private TextField txtCheckBy;
+
+    @FXML
+    private TextField txtCreateBy;
+
+    @FXML
+    private TextField txtDeadline;
+
+    @FXML
+    private TextField txtStatus;
 
     @FXML
     private TableColumn<StudentEventModel, String> colClass;
@@ -76,6 +90,13 @@ public class EventDetailController implements Initializable{
         this.txtTime.setText(object.getOccurDate().toString());
         this.txtTotal.setText(String.valueOf(object.getNumberOfAttendance()));
         this.txtDetail.setText(object.getDetail());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); // Specify the desired format
+        String deadlineString = object.getDeadline().format(formatter);
+        this.txtDeadline.setText(deadlineString);
+
+        txtStatus.setText(object.isStatus() ? "Mở" : "Đã hủy");
+
+
         EventDAO eventDAO = new EventDAO();
         List<StudentEventModel> tableList = new ArrayList<>();
 //        tableList = eventDAO.getTable(Filter.getSelectionModel().getSelectedIndex(), FilterSort.getSelectionModel().getSelectedIndex(), SearchField.getText());

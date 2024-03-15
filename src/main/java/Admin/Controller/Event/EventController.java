@@ -30,6 +30,15 @@ import java.util.ResourceBundle;
 
 public class EventController implements Initializable {
 
+    private int user;
+
+    public int getUser() {
+        return user;
+    }
+
+    public void setUser(int user) {
+        this.user = user;
+    }
 
     @FXML
     private AnchorPane Containner;
@@ -39,10 +48,20 @@ public class EventController implements Initializable {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/MainForm.fxml"));
             Parent page = fxmlLoader.load();
+
+            // Get the controller after loading
+            MainController controller = fxmlLoader.getController();
+
+            // Now set the user
+            controller.setSetUser(1);
+
+            // Add the loaded page to the container
             Containner.getChildren().add(page);
+
         } catch (IOException e) {
             System.out.println("Open Fail");
             e.printStackTrace();
         }
+
     }
 }

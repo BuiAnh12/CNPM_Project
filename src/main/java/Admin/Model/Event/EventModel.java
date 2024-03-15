@@ -12,6 +12,37 @@ public class EventModel {
 
     private int maxSlot;
 
+    private  boolean status;
+
+    private int checkBy =  -1;
+
+    private int createBy;
+
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public int getCheckBy() {
+        return checkBy;
+    }
+
+    public void setCheckBy(int checkBy) {
+        this.checkBy = checkBy;
+    }
+
+    public int getCreateBy() {
+        return createBy;
+    }
+
+    public void setCreateBy(int createBy) {
+        this.createBy = createBy;
+    }
+
     public LocalDate getOccurDate() {
         return occurDate;
     }
@@ -62,7 +93,24 @@ public class EventModel {
         this.deadline = deadline;
     }
 
+    public EventModel(int eventId, String eventName, String place, String organizationName, int numberOfAttendance, LocalDate deadline, LocalDate occurDate, int maxSlot, boolean status, int createBy, int checkBy, String detail) {
+        this.eventId = eventId;
+        this.eventName = eventName;
+        this.place = place;
+        this.organizationName = organizationName;
+        this.numberOfAttendance = numberOfAttendance;
+        this.deadline = deadline;
+        this.occurDate = occurDate;
+        this.maxSlot = maxSlot;
+        this.status = status;
+        this.createBy = createBy;
+        this.checkBy = checkBy;
+        this.detail = detail;
+    }
+
     // Getters and setters
+
+
     public int getEventId() {
         return eventId;
     }

@@ -1,5 +1,6 @@
 package Admin.Controller.Event;
 
+import Admin.Controller.Event.InsertCotroller;
 import Admin.Model.Event.EventModel;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -57,6 +59,16 @@ public class MainController implements Initializable {
     @FXML
     private TableView<EventModel> table;
 
+    private int setUser = 1;
+
+    public int getSetUser() {
+        return setUser;
+    }
+
+    public void setSetUser(int setUser) {
+        this.setUser = setUser;
+    }
+
     @FXML
     void DeleteBtnClickEvent(MouseEvent event) {
         EventModel selected = table.getSelectionModel().getSelectedItem();
@@ -86,24 +98,40 @@ public class MainController implements Initializable {
 
     @FXML
     void EditBtnClickEvent(MouseEvent event) {
-        try{
+        try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/UpdateForm.fxml"));
             Parent page = fxmlLoader.load();
 
-            Scene currentScene = table.getScene();
-            Stage currentStage = (Stage) table.getScene().getWindow();
+            // Create a new stage for the dialog
+            Stage dialogStage = new Stage();
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            dialogStage.setTitle("Update Event");
 
+            // Set the scene
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Set controller and update fields
             UpdateController updateController = fxmlLoader.getController();
             updateController.setObject(table.getSelectionModel().getSelectedItem());
             updateController.updateFields();
-            AnchorPane Container = (AnchorPane) DashbaordForm.getParent();
-            Container.getChildren().clear();
-            Container.getChildren().add(page);
+            updateController.setUser(this.getSetUser());
+            dialogStage.setOnHiding(eventS -> {
+                // Call updateTableView() when the dialog is closed
+                updateTableView();
+            });
+            dialogStage.setOnCloseRequest(events -> {
+                // Call the updateTableView() function
+                updateTableView();
+            });
+            // Show the dialog
+            dialogStage.showAndWait();
 
         } catch (IOException e) {
             System.out.println("Open Fail");
             e.printStackTrace();
         }
+
     }
 
     @FXML
@@ -118,26 +146,43 @@ public class MainController implements Initializable {
 
     @FXML
     void InsertBtnClickEvent(MouseEvent event) {
-        try{
+        try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/InsertForm.fxml"));
             Parent page = fxmlLoader.load();
 
-            Scene currentScene = table.getScene();
-            Stage currentStage = (Stage) table.getScene().getWindow();
+            // Create a new stage for the dialog
+            Stage dialogStage = new Stage();
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            dialogStage.setTitle("Insert Event");
 
-            InsertCotroller insertCotroller = fxmlLoader.getController();
-            insertCotroller.setPreviousScene(currentScene);
+            // Set the scene
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
 
-            AnchorPane Container = (AnchorPane) DashbaordForm.getParent();
-            Container.getChildren().clear();
-            Container.getChildren().add(page);
+            // Get the controller and set necessary data
+            InsertCotroller insertController = fxmlLoader.getController();
+            insertController.updateFields();
+            insertController.setUser(this.getSetUser());
+
+            dialogStage.setOnHiding(eventS -> {
+                // Call updateTableView() when the dialog is closed
+                updateTableView();
+            });
+            // Set the close request handler
+            dialogStage.setOnCloseRequest(events -> {
+                // Call the updateTableView() function
+                updateTableView();
+            });
+
+            // Show the dialog
+            dialogStage.showAndWait();
 
         } catch (IOException e) {
             System.out.println("Open Fail");
             e.printStackTrace();
         }
-
     }
+
 
     @FXML
     void SearchTxtType(KeyEvent event) {

@@ -1,3 +1,5 @@
+import Admin.Controller.Event.EventController;
+import Admin.Controller.Event.MainController;
 import Admin.Controller.Staff.IStaff;
 import Admin.Controller.Staff.StaffIpml;
 import Admin.Model.Staff.Staff;
@@ -15,10 +17,10 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            System.out.println(getClass().getResource(""));
-            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/Login/Login.fxml"));
-            System.out.println(Main.class.getResource(""));
-            Scene scene = new Scene(fxmlLoader.load(), 900, 600);
+            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+            EventController controller = fxmlLoader.getController();
+            controller.setUser(1);
         //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
@@ -38,15 +40,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-//        DBConnection db = new DBConnection();
-//        db.getConnection();
-        IStaff dao = new StaffIpml();
-        List<Staff> staffs = dao.getAllStaff();
-        if (!staffs.isEmpty()) {
-            System.out.println("ok");
-        } else {
-            System.out.println("ko");
-        }
         launch();
     }
 }
