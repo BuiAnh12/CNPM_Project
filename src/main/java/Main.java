@@ -17,15 +17,15 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-            EventController controller = fxmlLoader.getController();
-            controller.setUser(1);
+//            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
+//            Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+//            EventController controller = fxmlLoader.getController();
+//            controller.setUser(1);
         //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Student/StudentForm/MainAdminForm.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Student/StudentForm/MainAdminForm.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
 //            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Admin/Staff/StaffForm/staffs-view.fxml"));
 //            Parent content = fxmlLoader.load();
 

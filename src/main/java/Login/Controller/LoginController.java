@@ -31,16 +31,16 @@ public class LoginController {
         int result = checkLoginDAO.checkLogin(username, password);
 
         // Kiểm tra kết quả
-        if (result == 1) {
-            // Nếu đăng nhập thành công
+        if (result == 2) {
+            // Nếu đăng nhập thành công vào Student
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Thông báo");
             alert.setHeaderText(null);
             alert.setContentText(" Student đăng nhập thành công!");
             alert.showAndWait();
 
-        } else if (result == 2) {
-            // Nếu đăng nhập thành công
+        } else if (result == 1) {
+            // Nếu đăng nhập thành công vào Staff
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Thông báo");
             alert.setHeaderText(null);

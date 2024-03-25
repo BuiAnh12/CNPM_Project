@@ -22,8 +22,9 @@ public class CheckLoginDAO {
     // Có thể thêm phương thức khởi tạo khác hoặc sử dụng setter
 
     public int checkLogin(String username, String password) {
+        int result = 0;
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
-            try (CallableStatement cs = connection.prepareCall("{call sp_CheckLogin(?, ?, ?)}")) {
+            try (CallableStatement cs = connection.prepareCall("{call ValidateLogin(?, ?, ?)}")) {
                 cs.setString(1, username);
                 cs.setString(2, password);
                 cs.registerOutParameter(3, Types.INTEGER);
@@ -32,11 +33,12 @@ public class CheckLoginDAO {
                 cs.execute();
 
                 // Đọc kết quả từ OUTPUT parameter
-                return cs.getInt(3);
+                result = cs.getInt(3);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
+        return result;
     }
 }
