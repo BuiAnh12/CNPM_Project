@@ -1,4 +1,4 @@
-import Admin.Controller.Event.EventController;
+import User.Controller.Event.EventController;
 import Admin.Controller.Event.MainController;
 import Admin.Controller.Staff.IStaff;
 import Admin.Controller.Staff.StaffIpml;
@@ -17,7 +17,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/User/Event/EventForm/EventMainForm.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
             EventController controller = fxmlLoader.getController();
             controller.setUser(1);

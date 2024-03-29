@@ -1,13 +1,13 @@
-package Admin.Controller.Event;
+package User.Controller.Event;
+
+import Admin.Model.Event.EventModel;
+import Admin.Model.Event.Organization;
+import Admin.Model.Event.StudentEventModel;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
-import Admin.Model.Event.EventModel;
-import Admin.Model.Event.Organization;
-import Admin.Model.Event.StudentEventModel;
 
 public class EventDAO {
     private String jdbcUrl;
@@ -105,18 +105,18 @@ public class EventDAO {
     public boolean insertOrUpdateEvent(Integer eventId, String name, LocalDate occurDate, String place, int organizationId, int maxSlot, LocalDate deadline, String detail, boolean status, boolean enable, Integer createBy, Integer checkBy) {
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
             try (CallableStatement cs = connection.prepareCall("{call sp_upsertEvent(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}")) {
-                cs.setObject(1, eventId, java.sql.Types.INTEGER);; // Pass eventId as the first parameter
+                cs.setObject(1, eventId, Types.INTEGER);; // Pass eventId as the first parameter
                 cs.setString(2, name);
-                cs.setDate(3, java.sql.Date.valueOf(occurDate));
+                cs.setDate(3, Date.valueOf(occurDate));
                 cs.setString(4, place);
                 cs.setInt(5, organizationId);
                 cs.setInt(6, maxSlot);
-                cs.setDate(7, java.sql.Date.valueOf(deadline));
+                cs.setDate(7, Date.valueOf(deadline));
                 cs.setString(8, detail);
                 cs.setBoolean(9, status); // Convert boolean to BIT for status
                 cs.setBoolean(10, enable); // Convert boolean to BIT for enable
                 cs.setInt(11, createBy); // Added createBy parameter
-                cs.setObject(12, checkBy, java.sql.Types.INTEGER); // Added checkBy parameter
+                cs.setObject(12, checkBy, Types.INTEGER); // Added checkBy parameter
 
                 // Execute the stored procedure
                 int rowsAffected = cs.executeUpdate();
@@ -162,11 +162,11 @@ public class EventDAO {
             try (CallableStatement cs = connection.prepareCall("{call sp_updateEvent(?,?, ?, ?, ?, ?, ?, ?)}")) {
                 cs.setInt(1,id);
                 cs.setString(2, name);
-                cs.setDate(3, java.sql.Date.valueOf(occurDate));
+                cs.setDate(3, Date.valueOf(occurDate));
                 cs.setString(4, place);
                 cs.setInt(5, organizationId);
                 cs.setInt(6, maxSlot);
-                cs.setDate(7, java.sql.Date.valueOf(deadline));
+                cs.setDate(7, Date.valueOf(deadline));
                 cs.setString(8, detail);
 
                 // Execute the stored procedure
@@ -205,47 +205,6 @@ public class EventDAO {
             throw new RuntimeException(e);
         }
     }
-
-    public boolean insertRegistration(LocalDate occurDate, int eventId, String studentId) {
-        try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
-            try (CallableStatement cs = connection.prepareCall("{call sp_registerEvent(?, ?, ?)}")) {
-                cs.setObject(1, eventId, java.sql.Types.INTEGER);; // Pass eventId as the first parameter
-                cs.setString(2, studentId);
-                cs.setDate(3, java.sql.Date.valueOf(occurDate));
-
-                // Execute the stored procedure
-                int rowsAffected = cs.executeUpdate();
-
-                // Check if any rows were affected
-                return rowsAffected > 0;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
-
-    public boolean unregisterEvent(int eventId, String studentId) {
-        try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
-            try (CallableStatement cs = connection.prepareCall("{call sp_unregisterEvent(?, ?)}")) {
-                cs.setString(1, studentId);
-                cs.setInt(2, eventId);
-
-
-
-                // Execute the stored procedure
-                int rowsAffected = cs.executeUpdate();
-
-                // Check if any rows were affected
-                return rowsAffected > 0;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
-
-
 
 }
 
