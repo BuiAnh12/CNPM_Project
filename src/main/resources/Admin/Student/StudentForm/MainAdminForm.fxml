@@ -68,7 +68,7 @@
                 <TableColumn fx:id="idColumn" prefWidth="162.0" text="StudentID" />
                 <TableColumn fx:id="classColumn" prefWidth="147.0" text="Class" />
                 <TableColumn fx:id="phoneColumn" prefWidth="201.0" text="Phonenumber" />
-                <TableColumn fx:id="usernameColumn" prefWidth="132.0" text="Username" />
+                <TableColumn fx:id="dobColumn" prefWidth="201.0" text="DOB" />
             </columns>
         </TableView>
         <TextField layoutX="193.0" layoutY="133.0" prefHeight="39.0" prefWidth="263.0" promptText="Search" styleClass="label" stylesheets="@../CSS/MainAdminForm.css">
@@ -85,17 +85,17 @@
                 </ImageView>
             </graphic>
         </Button>
-        <Button layoutX="610.0" mnemonicParsing="false" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="green-form" text="Insert User" textFill="WHITE">
+        <Button layoutX="709.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="green-form" text="Insert User" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button layoutX="806.0" mnemonicParsing="false" onMouseClicked="#DeleteBtnClickEvent" prefHeight="39.0" prefWidth="99.0" style="-fx-background-radius: 9;" styleClass="red-form"  text="Delete User" textFill="WHITE">
+        <Button layoutX="932.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#DeleteBtnClickEvent" prefHeight="39.0" prefWidth="99.0" style="-fx-background-radius: 9;" styleClass="red-form" text="Delete User" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button layoutX="709.0" mnemonicParsing="false" onMouseClicked="#EditBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="blue-form"  text="Edit User" textFill="WHITE">
+        <Button layoutX="821.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#EditBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="blue-form" text="Edit User" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>

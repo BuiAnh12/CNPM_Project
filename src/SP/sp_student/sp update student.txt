@@ -1,0 +1,39 @@
+CREATE PROCEDURE UpdateStudentAndAccount
+    @StudentId nchar(10),
+    @FullName nvarchar(30),
+    @DOB date,
+    @PhoneNumber nvarchar(10),
+    @Username nvarchar(30),
+    @Password nvarchar(30),
+    @ClassId int
+AS
+BEGIN
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        -- Cập nhật thông tin trong bảng Student
+        UPDATE dbo.Student
+        SET Fullname = @FullName,
+            DOB = @DOB,
+            PhoneNumber = @PhoneNumber,
+            ClassId = @ClassId
+        WHERE StudentId = @StudentId;
+
+        -- Cập nhật thông tin trong bảng Account
+        DECLARE @AccountId int;
+        SELECT @AccountId = AccountID FROM dbo.Student WHERE StudentId = @StudentId;
+
+        UPDATE dbo.Account
+        SET Username = @Username,
+            Password = @Password
+        WHERE AccountID = @AccountId;
+
+        COMMIT;
+    END TRY
+    BEGIN CATCH
+        -- Nếu có lỗi xảy ra, rollback transaction và throw lỗi
+        IF @@TRANCOUNT > 0
+            ROLLBACK;
+        THROW;
+    END CATCH
+END

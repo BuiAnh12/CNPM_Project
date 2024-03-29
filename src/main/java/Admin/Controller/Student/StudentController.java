@@ -1,6 +1,7 @@
 package Admin.Controller.Student;
 
 import Admin.Model.Event.StudentEventModel;
+import Admin.Model.Student.StudentModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,36 +18,36 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import java.util.Optional;
+
 
 public class StudentController implements Initializable {
 
     @FXML
-    public TableView<StudentEventModel> mainTable;
+    public TableView<StudentModel> mainTable;
     public TableColumn<StudentEventModel, String> idColumn;
-    public TableColumn <StudentEventModel, String>nameColumn;
+    public TableColumn <StudentEventModel, String> nameColumn;
     public TableColumn<StudentEventModel, String> classColumn;
-    public TableColumn <StudentEventModel, String>phoneColumn;
-    public TableColumn <StudentEventModel, String>usernameColumn;
+    public TableColumn <StudentEventModel, String> phoneColumn;
     public AnchorPane DashbaordForm;
+    public TableColumn<StudentEventModel, LocalDate> dobColumn;
+    private StudentDAO studentDAO;
+    private StudentModel StudentModels;
 
+    public StudentController() {
+        this.studentDAO = new StudentDAO();
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        List<StudentEventModel> students = List.of(
-                new StudentEventModel("N21DCCN033", "Trung Nguyen", "CNTT"),
-                new StudentEventModel("N21DCCN032", "Trung Nguyen 1", "CNTT"),
-                new StudentEventModel("N21DCCN031", "Trung Nguyen 2", "CNTT"),
-                new StudentEventModel("N21DCCN030", "Trung Nguyen 3", "CNTT"),
-                new StudentEventModel("N21DCCN020", "Trung Nguyen 4", "CNTT"),
-                new StudentEventModel("N21DCCN021", "Trung Nguyen 5", "CNTT"),
-                new StudentEventModel("N21DCCN010", "Trung Nguyen 6", "CNTT")
-        );
+        List<StudentModel> students = this.studentDAO.getAllStudents();
 
         setupTable(students);
-
-        System.out.println(mainTable);
-
     }
 
 //    @FXML
@@ -96,7 +97,6 @@ public class StudentController implements Initializable {
 
     @FXML
     void InsertBtnClickEvent(MouseEvent event) {
-
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/InsertForm.fxml"));
             Parent page = fxmlLoader.load();
@@ -118,20 +118,37 @@ public class StudentController implements Initializable {
 
     }
 
-    private void setupTable(List<StudentEventModel> studentEventModels) {
+    private void setupTable(List<StudentModel> StudentModels) {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("studentId"));
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("studentName"));
-        classColumn.setCellValueFactory(new PropertyValueFactory<>("studentClass"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("fullName"));
+        classColumn.setCellValueFactory(new PropertyValueFactory<>("classId"));
+        dobColumn.setCellValueFactory(new PropertyValueFactory<>("dob"));
+        phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
 
-//        mainTable.getColumns().add(idColumn);
-//        mainTable.getColumns().add(nameColumn);
-//        mainTable.getColumns().add(classColumn);
 
-        ObservableList<StudentEventModel> data = FXCollections.observableArrayList(studentEventModels);
+        ObservableList<StudentModel> data = FXCollections.observableArrayList(StudentModels);
         mainTable.setItems(data);
     }
 
     public void DeleteBtnClickEvent(MouseEvent mouseEvent) {
-    }
+        StudentModel selectedStudent = mainTable.getSelectionModel().getSelectedItem();
+        if (selectedStudent != null) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirm Delete");
+            alert.setHeaderText(null);
+            alert.setContentText("Are you sure you want to delete this student?");
 
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+                studentDAO.deleteStudent(selectedStudent.getStudentId()); // Truyền studentId thay vì selectedStudent
+                mainTable.getItems().remove(selectedStudent);
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("No Selection");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select a student to delete.");
+            alert.showAndWait();
+        }
+}
 }
