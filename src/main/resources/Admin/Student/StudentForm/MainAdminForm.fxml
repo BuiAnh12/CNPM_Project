@@ -15,25 +15,16 @@
     <children>
         <AnchorPane fx:id="DashbaordForm" prefHeight="800.0" prefWidth="90.0" styleClass="grey-form" stylesheets="@../CSS/MainAdminForm.css">
             <children>
-            <Button layoutX="18.0" layoutY="291.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/MainAdminForm.css">
+            <Button fx:id="GoEventButton" layoutX="18.0" layoutY="291.0" mnemonicParsing="false" onAction="#handleGoEventButtonAction" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/MainAdminForm.css">
                <graphic>
                       <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                           <image>
-<!--                              <Image url="@../../../Images/Circled%20Menu.png" />-->
+                              <Image url="@../../../Images/Circled%20Menu.png" />
                           </image>
                       </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="18.0" layoutY="349.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/MainAdminForm.css">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Images/Name.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="18.0" layoutY="728.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/MainAdminForm.css">
+            <Button fx:id="GoLoginButton" layoutX="18.0" layoutY="728.0" mnemonicParsing="false" onAction="#handleGoLoginButtonAction" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/MainAdminForm.css">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -42,11 +33,11 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="18.0" layoutY="670.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/MainAdminForm.css">
+            <Button fx:id="GoStaffButton" layoutX="18.0" layoutY="670.0" mnemonicParsing="false" onAction="#handleGoStaffButtonAction" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/MainAdminForm.css">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-<!--                        <Image url="@../../../Images/Male%20User.png" />-->
+                        <Image url="@../../../Images/Male%20User.png" />
                      </image>
                   </ImageView>
                </graphic>
