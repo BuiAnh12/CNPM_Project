@@ -115,7 +115,7 @@ void AcceptClickBtn() {
         studentDAO.updateStudent(studentId, studentClass, phoneNumber, dob, studentEnable, fullName, username, password);
 
         // Hiển thị lại giao diện MainAdminForm
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/MainAdminForm.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/MainForm.fxml"));
         Parent root = fxmlLoader.load();
         Scene previousScene = new Scene(root);
         Stage stage = (Stage) updateForm.getScene().getWindow();
@@ -135,7 +135,7 @@ void AcceptClickBtn() {
         // Xử lý khi người dùng nhấn nút Cancel
         try {
             // Tạo một FXMLLoader cho giao diện trước đó
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/MainAdminForm.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/MainForm.fxml"));
             Parent root = fxmlLoader.load();
 
             // Lấy ra Scene của giao diện trước đó

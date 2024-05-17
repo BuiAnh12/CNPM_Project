@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Event/EventForm/Dashboard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SP/sp_student/sp_insert student.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/MainForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/StudentMainForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin/Event/EventForm/EventMainForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin/Event/EventForm/EventMainForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SP/sp_student/sp update student.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/SP/sp_student/sp update student.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/InsertController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/UpdateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Model/Student/StudentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Model/Student/StudentModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/MainAdminForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/MainAdminForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -34,7 +46,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -47,57 +59,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Just Run .executor": "Run",
-    "Application.Main.executor": "Debug",
-    "Application.TomConfig.executor": "Debug",
-    "Application.TrungNguyenConfig.executor": "Debug",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Maven.NMCNPM [clean].executor": "Run",
-    "Maven.NMCNPM [compile].executor": "Run",
-    "Maven.NMCNPM [deploy].executor": "Run",
-    "Maven.NMCNPM [install].executor": "Run",
-    "Maven.NMCNPM [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
-    "Maven.NMCNPM [org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile].executor": "Run",
-    "Maven.NMCNPM [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor": "Run",
-    "Maven.NMCNPM [org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources].executor": "Run",
-    "Maven.NMCNPM [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
-    "Maven.NMCNPM [package].executor": "Run",
-    "Maven.NMCNPM [test].executor": "Run",
-    "Maven.NMCNPM [validate].executor": "Run",
-    "Maven.NMCNPM [verify].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Java_learning/NMCNPM/src/main/resources/Admin/Event/EventForm",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.33333334",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Just Run .executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.TomConfig.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.TrungNguyenConfig.executor&quot;: &quot;Debug&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Maven.NMCNPM [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [verify].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/LÊ TRUNG NGUYÊN/mssql-jdbc-12.4.2.jre11.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.33333334&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\LÊ TRUNG NGUYÊN\QLHDSV\CNPM_Project\src\SP\sp_student" />
       <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Event\EventForm" />
       <recent name="E:\Java_learning\NMCNPM\src\main\resources\User" />
       <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project\src\main\resources\Admin\Staff\StaffForm" />
       <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project\src\main\resources\Admin\Staff\CSS" />
-      <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project\src\main\resources\Admin\Staff\CSS" />
@@ -113,7 +125,14 @@
       <recent name="User.Controller.Event" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TomConfig">
+  <component name="RunManager" selected="Application.TrungNguyenConfig">
+    <configuration name="App" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="NMCNPM" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TomConfig" type="Application" factoryName="Application" activateToolWindowBeforeRun="false">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="NMCNPM" />
@@ -125,12 +144,13 @@
     <configuration name="TrungNguyenConfig" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="NMCNPM" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\KhiemJP\Downloads\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\LÊ TRUNG NGUYÊN\CNPM\javafx-sdk-21.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.App" />
       <item itemvalue="Application.TrungNguyenConfig" />
       <item itemvalue="Application.TomConfig" />
     </list>
@@ -185,6 +205,24 @@
       <workItem from="1708764021561" duration="3762000" />
       <workItem from="1708768223220" duration="2384000" />
       <workItem from="1708779420411" duration="3605000" />
+      <workItem from="1714013221451" duration="182000" />
+      <workItem from="1714033636709" duration="20000" />
+      <workItem from="1714033999337" duration="91000" />
+      <workItem from="1714695405541" duration="72000" />
+      <workItem from="1714699488981" duration="85000" />
+      <workItem from="1714784940372" duration="10119000" />
+      <workItem from="1714813647168" duration="31000" />
+      <workItem from="1714813778790" duration="128000" />
+      <workItem from="1714916981366" duration="4599000" />
+      <workItem from="1715174226729" duration="240000" />
+      <workItem from="1715497296112" duration="7908000" />
+      <workItem from="1715507697742" duration="1445000" />
+      <workItem from="1715509614740" duration="1945000" />
+      <workItem from="1715516434542" duration="5641000" />
+      <workItem from="1715865768884" duration="1881000" />
+      <workItem from="1715867688601" duration="10428000" />
+      <workItem from="1715914803149" duration="547000" />
+      <workItem from="1715940740833" duration="3726000" />
     </task>
     <servers />
   </component>

@@ -46,6 +46,14 @@ public class StudentModel {
         this.accountId = accountId;
     }
 
+    public StudentModel(String studentId, int classId, String phoneNumber, LocalDate dob, String fullName) {
+        this.studentId = studentId;
+        this.classId = classId;
+        this.phoneNumber = phoneNumber;
+        this.dob = dob;
+        this.fullName = fullName;
+    }
+
     // Getters and setters
     public String getStudentId() {
         return studentId;

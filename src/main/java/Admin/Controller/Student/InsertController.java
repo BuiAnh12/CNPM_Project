@@ -62,7 +62,7 @@ public class InsertController {
             String password = txtPassword.getText();
 
             // Insert account into database and get accountId
-            int accountId = studentDAO.insertAccount(username, password);
+
 
             String fullName = txtFullName.getText();
             LocalDate dateOfBirth = txtDateOfBirth.getValue();
@@ -70,9 +70,9 @@ public class InsertController {
             String studentId = txtStudentId.getText();
             Integer studentClass = Integer.
                     parseInt(txtClass.getText());
-            boolean studentEnable = true;
+            /*boolean studentEnable = true;*/
             // Insert student information into database
-            studentDAO.insertStudent(accountId, fullName, dateOfBirth, phoneNumber, studentId, studentClass, studentEnable);
+            studentDAO.insertStudentWithAccount(username, password,fullName, dateOfBirth, phoneNumber, studentId, studentClass);
 
             // Thông báo thành công
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -95,7 +95,7 @@ public class InsertController {
     void CancelClickBtn() {
         try {
             // Tạo một FXMLLoader cho giao diện trước đó
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/MainAdminForm.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/MainForm.fxml"));
             Parent root = fxmlLoader.load();
 
             // Lấy ra Scene của giao diện trước đó
