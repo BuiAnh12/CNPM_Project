@@ -5,7 +5,6 @@ import java.sql.*;
 public class DBConnection {
     private Connection connection;
     private PreparedStatement preparedStatement;
-    private ResultSet resultSet;
     private int ok;
     public Connection getConnection() {
         String url = "jdbc:sqlserver://localhost:1433;databaseName=EventManagement;encrypt=true;trustServerCertificate=true";
@@ -30,9 +29,9 @@ public class DBConnection {
         }
     }
     public ResultSet executeSelect() {
-        resultSet = null;
+        ResultSet resultSet = null;
         try {
-            resultSet  = preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();
         } catch (Exception e) {
             e.printStackTrace();
         }

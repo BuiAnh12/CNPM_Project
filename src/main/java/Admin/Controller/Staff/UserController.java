@@ -12,6 +12,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -48,6 +50,8 @@ public class UserController implements Initializable {
     private TextField textSearch;
     @FXML
     private Button buttonSearch;
+    @FXML
+    private Button GoEventButton, GoStaffButton, GoStudentForm;
     private StaffIpml dao = new StaffIpml();
     public void updateUserList() {
         tableView.setItems(FXCollections.observableArrayList(dao.getAllStaff()));
@@ -77,7 +81,7 @@ public class UserController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        selectedColumn.setCellValueFactory(new PropertyValueFactory<User, Boolean>("flag"));
+        selectedColumn.setCellValueFactory(new PropertyValueFactory<User, Boolean>("flag")); //lỗi ở đây nhé đượt trước mng sửa db làm cái này bay màu
         nameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("username"));
         birthdayColumn.setCellValueFactory(new PropertyValueFactory<User, LocalDate>("dateOfBirth"));
         phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<User, String>("phoneNumber"));
@@ -106,7 +110,7 @@ public class UserController implements Initializable {
             System.out.println(getClass().getResource(""));
             Parent root = loader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root, 900, 600);
+            Scene scene = new Scene(root, 1200, 800);
             stage.setResizable(false);
             scene.getStylesheets().add(getClass().getResource("/Admin/Staff/CSS/new-user.css").toExternalForm());
             stage.setScene(scene);
@@ -174,5 +178,75 @@ public class UserController implements Initializable {
             controller.setDialog(dialog);
         }
     }
+    @FXML
+    private void handleGoEventButtonAction(ActionEvent event) {
+        try {
+            // Load file fxml mới
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
+            Parent root = loader.load();
 
+            // Tạo scene mới với root là node gốc của file fxml mới
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root, 1200, 800);
+            stage.setResizable(false);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void handleGoStudentButtonAction(ActionEvent event) {
+        try {
+            // Load file fxml mới
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/MainAdminForm.fxml"));
+            Parent root = loader.load();
+
+            // Tạo scene mới với root là node gốc của file fxml mới
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root, 1200, 800);
+            stage.setResizable(false);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    private void handleGoStaffButtonAction(ActionEvent event) {
+        try {
+            // Load file fxml mới
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Staff/StaffForm/staffs-view.fxml"));
+            Parent root = loader.load();
+
+            // Kiểm tra nếu phần tử gốc là một BorderPane
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//            Scene scene = new Scene(root, 1200, 800);
+//            stage.setResizable(false);
+//            stage.setScene(scene);
+//            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void handleGoLoginButtonAction(ActionEvent event) {
+        try {
+
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Login/Login.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 400, 530);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setTitle("Quản lí hoạt động sinh viên");
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+
+            ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -18,7 +18,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         try {
 
-            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/User/Event/EventForm/EventMainForm.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/User/Event/EventForm/MainForm.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
             EventController controller = fxmlLoader.getController();
             controller.setUser(1);

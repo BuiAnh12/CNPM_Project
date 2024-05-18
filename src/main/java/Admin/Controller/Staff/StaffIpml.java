@@ -1,6 +1,7 @@
 package Admin.Controller.Staff;
 
 import Admin.Model.Staff.Staff;
+import Login.Model.CheckLoginDAO;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.CheckBox;
@@ -17,17 +18,17 @@ public class StaffIpml implements IStaff {
         Staff staff = null;
         String sql = "SELECT * FROM staff WHERE Username = ? AND Password = ?";
         try {
-        db.initPrepar(sql);
-        db.getPreparedStatement().setString(1, username);
-        db.getPreparedStatement().setString(2, password);
-        resultSet = db.executeSelect();
-        if (resultSet.next()) {
-            staff = new Staff();
-            staff.setId(resultSet.getInt("StaffId"));
-            staff.setPassword(resultSet.getString("Password"));
-            staff.setUsername(resultSet.getString("Username"));
+            db.initPrepar(sql);
+            db.getPreparedStatement().setString(1, username);
+            db.getPreparedStatement().setString(2, password);
+            resultSet = db.executeSelect();
+            if (resultSet.next()) {
+                staff = new Staff();
+                staff.setId(resultSet.getInt("StaffId"));
+                staff.setPassword(resultSet.getString("Password"));
+                staff.setUsername(resultSet.getString("Username"));
 //            user.setDateOfBirth();
-        }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -39,17 +40,17 @@ public class StaffIpml implements IStaff {
     @Override
     public List<Staff> getAllStaff() {
         List<Staff> staffList = new ArrayList<>();
-        String sql = "SELECT * FROM staff";
+        String sql = "SELECT * FROM Staff";
         try {
             db.initPrepar(sql);
             resultSet = db.executeSelect();
             while (resultSet.next()) {
                 Staff staff = new Staff();
                 CheckBox checkBox = new CheckBox();
-                checkBox.setSelected(resultSet.getBoolean("Flag"));
+                checkBox.setSelected(resultSet.getBoolean("Enable"));
                 staff.setId(resultSet.getInt("StaffId"));
 
-                staff.setPassword(resultSet.getString("Password"));
+                //staff.setPassword(resultSet.getString("Password"));
                 staff.setUsername(resultSet.getString("Username"));
                 staff.setDateOfBirth(resultSet.getDate("DOB"));
                 staff.setFlag(checkBox);
@@ -73,14 +74,14 @@ public class StaffIpml implements IStaff {
         return staffList;
     }
     @Override
-    public boolean updateFlag(boolean flag, int staffId) {
-        String sql = "UPDATE staff " +
-                "SET Flag = ? " +
+    public boolean updateFlag(boolean enable, int staffId) {
+        String sql = "UPDATE Staff " +
+                "SET Enable = ? " +
                 "WHERE StaffId = ?";
         try {
             db.initPrepar(sql);
             // Thiết lập các tham số cho câu lệnh SQL
-            db.getPreparedStatement().setBoolean(1, flag);
+            db.getPreparedStatement().setBoolean(1, enable);
             db.getPreparedStatement().setInt(2, staffId);
             // Thực thi truy vấn
             int rowsUpdated = db.getPreparedStatement().executeUpdate();
@@ -96,13 +97,13 @@ public class StaffIpml implements IStaff {
     }
 
     @Override
-    public boolean updateAllFlag(boolean flag) {
-        String sql = "UPDATE staff " +
-                "SET Flag = ? ";
+    public boolean updateAllFlag(boolean enable) {
+        String sql = "UPDATE Staff " +
+                "SET Enable = ? ";
         try {
             db.initPrepar(sql);
             // Thiết lập các tham số cho câu lệnh SQL
-            db.getPreparedStatement().setBoolean(1, flag);
+            db.getPreparedStatement().setBoolean(1, enable);
             // Thực thi truy vấn
             int rowsUpdated = db.getPreparedStatement().executeUpdate();
             // Trả về true nếu cập nhật thành công ít nhất một hàng
@@ -118,7 +119,7 @@ public class StaffIpml implements IStaff {
 
     @Override
     public List<Staff> getAllStaffSelected() {
-        String selectSql = "SELECT * FROM staff WHERE Flag = 1";
+        String selectSql = "SELECT * FROM Staff WHERE Enable = 1";
         List<Staff> staffList = new ArrayList<>();
         try {
             db.initPrepar(selectSql);
@@ -142,7 +143,7 @@ public class StaffIpml implements IStaff {
     @Override
     public boolean deleteStaffSelected(List<Staff> staffList) {
 
-        String deleteSql = "DELETE FROM staff WHERE StaffId = ?";
+        String deleteSql = "DELETE FROM Staff WHERE StaffId = ?";
 
         try {
 
@@ -175,18 +176,17 @@ public class StaffIpml implements IStaff {
 
     @Override
     public boolean updateStaff(Staff staff) {
-        String sql = "UPDATE staff " +
-                "SET Username = ?, Password = ?, PhoneNumber = ?, DOB = ?, Name = ? " +
+        String sql = "UPDATE Staff " +
+                "SET Username = ?, PhoneNumber = ?, DOB = ?, Fullname = ?" +
                 "WHERE StaffId = ?";
         try {
             db.initPrepar(sql);
             // Thiết lập các tham số cho câu lệnh SQL
             db.getPreparedStatement().setString(1, staff.getUsername());
-            db.getPreparedStatement().setString(2, staff.getPassword());
-            db.getPreparedStatement().setString(3, staff.getPhoneNumber());
-            db.getPreparedStatement().setDate(4, new java.sql.Date(staff.getDateOfBirth().getTime())); // Chuyển đổi Date sang java.sql.Date
-            db.getPreparedStatement().setString(5, staff.getName());
-            db.getPreparedStatement().setInt(6, staff.getId());
+            db.getPreparedStatement().setString(2, staff.getPhoneNumber());
+            db.getPreparedStatement().setDate(3, new java.sql.Date(staff.getDateOfBirth().getTime())); // Chuyển đổi Date sang java.sql.Date
+            db.getPreparedStatement().setString(4, staff.getName());
+            db.getPreparedStatement().setInt(5, staff.getId());
 
             // Thực thi truy vấn
             int rowsUpdated = db.getPreparedStatement().executeUpdate();
@@ -203,19 +203,19 @@ public class StaffIpml implements IStaff {
     }
     @Override
     public boolean addStaff(Staff staff) {
-        String sql = "INSERT INTO staff (Username, Password, PermissionId, PhoneNumber, DOB, Flag, Name) " +
+        String sql = "INSERT INTO Staff (Username, PermissionId, PhoneNumber, DOB, Enable, Fullname, StaffId) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        //ai lai sua o day nua vay
         try {
             db.initPrepar(sql);
             // Thiết lập các tham số cho câu lệnh SQL
             db.getPreparedStatement().setString(1, staff.getUsername());
-            db.getPreparedStatement().setString(2, staff.getPassword());
-            db.getPreparedStatement().setInt(3, 1);
-            db.getPreparedStatement().setString(4, staff.getPhoneNumber());
-            db.getPreparedStatement().setDate(5, new java.sql.Date(staff.getDateOfBirth().getTime()));
-            // Thiết lập giá trị cho Flag tùy theo kiểu dữ liệu của cột Flag trong cơ sở dữ liệu
-            db.getPreparedStatement().setBoolean(6, false); // Ví dụ: staff.getFlag().toString() là một chuỗi
-            db.getPreparedStatement().setString(7, staff.getName());
+            db.getPreparedStatement().setInt(2, 1);
+            db.getPreparedStatement().setString(3, staff.getPhoneNumber());
+            db.getPreparedStatement().setDate(4, new java.sql.Date(staff.getDateOfBirth().getTime()));
+            db.getPreparedStatement().setBoolean(5, true);
+            db.getPreparedStatement().setString(6, staff.getName());
+            db.getPreparedStatement().setInt(7, 11);
             // Thực thi truy vấn
             db.getPreparedStatement().executeUpdate();
 
