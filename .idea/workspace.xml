@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/SP/sp_student/sp_insert student.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/MainForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/StudentMainForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SP/sp_student/sp update student.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/SP/sp_student/sp update student.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/InsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/InsertController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/StudentDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Student/UpdateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Model/Student/StudentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Model/Student/StudentModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/MainAdminForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin/Student/StudentForm/MainAdminForm.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenRunner">
+    <option name="environmentProperties">
+      <map>
+        <entry key="JAVA_HOME" value="C:\Program Files\Java\jdk-21\" />
+      </map>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2bkXGC48Mf59kdtZrAcOQGSQbod" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Just Run .executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.TomConfig.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.TrungNguyenConfig.executor&quot;: &quot;Debug&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Maven.NMCNPM [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [org.apache.maven.plugins:maven-resources-plugin:3.2.0:resources].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NMCNPM [verify].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/LÊ TRUNG NGUYÊN/mssql-jdbc-12.4.2.jre11.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.33333334&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\LÊ TRUNG NGUYÊN\QLHDSV\CNPM_Project\src\SP\sp_student" />
+      <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Event\EventForm" />
+      <recent name="E:\Java_learning\NMCNPM\src\main\resources\User" />
+      <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project\src\main\resources\Admin\Staff\StaffForm" />
+      <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project\src\main\resources\Admin\Staff\CSS" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project\src\main\resources\Admin\Staff\CSS" />
+      <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Student\StudentForm" />
+      <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Student\CSS" />
+      <recent name="E:\Java_learning\NMCNPM\src\main\resources\Login" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Login" />
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="User.Controller.Event" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.TrungNguyenConfig">
+    <configuration name="App" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="NMCNPM" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TomConfig" type="Application" factoryName="Application" activateToolWindowBeforeRun="false">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="NMCNPM" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrungNguyenConfig" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="NMCNPM" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\LÊ TRUNG NGUYÊN\CNPM\javafx-sdk-21.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="Application.TrungNguyenConfig" />
+      <item itemvalue="Application.TomConfig" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="" />
+      <created>1706759952788</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706759952788</updated>
+      <workItem from="1707915918138" duration="2693000" />
+      <workItem from="1707921426041" duration="3313000" />
+      <workItem from="1708075710927" duration="1013000" />
+      <workItem from="1708077448364" duration="94000" />
+      <workItem from="1708077686418" duration="1323000" />
+      <workItem from="1708079141537" duration="652000" />
+      <workItem from="1708086831680" duration="8352000" />
+      <workItem from="1708095237014" duration="17000" />
+      <workItem from="1708096272219" duration="1666000" />
+      <workItem from="1708097958413" duration="15000" />
+      <workItem from="1708149077840" duration="11630000" />
+      <workItem from="1708229760892" duration="2926000" />
+      <workItem from="1708249927001" duration="660000" />
+      <workItem from="1708250664727" duration="1124000" />
+      <workItem from="1708388123662" duration="192000" />
+      <workItem from="1708391723713" duration="1404000" />
+      <workItem from="1708393244340" duration="79000" />
+      <workItem from="1708393339054" duration="18000" />
+      <workItem from="1708483889729" duration="17000" />
+      <workItem from="1708497657523" duration="686000" />
+      <workItem from="1708499534462" duration="606000" />
+      <workItem from="1708502807623" duration="93000" />
+      <workItem from="1708503665793" duration="130000" />
+      <workItem from="1708503810705" duration="1207000" />
+      <workItem from="1708573267860" duration="334000" />
+      <workItem from="1708582183338" duration="1740000" />
+      <workItem from="1708585287112" duration="669000" />
+      <workItem from="1708585982895" duration="323000" />
+      <workItem from="1708586428386" duration="631000" />
+      <workItem from="1708588643083" duration="53000" />
+      <workItem from="1708651616577" duration="17000" />
+      <workItem from="1708689559958" duration="2179000" />
+      <workItem from="1708764021561" duration="3762000" />
+      <workItem from="1708768223220" duration="2384000" />
+      <workItem from="1708779420411" duration="3605000" />
+      <workItem from="1714013221451" duration="182000" />
+      <workItem from="1714033636709" duration="20000" />
+      <workItem from="1714033999337" duration="91000" />
+      <workItem from="1714695405541" duration="72000" />
+      <workItem from="1714699488981" duration="85000" />
+      <workItem from="1714784940372" duration="10119000" />
+      <workItem from="1714813647168" duration="31000" />
+      <workItem from="1714813778790" duration="128000" />
+      <workItem from="1714916981366" duration="4599000" />
+      <workItem from="1715174226729" duration="240000" />
+      <workItem from="1715497296112" duration="7908000" />
+      <workItem from="1715507697742" duration="1445000" />
+      <workItem from="1715509614740" duration="1945000" />
+      <workItem from="1715516434542" duration="5641000" />
+      <workItem from="1715865768884" duration="1881000" />
+      <workItem from="1715867688601" duration="10428000" />
+      <workItem from="1715914803149" duration="547000" />
+      <workItem from="1715940740833" duration="3726000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/EditController.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/StaffIpml.java</url>
+          <line>195</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/NewUserController.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/StaffIpml.java</url>
+          <line>223</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/NMCNPM$TomConfig.ic" NAME="TomConfig Coverage Results" MODIFIED="1709957569449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
