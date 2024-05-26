@@ -1,0 +1,63 @@
+CREATE PROCEDURE InsertStudentWithAccount
+    @Username NVARCHAR(255),
+    @Password NVARCHAR(255),
+    @FullName NVARCHAR(255),
+    @DOB DATE,
+    @PhoneNumber NVARCHAR(20),
+    @StudentId NVARCHAR(20),
+    @StudentClass INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    DECLARE @AccountId INT;
+
+    -- Start the transaction
+    BEGIN TRANSACTION;
+
+    -- Check if StudentId already exists
+    IF EXISTS (SELECT 1 FROM Student WHERE StudentId = @StudentId OR (PhoneNumber = @PhoneNumber AND LEN(PhoneNumber) <> 10))
+    BEGIN
+        IF EXISTS (SELECT 1 FROM Account WHERE Username = @Username)
+        BEGIN
+            RAISERROR('StudentId or Username already exists.', 16, 1);
+            ROLLBACK; -- Rollback the transaction
+            RETURN;
+        END
+        ELSE
+        BEGIN
+            RAISERROR('StudentId already exists.', 16, 1);
+            ROLLBACK; -- Rollback the transaction
+            RETURN;
+        END
+    END
+    ELSE IF EXISTS (SELECT 1 FROM Account WHERE Username = @Username)
+    BEGIN
+        RAISERROR('Username already exists.', 16, 1);
+        ROLLBACK; -- Rollback the transaction
+        RETURN;
+    END
+
+    BEGIN TRY
+        -- Insert into Account table
+        INSERT INTO Account (Username, Password)
+        VALUES (@Username, @Password);
+
+        -- Retrieve the generated AccountId
+        SET @AccountId = SCOPE_IDENTITY();
+
+        -- Insert into Student table
+        INSERT INTO Student (AccountID, FullName, DOB, PhoneNumber, StudentId, ClassId, Enable)
+        VALUES (@AccountId, @FullName, @DOB, @PhoneNumber, @StudentId, @StudentClass, 1);
+    END TRY
+    BEGIN CATCH
+        -- Rollback the transaction if an error occurs
+        ROLLBACK;
+        RAISERROR('An error occurred while inserting student.', 16, 1);
+        RETURN;
+    END CATCH;
+
+    -- Commit the transaction if everything succeeds
+    COMMIT;
+END;
+GO
