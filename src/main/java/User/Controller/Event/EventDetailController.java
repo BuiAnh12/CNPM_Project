@@ -6,11 +6,7 @@ import Admin.Model.Event.StudentEventModel;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -93,13 +89,20 @@ public class EventDetailController {
 
         if (Integer.parseInt(txtAvailableSlot.getText()) <= 0){
             System.out.println("Out of slot");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText(null);
+            alert.setContentText("Hiện tại đã hết suất. Xin vui lòng thử lại sau");
+            alert.showAndWait();
         }
         else if (object.getDeadline().compareTo(today) < 0){
             System.out.println("Out of ReDate");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText(null);
+            alert.setContentText("Hết hạn đăng ký.");
+            alert.showAndWait();
         }
-//        else if (!object.isStatus()){
-//            System.out.println("Cancle Event");
-//        }
         else{
             EventDAO eventDAO = new EventDAO();
             boolean registrationSuccessful = eventDAO.insertRegistration(today, object.getEventId(), user);
@@ -121,9 +124,17 @@ public class EventDetailController {
     @FXML
     void unregisterBtnClickEvent(MouseEvent event) {
         // Assuming you have access to the eventId and studentId variables
+        LocalDate today = LocalDate.now();
         int eventId = object.getEventId();
         String studentId = user; // Example student ID
-
+        if (object.getDeadline().compareTo(today) < 0){
+            System.out.println("Out of ReDate");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText(null);
+            alert.setContentText("Hết hạn hủy đăng ký.");
+            alert.showAndWait();
+        }
         EventDAO eventDAO = new EventDAO();
         boolean unregistered = eventDAO.unregisterEvent(eventId, studentId);
 
