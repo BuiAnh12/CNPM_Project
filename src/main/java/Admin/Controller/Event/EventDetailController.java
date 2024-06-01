@@ -1,17 +1,23 @@
 package Admin.Controller.Event;
 
+import Admin.Controller.ChuyenViewController;
 import Admin.Model.Event.EventModel;
 import Admin.Model.Event.StudentEventModel;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.fxml.Initializable;
 import javax.management.modelmbean.ModelMBean;
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -26,6 +32,8 @@ public class EventDetailController implements Initializable{
     @FXML
     private TableView<StudentEventModel> StudentTable;
 
+    @FXML
+    private Button GoBackBtn;
     @FXML
     private TextField txtName;
 
@@ -66,14 +74,7 @@ public class EventDetailController implements Initializable{
     @FXML
     private TableColumn<StudentEventModel, String> colStudentId;
     @FXML
-    void goBack(MouseEvent event) {
-        // Show the previous stage
-        if (previousScene != null) {
-            Stage currentStage = (Stage) StudentTable.getScene().getWindow();
-            currentStage.setScene(previousScene);
-        }
 
-    }
 
     public void setPreviousStage(Scene scene) {
         this.previousScene = scene;
@@ -107,8 +108,58 @@ public class EventDetailController implements Initializable{
         StudentTable.setItems(FXCollections.observableArrayList(tableList));
     }
 
+
+//    @FXML
+//    public void handleGoBack(ActionEvent event) {
+//        try {
+//            // Tải FXML của EventMainForm
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
+//            Parent root = loader.load();
+//
+//            // Tạo một Scene mới từ FXML và lấy Stage hiện tại
+//            Scene scene = new Scene(root);
+//            Stage stage = (Stage) GoBackBtn.getScene().getWindow();
+//
+//            // Đặt Scene mới cho Stage
+//            stage.setScene(scene);
+//            stage.show();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            // Xử lý ngoại lệ khi tải FXML không thành công
+//        }
+//    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
+
+    public void handleGoBack(javafx.event.ActionEvent actionEvent) {
+        try {
+            // Load FXML của ViewChinh.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
+            StackPane root = loader.load();
+
+            // Lấy controller của ViewChinh
+            ChuyenViewController controller = loader.getController();
+
+            // Gọi phương thức loadView của controller để hiển thị EventMainForm
+            controller.loadView("/Admin/Event/EventForm/EventMainForm.fxml");
+
+            // Tạo một Scene mới từ StackPane
+            Scene scene = new Scene(root);
+
+            // Lấy Stage từ ActionEvent
+            Stage stage = (Stage) GoBackBtn.getScene().getWindow();
+
+            // Đặt Scene mới cho Stage
+            stage.setScene(scene);
+
+            // Hiển thị Stage
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Xử lý nếu có lỗi khi chuyển đổi
+        }
     }
 }

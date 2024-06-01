@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="white-form" stylesheets="@Admin/Event/CSS/EventMainForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.ChuyenViewController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="90.0" styleClass="grey-form" stylesheets="@Admin/Event/CSS/EventMainForm.css" StackPane.alignment="TOP_LEFT">
+         <children>
+            <Button fx:id="GoStudentForm" layoutX="18.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleGoStudentButtonAction" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../../../../CNPM_Project-master9-4-2024/src/main/resources/Admin/Event/CSS/EventMainForm.css">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Name.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="GoLoginButton" layoutX="18.0" layoutY="728.0" mnemonicParsing="false" onAction="#handleGoLoginButtonAction" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../../../../CNPM_Project-master9-4-2024/src/main/resources/Admin/Event/CSS/EventMainForm.css">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="GoStaffButton" layoutX="18.0" layoutY="670.0" mnemonicParsing="false" onAction="#handleGoStaffButtonAction" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../../../../CNPM_Project-master9-4-2024/src/main/resources/Admin/Event/CSS/EventMainForm.css">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Male%20User.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="GoEventDetails" layoutX="18.0" layoutY="291.0" mnemonicParsing="false" onAction="#handleGoEventDetailsButtonAction" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../../../../CNPM_Project-master9-4-2024/src/main/resources/Admin/Student/CSS/MainAdminForm.css">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Circled%20Menu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <StackPane fx:id="contentPane" layoutX="90" layoutY="0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800" prefWidth="1110" StackPane.alignment="CENTER_RIGHT" />
+   </children>
+</StackPane>

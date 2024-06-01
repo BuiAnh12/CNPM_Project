@@ -1,5 +1,6 @@
 package Admin.Controller.Student;
 
+import Admin.Controller.ChuyenViewController;
 import Admin.Model.Student.StudentModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -115,10 +116,21 @@ void AcceptClickBtn() {
         studentDAO.updateStudent(studentId, studentClass, phoneNumber, dob, studentEnable, fullName, username, password);
 
         // Hiển thị lại giao diện MainAdminForm
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/MainForm.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
         Parent root = fxmlLoader.load();
+
+        // Lấy controller của ViewChinh
+        ChuyenViewController controller = fxmlLoader.getController();
+
+        // Gọi phương thức loadView của controller để hiển thị EventMainForm
+        controller.loadView("/Admin/Student/StudentForm/MainForm.fxml");
+        // Lấy ra Scene của giao diện trước đó
         Scene previousScene = new Scene(root);
+
+        // Lấy ra Stage hiện tại
         Stage stage = (Stage) updateForm.getScene().getWindow();
+
+        // Thiết lập Scene của giao diện trước đó vào Stage
         stage.setScene(previousScene);
         stage.show();
     } catch (Exception e) {
@@ -135,9 +147,14 @@ void AcceptClickBtn() {
         // Xử lý khi người dùng nhấn nút Cancel
         try {
             // Tạo một FXMLLoader cho giao diện trước đó
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/MainForm.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
             Parent root = fxmlLoader.load();
 
+            // Lấy controller của ViewChinh
+            ChuyenViewController controller = fxmlLoader.getController();
+
+            // Gọi phương thức loadView của controller để hiển thị EventMainForm
+            controller.loadView("/Admin/Student/StudentForm/MainForm.fxml");
             // Lấy ra Scene của giao diện trước đó
             Scene previousScene = new Scene(root);
 

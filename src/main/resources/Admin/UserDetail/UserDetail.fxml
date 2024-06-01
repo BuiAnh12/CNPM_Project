@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1110.0" styleClass="white-form" stylesheets="@../Event/CSS/EventMainForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.UserDetail.UserDetailController">
+    <children>
+        <Pane prefHeight="800.0" prefWidth="400.0">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5c9ae9" height="800.0" stroke="#5c9ae9" strokeType="INSIDE" width="400.0" />
+                <Text fill="WHITE" layoutX="46.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Details" wrappingWidth="307.7367401123047">
+                    <font>
+                        <Font size="96.0" />
+                    </font>
+                </Text>
+            <Button fx:id="backBtn1234" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="68.0" layoutY="698.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #5c9ae9;" textAlignment="CENTER">
+               <graphic>
+                  <AnchorPane>
+                     <children>
+                        <ImageView fitHeight="44.0" fitWidth="223.0" layoutX="-8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/Rectangle%2035.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#5c9ae9" layoutX="77.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Back">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/Back%20To.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </graphic>
+            </Button>
+            </children>
+        </Pane>
+        <AnchorPane layoutX="457.0" layoutY="25.0" prefHeight="264.0" prefWidth="596.0">
+            <children>
+                <AnchorPane layoutY="0.1015625">
+                    <children>
+                        <TextField fx:id="txtName" editable="false" layoutY="38.8984375" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+                            <font>
+                                <Font size="18.0" />
+                            </font></TextField>
+                        <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name" wrappingWidth="200.00000000000023">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="316.0">
+                    <children>
+                        <TextField fx:id="txtPhoneNumber" editable="false" layoutY="38.8984375" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+                            <font>
+                                <Font size="18.0" />
+                            </font></TextField>
+                        <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" wrappingWidth="200.00000000000023">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutY="85.0">
+                    <children>
+                        <TextField fx:id="txtUserName" editable="false" layoutY="38.8984375" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+                            <font>
+                                <Font size="18.0" />
+                            </font></TextField>
+                        <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="200.00000000000023">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="316.0" layoutY="85.0">
+                    <children>
+                        <TextField fx:id="txtDateOfBirth" editable="false" layoutY="38.8984375" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+                            <font>
+                                <Font size="18.0" />
+                            </font></TextField>
+                        <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" wrappingWidth="200.00000000000023">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+        <Text layoutX="458.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detail" wrappingWidth="193.60009765625023">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <TextArea fx:id="txtDetail" editable="false" layoutX="457.0" layoutY="664.0" prefHeight="106.0" prefWidth="490.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;" wrapText="true">
+            <font>
+                <Font size="18.0" />
+            </font></TextArea>
+    </children>
+</AnchorPane>

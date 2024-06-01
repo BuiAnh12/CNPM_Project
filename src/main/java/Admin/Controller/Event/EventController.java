@@ -17,9 +17,11 @@ import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -29,6 +31,16 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class EventController implements Initializable {
+
+    @FXML
+    private Button GoEventDetails;
+    @FXML
+    private Button GoStudentForm;
+    @FXML
+    private Button GoStaffButton;
+
+    @FXML
+    private Button GoLoginButton;
 
     private int user;
 
@@ -60,6 +72,95 @@ public class EventController implements Initializable {
 
         } catch (IOException e) {
             System.out.println("Open Fail");
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+
+
+
+    public void handleGoStudentButtonAction(javafx.event.ActionEvent actionEvent) {
+
+        try {
+            // Load file fxml mới
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/MainAdminForm.fxml"));
+            AnchorPane root = loader.load();
+
+            // Tạo scene mới với root là node gốc của file fxml mới
+            Scene scene = new Scene(root);
+
+            // Lấy stage từ event
+            Stage stage = (Stage) GoStudentForm.getScene().getWindow();
+
+            // Đặt scene mới cho stage
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void handleGoLoginButtonAction(javafx.event.ActionEvent actionEvent) {
+        try {
+
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Login/Login.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 400, 530);
+            Stage stage = new Stage();
+            stage.setTitle("Quản lí hoạt động sinh viên");
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void handleGoStaffButtonAction(javafx.event.ActionEvent actionEvent) {
+
+        try {
+            // Load file fxml mới
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Staff/StaffForm/staffs-view.fxml"));
+            BorderPane root = loader.load();
+
+            // Kiểm tra nếu phần tử gốc là một BorderPane
+            if (root instanceof BorderPane) {
+                // Lấy scene hiện tại
+                Scene currentScene = GoStaffButton.getScene();
+
+                // Tạo một AnchorPane mới để chứa nội dung
+                AnchorPane anchorPane = new AnchorPane();
+                anchorPane.getChildren().add(root);
+
+                // Thay đổi nội dung của phần tử gốc
+                currentScene.setRoot(anchorPane);
+            } else {
+                System.err.println("Phần tử gốc của tập tin FXML không phải là một BorderPane.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void handleGoEventDetailsButtonAction(javafx.event.ActionEvent actionEvent) {
+        try {
+            // Load file fxml mới
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/EventDetailForm.fxml"));
+            AnchorPane root = loader.load();
+
+            // Tạo scene mới với root là node gốc của file fxml mới
+            Scene scene = new Scene(root);
+
+            // Lấy stage từ event
+            Stage stage = (Stage) GoEventDetails.getScene().getWindow();
+
+            // Đặt scene mới cho stage
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

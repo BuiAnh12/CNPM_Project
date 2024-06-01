@@ -1,6 +1,11 @@
 package Login.Controller;
+import Admin.Controller.ChuyenViewController;
 import Login.Model.CheckLoginDAO;
+import User.Controller.Event.UserDetail.UserDetailController;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 
 import javafx.fxml.FXML;
@@ -8,6 +13,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 
 public class LoginController {
@@ -22,6 +30,7 @@ public class LoginController {
 
     @FXML
     private TextField si_username;
+
     public void handleLoginButtonAction(ActionEvent event) {
         String username = si_username.getText();
         String password = si_password.getText();
@@ -39,6 +48,24 @@ public class LoginController {
             alert.setContentText(" Student đăng nhập thành công!");
             alert.showAndWait();
 
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/Event/UserDetail.fxml"));
+                Parent root = loader.load();
+
+                UserDetailController userDetailController = loader.getController();
+                userDetailController.initialize(username);
+
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) si_loginForm.getScene().getWindow();
+                stage.setScene(scene);
+                stage.setResizable(true);
+                stage.show();
+
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+
         } else if (result == 1) {
             // Nếu đăng nhập thành công vào Staff
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -46,6 +73,27 @@ public class LoginController {
             alert.setHeaderText(null);
             alert.setContentText("Staff đăng nhập thành công!");
             alert.showAndWait();
+
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
+                Parent root = loader.load();
+
+                // Lấy controller từ loader
+                ChuyenViewController chuyenViewController = loader.getController();
+                chuyenViewController.setUsername(username);
+
+                // Hiển thị ViewChinh
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) si_loginForm.getScene().getWindow();
+                stage.setScene(scene);
+                stage.setResizable(true);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+                // Xử lý nếu có lỗi khi chuyển đổi
+            }
+
+
 
         } else {
             // Nếu đăng nhập thất bại

@@ -1,5 +1,6 @@
 package Admin.Controller.Student;
 
+import Admin.Controller.ChuyenViewController;
 import Admin.Controller.Staff.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -68,8 +69,7 @@ public class InsertController {
             LocalDate dateOfBirth = txtDateOfBirth.getValue();
             String phoneNumber = txtPhoneNumber.getText();
             String studentId = txtStudentId.getText();
-            Integer studentClass = Integer.
-                    parseInt(txtClass.getText());
+            Integer studentClass = Integer.parseInt(txtClass.getText());
             /*boolean studentEnable = true;*/
             // Insert student information into database
             studentDAO.insertStudentWithAccount(username, password,fullName, dateOfBirth, phoneNumber, studentId, studentClass);
@@ -95,9 +95,14 @@ public class InsertController {
     void CancelClickBtn() {
         try {
             // Tạo một FXMLLoader cho giao diện trước đó
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/MainForm.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
             Parent root = fxmlLoader.load();
 
+            // Lấy controller của ViewChinh
+            ChuyenViewController controller = fxmlLoader.getController();
+
+            // Gọi phương thức loadView của controller để hiển thị EventMainForm
+            controller.loadView("/Admin/Student/StudentForm/MainForm.fxml");
             // Lấy ra Scene của giao diện trước đó
             Scene previousScene = new Scene(root);
 

@@ -1,8 +1,8 @@
 import User.Controller.Event.EventController;
 import Admin.Controller.Event.MainController;
-import Admin.Controller.Staff.IStaff;
-import Admin.Controller.Staff.StaffIpml;
-import Admin.Model.Staff.Staff;
+//import Admin.Controller.Staff.IStaff;
+//import Admin.Controller.Staff.StaffIpml;
+//import Admin.Model.Staff.Staff;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,16 +25,25 @@ public class Main extends Application {
         //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Student/StudentForm/MainForm.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/ViewChinh.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
 //            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Admin/Staff/StaffForm/staffs-view.fxml"));
 //            Parent content = fxmlLoader.load();
 
 //            scene.getStylesheets().add(getClass().getResource("/Admin/Staff/CSS/staffs.css")toExternalForm());
-            stage.setTitle("Quản lí hoạt động sinh viên");
+//            stage.setTitle("Quản lí hoạt động sinh viên");
+//            stage.setScene(scene);
+//            stage.setResizable(false);
+//            stage.show();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login/Login.fxml"));
+            Scene scene = new Scene(loader.load(), 1200, 800);
             stage.setScene(scene);
-            stage.setResizable(false);
+            stage.setTitle("JavaFX Application");
             stage.show();
+
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }

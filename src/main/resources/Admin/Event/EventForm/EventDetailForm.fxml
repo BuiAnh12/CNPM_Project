@@ -13,57 +13,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="white-form" stylesheets="@../CSS/EventDetailForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.Event.EventDetailController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1110.0" styleClass="white-form" stylesheets="@../CSS/EventDetailForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.Event.EventDetailController">
     <children>
-        <AnchorPane prefHeight="800.0" prefWidth="90.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
-            <children>
-            <Button layoutX="18.0" layoutY="291.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
-               <graphic>
-                      <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
-                              <Image url="@../../../Images/Circled%20Menu.png" />
-                          </image>
-                      </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="18.0" layoutY="349.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Images/Name.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="18.0" layoutY="728.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Images/Logout.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="18.0" layoutY="670.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Images/Male%20User.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            </children>
-        </AnchorPane>
-      <Pane layoutX="90.0" prefHeight="800.0" prefWidth="400.0">
+      <Pane layoutX="7.0" prefHeight="800.0" prefWidth="400.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5c9ae9" height="800.0" stroke="#5c9ae9" strokeType="INSIDE" width="400.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5c9ae9" height="800.0" layoutX="-7.0" stroke="#5c9ae9" strokeType="INSIDE" width="400.0" />
             <Text fill="WHITE" layoutX="46.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Details" wrappingWidth="307.7367401123047">
                <font>
                   <Font size="96.0" />
                </font>
             </Text>
-            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="90.0" layoutY="691.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #5c9ae9;" textAlignment="CENTER">
+            <Button fx:id="GoBackBtn" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="90.0" layoutY="691.0" mnemonicParsing="false" onAction="#handleGoBack" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #5c9ae9;" textAlignment="CENTER">
                <graphic>
                   <AnchorPane>
                      <children>
@@ -88,7 +48,7 @@
             </Button>
          </children>
       </Pane>
-      <AnchorPane layoutX="539.0" layoutY="11.0" prefHeight="368.0" prefWidth="598.0">
+      <AnchorPane layoutX="480.0" layoutY="14.0" prefHeight="368.0" prefWidth="598.0">
          <children>
             <AnchorPane layoutY="0.1015625">
                <children>
@@ -185,34 +145,34 @@
             </Text>
          </children>
       </AnchorPane>
-      <TableView fx:id="StudentTable" layoutX="535.0" layoutY="423.0" prefHeight="206.0" prefWidth="587.0">
+      <TableView fx:id="StudentTable" layoutX="485.0" layoutY="423.0" prefHeight="206.0" prefWidth="587.0">
         <columns>
           <TableColumn fx:id="colName" editable="false" prefWidth="193.60003662109375" text="Name" />
           <TableColumn fx:id="colStudentId" editable="false" prefWidth="213.5999755859375" text="StudentID" />
             <TableColumn fx:id="colClass" editable="false" prefWidth="198.39996337890625" text="Class" />
         </columns>
       </TableView>
-      <Text layoutX="535.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participant List">
+      <Text layoutX="485.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participant List">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
       <AnchorPane layoutX="1077.0" layoutY="629.0" />
-      <Text layoutX="539.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detail" wrappingWidth="193.60009765625023">
+      <Text layoutX="465.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detail" wrappingWidth="193.60009765625023">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextArea fx:id="txtDetail" editable="false" layoutX="539.0" layoutY="664.0" prefHeight="106.0" prefWidth="502.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;" wrapText="true">
+      <TextArea fx:id="txtDetail" editable="false" layoutX="465.0" layoutY="661.0" prefHeight="106.0" prefWidth="502.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;" wrapText="true">
          <font>
             <Font size="18.0" />
          </font></TextArea>
-      <TextField fx:id="txtTotal" editable="false" layoutX="1102.0" layoutY="696.0" prefHeight="46.0" prefWidth="65.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
+      <TextField fx:id="txtTotal" editable="false" layoutX="1013.0" layoutY="714.0" prefHeight="46.0" prefWidth="65.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Text layoutX="1103.0" layoutY="687.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="64.80004882812523">
+      <Text layoutX="1013.0" layoutY="687.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="64.80004882812523">
          <font>
             <Font size="24.0" />
          </font>
