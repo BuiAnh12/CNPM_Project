@@ -86,6 +86,29 @@
                   </AnchorPane>
                </graphic>
             </Button>
+            <Button <Button fx:id="goattendanceButton" onMouseClicked="#attendanceButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="90.0" layoutY="628.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #5c9ae9;" textAlignment="CENTER">
+               <graphic>
+                  <AnchorPane>
+                     <children>
+                        <ImageView fitHeight="44.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/Rectangle%2035.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#5c9ae9" layoutX="37.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Điểm danh">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="164.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/Back%20To.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </graphic>
+            </Button>
          </children>
       </Pane>
       <AnchorPane layoutX="539.0" layoutY="11.0" prefHeight="368.0" prefWidth="598.0">

@@ -1,6 +1,6 @@
 package Admin.Model.Event;
 
-import java.time.LocalDate;
+import javafx.scene.control.CheckBox;
 
 public class StudentEventModel {
     private String studentId;
@@ -10,7 +10,23 @@ public class StudentEventModel {
     private String username;
     private String password;
     private String phoneNumber;
+    private CheckBox checkBox;
+    private int status;
 
+//    public StudentModel(CheckBox checkbox, String fullname, String studentId, String classid, int status) {
+//        this.checkBox = checkbox;
+//        this.fullName = fullname;
+//        this.studentId = studentId;
+//        this.classId = classId;
+//        this.status = status;
+//    }
+public StudentEventModel(CheckBox checkBox, String studentId, String studentName, String studentClass, int status) {
+    this.checkBox = checkBox;
+    this.studentId = studentId;
+    this.studentName = studentName;
+    this.studentClass = studentClass;
+    this.status = status;
+}
     public StudentEventModel(String studentId, String studentName, String studentClass) {
         this.studentId = studentId;
         this.studentName = studentName;
@@ -85,5 +101,14 @@ public class StudentEventModel {
 
     public String getFullName() {
         return studentName; // Assuming the full name is just the student's name
+    }
+    public CheckBox getCheckBox() {
+        return checkBox;
+    }
+    public int getStatus() {
+        return status;
+    }
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

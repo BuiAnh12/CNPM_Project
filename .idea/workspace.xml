@@ -4,19 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_7_46_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_7_46_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_19_2024_10_09_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_19_2024_10_09_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="6a9437d5-25f3-4440-a555-c4865aa47d73" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/AttendentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/AttendentDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Staff/StaffForm/attendance.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Admin/Staff/StaffForm/staffs-view-mini.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/StaffDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/StaffIpml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/StaffIpml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/UserManagementApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/EventDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Controller/Event/EventDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Model/Event/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Model/Event/EventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Model/Event/StudentEventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Model/Event/StudentEventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Admin/Model/Student/StudentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Admin/Model/Student/StudentModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin/Staff/StaffForm/staffs-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin/Staff/StaffForm/staffs-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/User/Event/CSS/EventDetailForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/Event/CSS/EventDetailForm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin/Event/EventForm/EventDetailForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin/Event/EventForm/EventDetailForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,13 +27,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Tom &lt;buianh120403@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--follow-tags" />
@@ -45,6 +51,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;toanpham11&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bfadebd0-0321-47f6-9730-30bd5050a7c5" />
+        <option name="url" value="https://github.com/BuiAnh12/CNPM_Project.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MavenRunner">
     <option name="environmentProperties">
@@ -98,34 +118,36 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/toanm/IdeaProjects/CNPM_Project1/src/main/resources/Admin/Staff/StaffForm&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/toanm/IdeaProjects/CNPM_Project1/target/classes&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.33333334&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project1\target\classes" />
       <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project1\src\main\resources\Admin\Staff\StaffForm" />
       <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Event\EventForm" />
       <recent name="E:\Java_learning\NMCNPM\src\main\resources\User" />
       <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project\src\main\resources\Admin\Staff\StaffForm" />
-      <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project\src\main\resources\Admin\Staff\CSS" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project1\target" />
       <recent name="C:\Users\toanm\IdeaProjects\CNPM_Project\src\main\resources\Admin\Staff\CSS" />
       <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Student\StudentForm" />
       <recent name="E:\Java_learning\NMCNPM\src\main\resources\Admin\Student\CSS" />
       <recent name="E:\Java_learning\NMCNPM\src\main\resources\Login" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Admin" />
       <recent name="Login" />
       <recent name="" />
     </key>
@@ -137,7 +159,7 @@
     <configuration name="Toan" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="NMCNPM" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;D:\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\DoAnCNPM\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -230,7 +252,37 @@
       <workItem from="1715931146093" duration="1048000" />
       <workItem from="1715958775382" duration="421000" />
       <workItem from="1715963224593" duration="2862000" />
+      <workItem from="1716018467674" duration="1391000" />
+      <workItem from="1716469225395" duration="593000" />
+      <workItem from="1716469833747" duration="170000" />
+      <workItem from="1716470406642" duration="1439000" />
+      <workItem from="1716472775376" duration="2159000" />
+      <workItem from="1716825826075" duration="1968000" />
+      <workItem from="1716999458017" duration="198000" />
+      <workItem from="1717068957019" duration="2793000" />
+      <workItem from="1717072342187" duration="9123000" />
+      <workItem from="1717135700971" duration="449000" />
+      <workItem from="1717137689167" duration="163000" />
+      <workItem from="1717142256155" duration="5752000" />
+      <workItem from="1717166880562" duration="310000" />
+      <workItem from="1717167213805" duration="605000" />
+      <workItem from="1717167836118" duration="965000" />
+      <workItem from="1717168817439" duration="374000" />
+      <workItem from="1717169203898" duration="3119000" />
+      <workItem from="1717222612877" duration="1125000" />
+      <workItem from="1717223751741" duration="269000" />
+      <workItem from="1717224033453" duration="18656000" />
+      <workItem from="1717253667569" duration="85000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <option name="closed" value="true" />
+      <created>1716019355776</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716019355776</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,14 +293,22 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="feat: update new sp" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -257,11 +317,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/EditController.java</url>
           <line>120</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/StaffIpml.java</url>
-          <line>195</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Admin/Controller/Staff/NewUserController.java</url>

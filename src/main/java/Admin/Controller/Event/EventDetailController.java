@@ -1,5 +1,9 @@
 package Admin.Controller.Event;
 
+import Admin.Controller.AttendentController;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import Admin.Model.Event.EventModel;
 import Admin.Model.Event.StudentEventModel;
 import javafx.collections.FXCollections;
@@ -12,6 +16,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.fxml.Initializable;
 import javax.management.modelmbean.ModelMBean;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -23,6 +28,7 @@ public class EventDetailController implements Initializable{
     private Scene previousScene;
 
     private EventModel object;
+    private int eventId;
     @FXML
     private TableView<StudentEventModel> StudentTable;
 
@@ -43,7 +49,6 @@ public class EventDetailController implements Initializable{
 
     @FXML
     private TextArea txtDetail;
-
 
     @FXML
     private TextField txtCheckBy;
@@ -110,5 +115,32 @@ public class EventDetailController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
+
+    @FXML
+    public void attendanceButton(MouseEvent mouseEvent) {
+        try {
+            // Tải attendance.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Staff/StaffForm/attendance.fxml"));
+            Parent root = loader.load();
+
+            // Tạo một Scene mới với root là attendance.fxml
+            Scene scene = new Scene(root);
+
+            // Lấy controller của AttendanceController
+            AttendentController controller = loader.getController();
+
+            // Thiết lập eventId cho AttendanceController
+            controller.setEventId(object.getEventId());
+
+            // Lấy Stage hiện tại từ nút được nhấp
+            Stage stage = (Stage) StudentTable.getScene().getWindow();
+
+            // Đặt Scene mới cho Stage và hiển thị
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 
 public class Main extends Application {
@@ -17,14 +18,20 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
+//            System.out.println(getClass().getResource("/Admin/Staff/StaffForm/attendance.fxml"));
+//
+//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Staff/StaffForm/attendance.fxml"));
+//            Parent content = fxmlLoader.load();
+//            //thiet lap scene
+//            Scene scene = new Scene(content, 1200, 800);
 
-            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/User/Event/EventForm/MainForm.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-            EventController controller = fxmlLoader.getController();
-            controller.setUser(1);
-        //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+//            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
+//            Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+//            EventController controller = fxmlLoader.getController();
+//            controller.setUser(1);
+//                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Admin/Student/StudentForm/MainAdminForm.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
 //            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Admin/Staff/StaffForm/staffs-view.fxml"));

@@ -19,7 +19,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -62,6 +65,39 @@ public class EventController implements Initializable {
             System.out.println("Open Fail");
             e.printStackTrace();
         }
+
+    }
+
+
+    @FXML
+    private Button GoEventDetails;
+
+    @FXML
+    private Button GoLoginButton;
+
+    @FXML
+    private Button GoStaffButton;
+
+    @FXML
+    private Button GoStudentForm;
+
+    @FXML
+    void handleGoEventDetailsButtonAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void handleGoLoginButtonAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void handleGoStaffButtonAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void handleGoStudentButtonAction(ActionEvent event) {
 
     }
 }

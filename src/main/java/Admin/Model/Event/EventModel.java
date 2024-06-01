@@ -1,4 +1,6 @@
 package Admin.Model.Event;
+import javafx.scene.control.CheckBox;
+
 import java.time.LocalDate;
 public class EventModel {
     private int eventId;
@@ -17,8 +19,6 @@ public class EventModel {
     private int checkBy =  -1;
 
     private int createBy;
-
-
     public boolean isStatus() {
         return status;
     }

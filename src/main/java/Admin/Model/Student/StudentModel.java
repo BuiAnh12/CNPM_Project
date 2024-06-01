@@ -1,8 +1,12 @@
 package Admin.Model.Student;
 
+import javafx.scene.control.CheckBox;
+
 import java.time.LocalDate;
 
 public class StudentModel {
+
+
     private String studentId;
     private int classId;
     private String phoneNumber;
@@ -12,11 +16,10 @@ public class StudentModel {
     private int accountId;
     private String password;
     private String username; // Thêm trường username
+    private int status;
 
     // Constructors
-    public StudentModel(String studentId, String fullname, String className) {
-        // Default constructor
-    }
+
 
     public StudentModel(String studentId, String username, int classId) {
         this.studentId = studentId;
@@ -120,6 +123,7 @@ public class StudentModel {
     }
 
     // toString method
+
     @Override
     public String toString() {
         return "Student{" +
