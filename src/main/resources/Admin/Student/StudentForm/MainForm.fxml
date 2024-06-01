@@ -15,7 +15,7 @@
     <children>
         <AnchorPane fx:id="DashbaordForm" layoutX="67.0" layoutY="119.0" prefHeight="620.0" prefWidth="980.0">
             <children>
-                <TableView fx:id="mainTable" layoutY="64.0" onMouseClicked="#TblClickEvent" prefHeight="543.0" prefWidth="900.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/MainAdminForm.css">
+                <TableView fx:id="mainTable" layoutY="64.0" onMouseClicked="#TblClickEvent" prefHeight="543.0" prefWidth="980.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/MainAdminForm.css">
                     <columns>
                         <TableColumn fx:id="nameColumn" prefWidth="262.0" text="Name" />
                         <TableColumn fx:id="idColumn" prefWidth="162.0" text="StudentID" />

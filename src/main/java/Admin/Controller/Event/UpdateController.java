@@ -6,19 +6,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import jdk.jfr.Event;
-
+import Exception.InputHandle;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -26,6 +24,7 @@ import java.util.ResourceBundle;
 public class UpdateController {
     private EventModel object;
 
+    private InputHandle inputHandle = new InputHandle();
     public EventModel getObject() {
         return object;
     }
@@ -76,6 +75,13 @@ public class UpdateController {
         this.user = user;
     }
 
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
     public void updateFields() {
         if (object != null) {
             dateOccur.setValue(object.getOccurDate());
@@ -128,12 +134,41 @@ public class UpdateController {
     @FXML
     void AcceptClickBtn(MouseEvent event) {
         System.out.println("Update btn accpt click");
+        // Check for empty field
+        if (txtName.getText().isEmpty()){
+            showAlert("Lỗi", "Trường tên sự kiện đang trống");
+            return;
+        }
+        if (txtPlace.getText().isEmpty()){
+            showAlert("Lỗi", "Trường địa điểm sự kiện đang trống");
+            return;
+        }
+        if (dateOccur.getValue().toString().isEmpty()){
+            showAlert("Lỗi", "Ngày diễn ra sự kiện đang trống");
+            return;
+        }
+        if (dateDeadline.getValue().toString().isEmpty()){
+            showAlert("Lỗi", "Ngày hết hạn đăng ký sự kiện đang trống");
+            return;
+        }
+        if (txtMaxSlot.getText().isEmpty()){
+            showAlert("Lỗi", "Trường số lượng sinh viên tối đa đang trống");
+            return;
+        }
+        if (inputHandle.isNumber(txtMaxSlot.getText())){
+            showAlert("Lỗi", "Trường số lượng slot tối đa không phải là số");
+            return;
+        }
+        LocalDate deadline = LocalDate.parse(dateDeadline.getValue().toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LocalDate occurDate = LocalDate.parse(dateOccur.getValue().toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        if (deadline.isAfter(occurDate)) {
+            showAlert("Lỗi", "Ngày hết hạn đăng ký phải trước ngày diễn ra sự kiện");
+            return;
+        }
         String name = txtName.getText();
-        LocalDate occurDate = LocalDate.parse(dateOccur.getValue().toString()); // Assuming date format is correct
         String place = txtPlace.getText();
         int organizationId = cmbOrganization.getSelectionModel().getSelectedItem().getId();
         int maxSlot = Integer.parseInt(txtMaxSlot.getText());
-        LocalDate deadline = LocalDate.parse(dateDeadline.getValue().toString()); // Assuming date format is correct
         String detail = txtDetail.getText();
         boolean status = Boolean.parseBoolean(txtStatus.getText());
         String text = txtEnable.getText();

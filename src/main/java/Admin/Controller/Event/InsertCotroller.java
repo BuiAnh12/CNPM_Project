@@ -7,10 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -18,8 +15,10 @@ import javafx.util.StringConverter;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import Exception.InputHandle;
 
 public class InsertCotroller {
     private Scene previousScene;
@@ -48,6 +47,7 @@ public class InsertCotroller {
 
     @FXML
     private TextField txtPlace;
+    private InputHandle inputHandle = new InputHandle();
 
     private int user;
 
@@ -67,6 +67,14 @@ public class InsertCotroller {
     public void setPreviousScene(Scene previousScene) {
         this.previousScene = previousScene;
         System.out.println(previousScene);
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     public void updateFields() {
@@ -95,18 +103,46 @@ public class InsertCotroller {
 
         // Optionally, set a default value for the ComboBox
         if (!organizationList.isEmpty()) {
-            cmbOrganization.setValue(organizationList.get(0)); // Set the first organization as default
+            cmbOrganization.setValue(organizationList.getFirst()); // Set the first organization as default
         }
     }
 
     @FXML
     void AcceptClickBtn(MouseEvent event) {
+        if (txtName.getText().isEmpty()){
+            showAlert("Lỗi", "Trường tên sự kiện đang trống");
+            return;
+        }
+        if (txtPlace.getText().isEmpty()){
+            showAlert("Lỗi", "Trường địa điểm sự kiện đang trống");
+            return;
+        }
+        if (dateOccur.getValue().toString().isEmpty()){
+            showAlert("Lỗi", "Ngày diễn ra sự kiện đang trống");
+            return;
+        }
+        if (dateDeadline.getValue().toString().isEmpty()){
+            showAlert("Lỗi", "Ngày hết hạn đăng ký sự kiện đang trống");
+            return;
+        }
+        if (txtMaxSlot.getText().isEmpty()){
+            showAlert("Lỗi", "Trường số lượng sinh viên tối đa đang trống");
+            return;
+        }
+        if (inputHandle.isNumber(txtMaxSlot.getText())){
+            showAlert("Lỗi", "Trường số lượng slot tối đa không phải là số");
+            return;
+        }
+        LocalDate deadline = LocalDate.parse(dateDeadline.getValue().toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LocalDate occurDate = LocalDate.parse(dateOccur.getValue().toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        if (deadline.isAfter(occurDate)) {
+            showAlert("Lỗi", "Ngày hết hạn đăng ký phải trước ngày diễn ra sự kiện");
+            return;
+        }
         String name = txtName.getText();
-        LocalDate occurDate = LocalDate.parse(dateOccur.getValue().toString()); // Assuming date format is correct
         String place = txtPlace.getText();
         int organizationId = cmbOrganization.getSelectionModel().getSelectedItem().getId();
         int maxSlot = Integer.parseInt(txtMaxSlot.getText());
-        LocalDate deadline = LocalDate.parse(dateDeadline.getValue().toString()); // Assuming date format is correct
         String detail = txtDetail.getText();
 
         EventDAO eventDAO = new EventDAO();

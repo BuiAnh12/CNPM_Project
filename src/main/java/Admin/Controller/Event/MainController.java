@@ -69,8 +69,21 @@ public class MainController implements Initializable {
         this.setUser = setUser;
     }
 
+    public void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
     @FXML
     void DeleteBtnClickEvent(MouseEvent event) {
+        if (table.getSelectionModel().isEmpty()) {
+            // Show an error message or handle the situation accordingly
+            showAlert("Error", "No event selected. Please select an event to delete.");
+            return;
+        }
         EventModel selected = table.getSelectionModel().getSelectedItem();
         EventDAO eventDAO = new EventDAO();
         boolean success = eventDAO.deleteEvent(selected.getEventId());
@@ -98,6 +111,11 @@ public class MainController implements Initializable {
 
     @FXML
     void EditBtnClickEvent(MouseEvent event) {
+        if (table.getSelectionModel().isEmpty()) {
+            // Show an error message or handle the situation accordingly
+            showAlert("Error", "No event selected. Please select an event to update.");
+            return;
+        }
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/UpdateForm.fxml"));
             Parent page = fxmlLoader.load();
