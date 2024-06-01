@@ -33,6 +33,7 @@ public class MainController implements Initializable {
     @FXML
     private ComboBox<String> Filter;
 
+    private String user = "";
     @FXML
     private ImageView SearchBtn;
 
@@ -61,6 +62,14 @@ public class MainController implements Initializable {
     private TableColumn<StaffModel, String > roleColumn;
 
     StaffDAO staffDao = new StaffDAO();
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -116,24 +125,25 @@ public class MainController implements Initializable {
             return; // Exit the method
         }
         StaffModel selectedStaff = mainTable.getSelectionModel().getSelectedItem();
-        if (selectedStaff != null) {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirm Delete");
+        if (selectedStaff.getUsername().equals(this.user)){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
             alert.setHeaderText(null);
-            alert.setContentText("Are you sure you want to delete this student?");
-
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.isPresent() && result.get() == ButtonType.OK) {
-                staffDao.deleteStaff(selectedStaff.getId()); // Truyền studentId thay vì selectedStudent
-                mainTable.getItems().remove(selectedStaff);
-            }
-        } else {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("No Selection");
-            alert.setHeaderText(null);
-            alert.setContentText("Please select a staff to delete.");
+            alert.setContentText("Vui lòng không xóa chính mình");
             alert.showAndWait();
+            return;
         }
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirm Delete");
+        alert.setHeaderText(null);
+        alert.setContentText("Bạn có muốn xóa nhân viên này không?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            staffDao.deleteStaff(selectedStaff.getId()); // Truyền studentId thay vì selectedStudent
+            mainTable.getItems().remove(selectedStaff);
+        }
+
     }
 
     @FXML

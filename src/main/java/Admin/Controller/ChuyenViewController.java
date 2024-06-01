@@ -1,6 +1,7 @@
 package Admin.Controller;
 
 import Admin.Controller.UserDetail.UserDetailController;
+import Admin.Controller.NewStaff.MainController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -110,7 +111,16 @@ public class ChuyenViewController {
 
     @FXML
     void handleGoStaffButtonAction(ActionEvent event) {
-        loadView("/Admin/NewStaff/StaffForm/MainForm.fxml");
+        try{
+            FXMLLoader loader = loadView("/Admin/NewStaff/StaffForm/MainForm.fxml");
+            MainController controller = loader.getController();
+            controller.setUser(this.username);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
     }
 
     @FXML
@@ -118,13 +128,15 @@ public class ChuyenViewController {
         loadView("/Admin/Student/StudentForm/MainForm.fxml");
     }
 
-    public void loadView(String fxmlFile) {
+    public FXMLLoader loadView(String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent view = loader.load();
             contentPane.getChildren().setAll(view);
+            return loader;
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
     }
 

@@ -37,6 +37,9 @@ public class EventDAO {
 
                 // Read the result from the OUTPUT parameter
                 try (ResultSet rs = cs.getResultSet()) {
+                    if (rs == null){
+                        return tableList;
+                    }
                     while (rs.next()) {
                         // Retrieve data from the result set and create Event objects
                         int eventId = rs.getInt("EventId");
