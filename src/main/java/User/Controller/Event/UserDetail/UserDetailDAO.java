@@ -1,6 +1,6 @@
 package User.Controller.Event.UserDetail;
 
-import Admin.Controller.UserDetail.User;
+
 
 import java.sql.*;
 
@@ -17,8 +17,8 @@ public class UserDetailDAO {
         this.dbPassword = "123";
     }
 
-    public Admin.Controller.UserDetail.User getUserDetails(String username) {
-        Admin.Controller.UserDetail.User user = new User();
+    public User getUserDetails(String username) {
+       User user = new User();
 
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
             String sql = "{call sp_GetUserDetailsStudent(?)}";

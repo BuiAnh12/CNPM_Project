@@ -24,7 +24,8 @@ public class ChuyenViewController {
 
     public void setUsername(String username) {
         this.username = username;
-        loadUserDetail();
+        loadInitialView();
+       // loadUserDetail();
     }
 
     @FXML
@@ -46,12 +47,12 @@ public class ChuyenViewController {
     @FXML
     private void initialize() {
 //        try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/UserDetail/UserDetail.fxml"));
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/MainForm.fxml"));
 //            Parent userDetailRoot = loader.load();
 //
-//            // Lấy controller của UserDetail.fxml sau khi nó được tải
-//            UserDetailController userDetailController = loader.getController();
-//            userDetailController.setUsername(username); // Truyền username vào UserDetailController
+////            // Lấy controller của UserDetail.fxml sau khi nó được tải
+////            UserDetailController userDetailController = loader.getController();
+////            userDetailController.setUsername(username); // Truyền username vào UserDetailController
 //
 //            // Thêm UserDetail vào contentPane hoặc pane cần thiết
 //            contentPane.getChildren().add(userDetailRoot);
@@ -61,23 +62,11 @@ public class ChuyenViewController {
 //        }
     }
 
-    private void loadUserDetail() {
-        if (username != null) {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/UserDetail/UserDetail.fxml"));
-                Parent userDetailRoot = loader.load();
-
-                // Lấy controller của UserDetail.fxml sau khi nó được tải
-                UserDetailController userDetailController = loader.getController();
-                userDetailController.setUsername(username); // Truyền username vào UserDetailController
-
-                // Thêm UserDetail vào contentPane hoặc pane cần thiết
-                contentPane.getChildren().add(userDetailRoot);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+    private void loadInitialView() {
+        loadView("/Admin/Event/EventForm/EventMainForm.fxml");
     }
+
+
 
     @FXML
     void handleGoEventDetailsButtonAction(ActionEvent event) {
@@ -147,5 +136,23 @@ public class ChuyenViewController {
 
         // Lấy controller của node cuối cùng trong danh sách (đó chính là UserDetail.fxml)
         return ((FXMLLoader) children.get(children.size() - 1).getUserData()).getController();
+    }
+
+    private void loadUserDetail() {
+        if (username != null) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/UserDetail/UserDetail.fxml"));
+                Parent userDetailRoot = loader.load();
+
+                // Lấy controller của UserDetail.fxml sau khi nó được tải
+                UserDetailController userDetailController = loader.getController();
+                userDetailController.setUsername(username); // Truyền username vào UserDetailController
+
+                // Thêm UserDetail vào contentPane hoặc pane cần thiết
+                contentPane.getChildren().add(userDetailRoot);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

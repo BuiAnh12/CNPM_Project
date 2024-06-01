@@ -1,7 +1,7 @@
 package Login.Controller;
 import Admin.Controller.ChuyenViewController;
 import Login.Model.CheckLoginDAO;
-import User.Controller.Event.UserDetail.UserDetailController;
+import User.Controller.Event.ChuyenViewControllerUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -49,21 +49,22 @@ public class LoginController {
             alert.showAndWait();
 
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/Event/UserDetail.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/ViewChinh.fxml"));
                 Parent root = loader.load();
 
-                UserDetailController userDetailController = loader.getController();
-                userDetailController.initialize(username);
+                // Lấy controller từ loader
+                ChuyenViewControllerUser chuyenViewControllerUser = loader.getController();
+                chuyenViewControllerUser.setUsername(username);
 
+                // Hiển thị ViewChinh
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) si_loginForm.getScene().getWindow();
                 stage.setScene(scene);
                 stage.setResizable(true);
                 stage.show();
-
-
-            } catch (Exception e) {
-                throw new RuntimeException(e);
+            } catch (IOException e) {
+                e.printStackTrace();
+                // Xử lý nếu có lỗi khi chuyển đổi
             }
 
         } else if (result == 1) {
@@ -88,6 +89,12 @@ public class LoginController {
                 stage.setScene(scene);
                 stage.setResizable(true);
                 stage.show();
+
+                Integer permissionID = checkLoginDAO.getPermissionIDForStaff(username);
+                if (permissionID != null) {
+                    System.out.println("PermissionID: " + permissionID);
+                    // Bạn có thể sử dụng giá trị permissionID ở đây
+                }
             } catch (IOException e) {
                 e.printStackTrace();
                 // Xử lý nếu có lỗi khi chuyển đổi

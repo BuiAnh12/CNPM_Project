@@ -41,4 +41,28 @@ public class CheckLoginDAO {
         }
         return result;
     }
+
+
+    public Integer getPermissionIDForStaff(String username) {
+        Integer permissionID = null;
+        try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
+            try (CallableStatement cs = connection.prepareCall("{call GetPermissionIDForStaff(?, ?)}")) {
+                cs.setString(1, username);
+                cs.registerOutParameter(2, Types.INTEGER);
+
+                // Thực thi stored procedure
+                cs.execute();
+
+                // Đọc kết quả từ OUTPUT parameter
+                int result = cs.getInt(2);
+                if (!cs.wasNull()) {
+                    permissionID = result;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        return permissionID;
+    }
 }
