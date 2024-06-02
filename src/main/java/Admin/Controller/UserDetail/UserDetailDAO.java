@@ -33,6 +33,7 @@ public class UserDetailDAO {
                         user.setPhoneNumber(rs.getString("Phonenumber"));
                         user.setDob(rs.getString("DOB"));
                         user.setFullName(rs.getString("Fullname"));
+                        user.setPassword(rs.getString("Password"));
                     }
                 }
             }
@@ -42,5 +43,25 @@ public class UserDetailDAO {
         }
 
         return user;
+    }
+
+    public void updatePassword(String newPassword, String userName) {
+        try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
+            String sql = "UPDATE Account SET Password = ? WHERE Username = ?";
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ps.setString(1, newPassword);
+                ps.setString(2, userName);
+
+                int rowsUpdated = ps.executeUpdate();
+                if (rowsUpdated > 0) {
+                    System.out.println("Password updated successfully!");
+                } else {
+                    System.out.println("Failed to update password for username: " + userName);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 }
