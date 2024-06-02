@@ -19,7 +19,7 @@
                         <TableColumn fx:id="classColumn" prefWidth="155.199951171875" text="Class" />
                         <TableColumn fx:id="phoneColumn" prefWidth="148.800048828125" text="Phonenumber" />
                         <TableColumn fx:id="dobColumn" prefWidth="128.800048828125" text="DOB" />
-                  <TableColumn fx:id="attendaceColumn" prefWidth="108.79998779296875" text="Attendance" />
+                  <TableColumn fx:id="attendaceColumn" prefWidth="108.79998779296875" style="fx-alignment: center;" text="Attendance" />
                     </columns>
                 </TableView>
                 <TextField fx:id="SearchField" onKeyTyped="#SearchTxtType" prefHeight="40.0" prefWidth="483.0" promptText="Search by name" style="-fx-background-radius: 9;" styleClass="label" stylesheets="@../CSS/MainAdminForm.css">

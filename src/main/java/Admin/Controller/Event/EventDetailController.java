@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.fxml.Initializable;
@@ -34,6 +35,10 @@ public class EventDetailController implements Initializable{
 
     @FXML
     private Button GoBackBtn;
+
+    @FXML
+    private Button CheckingBtn;
+
     @FXML
     private TextField txtName;
 
@@ -137,8 +142,8 @@ public class EventDetailController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-
-    public void handleGoBack(javafx.event.ActionEvent actionEvent) {
+    @FXML
+    void handleGoBack(ActionEvent event) {
         try {
             // Load FXML của ViewChinh.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
@@ -167,4 +172,38 @@ public class EventDetailController implements Initializable{
             // Xử lý nếu có lỗi khi chuyển đổi
         }
     }
+
+    @FXML
+    void GoCheckAttendance(MouseEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Admin/Event/EventForm/attendanceCheck.fxml"));
+            Parent page = fxmlLoader.load();
+            AttendaceController attendaceController = fxmlLoader.getController();
+            attendaceController.seteventId(object.getEventId());
+            // Create a new stage for the dialog
+            Stage dialogStage = new Stage();
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            dialogStage.setTitle("Checking Attendance");
+
+            // Set the scene
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            dialogStage.setOnHiding(eventS -> {
+                // Call updateTableView() when the dialog is closed
+                handleGoBack(null);
+            });
+            dialogStage.setOnCloseRequest(events -> {
+                // Call the updateTableView() function
+                handleGoBack(null);
+            });
+            dialogStage.showAndWait();
+
+        }
+        catch (IOException e) {
+            System.out.println("Open Fail");
+            e.printStackTrace();
+        }
+    }
+
+
 }

@@ -35,6 +35,12 @@ public class Main extends Application {
 //            stage.setScene(scene);
 //            stage.setResizable(false);
 //            stage.show();
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin/Event/EventForm/attendanceCheck.fxml"));
+//            Scene scene = new Scene(loader.load(), 1200, 800);
+//            stage.setScene(scene);
+//            stage.setTitle("JavaFX Application");
+//            stage.show();
+
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login/Login.fxml"));
             Scene scene = new Scene(loader.load(), 1200, 800);
