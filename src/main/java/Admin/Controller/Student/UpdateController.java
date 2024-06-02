@@ -1,18 +1,20 @@
 package Admin.Controller.Student;
 
-import Admin.Controller.ChuyenViewController;
 import Admin.Model.Student.StudentModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -84,89 +86,54 @@ public class UpdateController implements Initializable {
         }
     }
 
-//    @FXML
-//    void AcceptClickBtn(MouseEvent event) {
-//
-//    }
-@FXML
-void AcceptClickBtn() {
-    try {
-        // Lấy dữ liệu mới từ các trường nhập liệu
-        String studentId = txtStudentId.getText();
-        Integer studentClass = Integer.parseInt(txtClass.getText());
-        String phoneNumber = txtPhoneNumber.getText();
-        LocalDate dob = txtDateOfBirth.getValue();
-        String fullName = txtFullName.getText();
-        String password = txtPassword.getText();
-        String username = txtUsername.getText();
-        boolean studentEnable = true;
-
-//        System.out.println(txtStudentId.getText());
-//        System.out.println(Integer.parseInt(txtClass.getText()));
-//        System.out.println(txtPhoneNumber.getText());
-//        System.out.println(txtDateOfBirth.getValue());
-//        System.out.println(txtFullName.getText());
-//        System.out.println(txtPassword.getText());
-//        System.out.println(txtUsername.getText());
-        // Cập nhật dữ liệu vào cơ sở dữ liệu
-        StudentDAO studentDAO = new StudentDAO();
-//        // Cập nhật trước khi gọi phương thức updateStudent
-        updateFields(object);
-//        // Thực hiện cập nhật dữ liệu sinh viên
-        studentDAO.updateStudent(studentId, studentClass, phoneNumber, dob, studentEnable, fullName, username, password);
-
-        // Hiển thị lại giao diện MainAdminForm
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
-        Parent root = fxmlLoader.load();
-
-        // Lấy controller của ViewChinh
-        ChuyenViewController controller = fxmlLoader.getController();
-
-        // Gọi phương thức loadView của controller để hiển thị EventMainForm
-        controller.loadView("/Admin/Student/StudentForm/MainForm.fxml");
-        // Lấy ra Scene của giao diện trước đó
-        Scene previousScene = new Scene(root);
-
-        // Lấy ra Stage hiện tại
-        Stage stage = (Stage) updateForm.getScene().getWindow();
-
-        // Thiết lập Scene của giao diện trước đó vào Stage
-        stage.setScene(previousScene);
-        stage.show();
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-}
-
-
-
-
-
     @FXML
-    void CancelClickBtn(MouseEvent event) {
-        // Xử lý khi người dùng nhấn nút Cancel
+    void AcceptClickBtn(ActionEvent event) {
+
+    }
+    @FXML
+    void CancelClickBtn(ActionEvent event) {
+        // Đóng cửa sổ hiện tại
+
+    }
+
+    public void AcceptClickBtn(javafx.event.ActionEvent event) {
         try {
-            // Tạo một FXMLLoader cho giao diện trước đó
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
-            Parent root = fxmlLoader.load();
+            // Lấy dữ liệu mới từ các trường nhập liệu
+            String studentId = txtStudentId.getText();
+            Integer studentClass = Integer.parseInt(txtClass.getText());
+            String phoneNumber = txtPhoneNumber.getText();
+            LocalDate dob = txtDateOfBirth.getValue();
+            String fullName = txtFullName.getText();
+            String password = txtPassword.getText();
+            String username = txtUsername.getText();
+            boolean studentEnable = true;
 
-            // Lấy controller của ViewChinh
-            ChuyenViewController controller = fxmlLoader.getController();
+            // Cập nhật dữ liệu vào cơ sở dữ liệu
+            StudentDAO studentDAO = new StudentDAO();
 
-            // Gọi phương thức loadView của controller để hiển thị EventMainForm
-            controller.loadView("/Admin/Student/StudentForm/MainForm.fxml");
-            // Lấy ra Scene của giao diện trước đó
-            Scene previousScene = new Scene(root);
+            // Cập nhật trước khi gọi phương thức updateStudent
+            updateFields(object);
 
-            // Lấy ra Stage hiện tại
-            Stage stage = (Stage) updateForm.getScene().getWindow();
+            // Thực hiện cập nhật dữ liệu sinh viên
+            studentDAO.updateStudent(studentId, studentClass, phoneNumber, dob, studentEnable, fullName, username, password);
 
-            // Thiết lập Scene của giao diện trước đó vào Stage
-            stage.setScene(previousScene);
-            stage.show();
-        } catch (IOException e) {
-            System.out.println("Open Fail");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText(null);
+            alert.setContentText("Student update successfully!");
+            alert.showAndWait();
+
+            // Đóng cửa sổ hiện tại
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void CancelClickBtn(MouseEvent mouseEvent) {
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        stage.close();
     }
 }

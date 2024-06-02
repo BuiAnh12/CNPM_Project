@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
@@ -18,6 +19,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.*;
 import java.io.IOException;
@@ -358,7 +360,7 @@ public class MainController implements Initializable {
     }
 
 
-    private void updateTableView() {
+    public void updateTableView() {
 
         String TypeOrder = getTypeRange();
 
@@ -377,48 +379,92 @@ public class MainController implements Initializable {
 
     @FXML
     void EditBtnClickEvent(MouseEvent event) {
+        Object selectedItem = mainTable.getSelectionModel().getSelectedItem();
+        if (selectedItem == null) {
+            showAlert("Thông báo", "Bạn chưa chọn sinh viên cần chỉnh sửa!");
+        } else {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/UpdateForm.fxml"));
+                Parent page = fxmlLoader.load();
 
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/UpdateForm.fxml"));
-            Parent page = fxmlLoader.load();
+                UpdateController updateController = fxmlLoader.getController();
+                updateController.setObject(mainTable.getSelectionModel().getSelectedItem());
+                //updateController.updateFields();
 
-            UpdateController updateController = fxmlLoader.getController();
-            updateController.setObject(mainTable.getSelectionModel().getSelectedItem());
-            //updateController.updateFields();
+                // Tạo một stage mới cho cửa sổ mới
+                Stage newStage = new Stage();
+                newStage.setTitle("Insert student");
 
-            AnchorPane Container = (AnchorPane) DashbaordForm.getParent();
-            Container.getChildren().clear();
-            Container.getChildren().add(page);
+                // Lấy stage hiện tại từ sự kiện chuột
+                Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                newStage.initOwner(currentStage); // Đặt chủ sở hữu cho cửa sổ mới
 
-        } catch (IOException e) {
-            System.out.println("Open Fail");
-            e.printStackTrace();
+                // Đặt chế độ cho cửa sổ mới (OPTIONAL)
+                newStage.initModality(Modality.WINDOW_MODAL);
+
+                // Tạo và thiết lập phân cảnh mới
+                Scene scene = new Scene(page);
+                newStage.setScene(scene);
+
+                // Hiển thị cửa sổ mới
+                newStage.show();
+
+
+
+                newStage.setOnHiding(e -> {
+                    List<StudentModel> students = this.studentDAO.getAllStudents();
+
+                    setupTable(students);
+                });
+
+            } catch (IOException e) {
+                System.out.println("Open Fail");
+                e.printStackTrace();
+            }
         }
+
     }
 
 
     @FXML
     void InsertBtnClickEvent(MouseEvent event) {
-        try{
+        try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Student/StudentForm/InsertForm.fxml"));
             Parent page = fxmlLoader.load();
 
-            Scene currentScene = mainTable.getScene();
-            Stage currentStage = (Stage) mainTable.getScene().getWindow();
+            // Tạo một stage mới cho cửa sổ mới
+            Stage newStage = new Stage();
+            newStage.setTitle("Insert student");
 
-            InsertController insertCotroller = fxmlLoader.getController();
-            insertCotroller.setPreviousScene(currentScene);
+            // Lấy stage hiện tại từ sự kiện chuột
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            newStage.initOwner(currentStage); // Đặt chủ sở hữu cho cửa sổ mới
 
-            AnchorPane Container = (AnchorPane) DashbaordForm.getParent();
-            Container.getChildren().clear();
-            Container.getChildren().add(page);
+            // Đặt chế độ cho cửa sổ mới
+            newStage.initModality(Modality.WINDOW_MODAL);
+
+            // Tạo và thiết lập phân cảnh mới
+            Scene scene = new Scene(page);
+            newStage.setScene(scene);
+
+            // Hiển thị cửa sổ mới
+            newStage.show();
+
+            // Cập nhật bảng dữ liệu khi cửa sổ chèn dữ liệu bị đóng
+
+            newStage.setOnHiding(e -> {
+                List<StudentModel> students = this.studentDAO.getAllStudents();
+
+                setupTable(students);
+            });
 
         } catch (IOException e) {
             System.out.println("Open Fail");
             e.printStackTrace();
         }
-
     }
+
+
 
     private void setupTable(List<StudentModel> StudentModels) {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("studentId"));
@@ -438,7 +484,7 @@ public class MainController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Confirm Delete");
             alert.setHeaderText(null);
-            alert.setContentText("Are you sure you want to delete this student?");
+            alert.setContentText("Bạn có chắc rằng muốn xóa sinh viên này không?");
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -449,7 +495,7 @@ public class MainController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("No Selection");
             alert.setHeaderText(null);
-            alert.setContentText("Please select a student to delete.");
+            alert.setContentText("Vui lòng chọn sinh viên bạn muốn xóa.");
             alert.showAndWait();
         }
     }
