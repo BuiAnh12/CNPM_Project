@@ -74,27 +74,26 @@ public class LoginController {
             alert.setHeaderText(null);
             alert.setContentText("Staff đăng nhập thành công!");
             alert.showAndWait();
-
             try {
+                Integer permissionID = checkLoginDAO.getPermissionIDForStaff(username);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
                 Parent root = loader.load();
 
                 // Lấy controller từ loader
                 ChuyenViewController chuyenViewController = loader.getController();
                 chuyenViewController.setUsername(username);
-
+                chuyenViewController.setPermission(permissionID);
+                chuyenViewController.loadInitialView();
+                System.out.println("User: " + username);
+                System.out.println("Permission: " + permissionID);
                 // Hiển thị ViewChinh
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) si_loginForm.getScene().getWindow();
                 stage.setScene(scene);
-                stage.setResizable(true);
+                stage.setResizable(false);
                 stage.show();
 
-                Integer permissionID = checkLoginDAO.getPermissionIDForStaff(username);
-                if (permissionID != null) {
-                    System.out.println("PermissionID: " + permissionID);
-                    // Bạn có thể sử dụng giá trị permissionID ở đây
-                }
+
             } catch (IOException e) {
                 e.printStackTrace();
                 // Xử lý nếu có lỗi khi chuyển đổi

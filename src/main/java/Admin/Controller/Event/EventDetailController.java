@@ -74,7 +74,11 @@ public class EventDetailController implements Initializable{
     @FXML
     private TableColumn<StudentEventModel, String> colStudentId;
     @FXML
+    private int permissionId = 0;
 
+    public void setPermissionId(int permissionId) {
+        this.permissionId = permissionId;
+    }
 
     public void setPreviousStage(Scene scene) {
         this.previousScene = scene;
@@ -142,10 +146,11 @@ public class EventDetailController implements Initializable{
 
             // Lấy controller của ViewChinh
             ChuyenViewController controller = loader.getController();
-
             // Gọi phương thức loadView của controller để hiển thị EventMainForm
-            controller.loadView("/Admin/Event/EventForm/EventMainForm.fxml");
 
+            FXMLLoader view = controller.loadView("/Admin/Event/EventForm/MainForm.fxml");
+            Admin.Controller.Event.MainController mainController = view.getController();
+            mainController.setPermissionId(permissionId);
             // Tạo một Scene mới từ StackPane
             Scene scene = new Scene(root);
 

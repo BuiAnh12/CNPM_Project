@@ -22,6 +22,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -59,6 +60,8 @@ public class MainController implements Initializable {
     @FXML
     private TableView<EventModel> table;
 
+    private int permissionId = 0;
+
     private int setUser = 1;
 
     public int getSetUser() {
@@ -67,6 +70,10 @@ public class MainController implements Initializable {
 
     public void setSetUser(int setUser) {
         this.setUser = setUser;
+    }
+
+    public void setPermissionId(int permissionId) {
+        this.permissionId = permissionId;
     }
 
     public void showAlert(String title, String message) {
@@ -79,38 +86,65 @@ public class MainController implements Initializable {
 
     @FXML
     void DeleteBtnClickEvent(MouseEvent event) {
+        if (permissionId != 1 && permissionId != 2){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Phân quyền");
+            alert.setHeaderText(null);
+            alert.setContentText("Bạn không có quyền thực hiện chức năng này");
+            System.out.println("Permission: " + permissionId);
+            alert.showAndWait();
+            return;
+        }
         if (table.getSelectionModel().isEmpty()) {
             // Show an error message or handle the situation accordingly
             showAlert("Error", "No event selected. Please select an event to delete.");
             return;
         }
-        EventModel selected = table.getSelectionModel().getSelectedItem();
-        EventDAO eventDAO = new EventDAO();
-        boolean success = eventDAO.deleteEvent(selected.getEventId());
-        if (success){
-            System.out.println("Delete Success!");
-            try{
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/MainForm.fxml"));
-                Parent page = fxmlLoader.load();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirm Delete");
+        alert.setHeaderText(null);
+        alert.setContentText("Bạn có muốn xóa sự kiện này không?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            EventModel selected = table.getSelectionModel().getSelectedItem();
+            EventDAO eventDAO = new EventDAO();
+            boolean success = eventDAO.deleteEvent(selected.getEventId());
+            if (success){
+                System.out.println("Delete Success!");
+                try{
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/MainForm.fxml"));
+                    Parent page = fxmlLoader.load();
 
-                Scene currentScene = table.getScene();
-                Stage currentStage = (Stage) table.getScene().getWindow();
+                    Scene currentScene = table.getScene();
+                    Stage currentStage = (Stage) table.getScene().getWindow();
 
-                AnchorPane Container = (AnchorPane) DashbaordForm.getParent();
-                Container.getChildren().clear();
-                Container.getChildren().add(page);
-            } catch (IOException e) {
-                System.out.println("Open Fail");
-                e.printStackTrace();
+                    AnchorPane Container = (AnchorPane) DashbaordForm.getParent();
+                    Container.getChildren().clear();
+                    Container.getChildren().add(page);
+                } catch (IOException e) {
+                    System.out.println("Open Fail");
+                    e.printStackTrace();
+                }
+            }
+            else{
+                System.out.println("Delete Fail");
             }
         }
-        else{
-            System.out.println("Delete Fail");
-        }
+
+
     }
 
     @FXML
     void EditBtnClickEvent(MouseEvent event) {
+        if (permissionId != 1 && permissionId != 2){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Phân quyền");
+            alert.setHeaderText(null);
+            alert.setContentText("Bạn không có quyền thực hiện chức năng này");
+            System.out.println("Permission: " + permissionId);
+            alert.showAndWait();
+            return;
+        }
         if (table.getSelectionModel().isEmpty()) {
             // Show an error message or handle the situation accordingly
             showAlert("Error", "No event selected. Please select an event to update.");
@@ -164,6 +198,15 @@ public class MainController implements Initializable {
 
     @FXML
     void InsertBtnClickEvent(MouseEvent event) {
+        if (permissionId != 1 && permissionId != 2){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Phân quyền");
+            alert.setHeaderText(null);
+            alert.setContentText("Bạn không có quyền thực hiện chức năng này");
+            System.out.println("Permission: " + permissionId);
+            alert.showAndWait();
+            return;
+        }
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/InsertForm.fxml"));
             Parent page = fxmlLoader.load();
@@ -238,9 +281,11 @@ public class MainController implements Initializable {
             Scene newScene = new Scene(page, 1200, 800);
 
             EventDetailController eventDetailController = fxmlLoader.getController();
+            eventDetailController.setPermissionId(permissionId);
             eventDetailController.setPreviousStage(currentScene);
             // Set the id for function to show
             eventDetailController.setObject(object);
+
             eventDetailController.refresh();
             // Set the scene to the current stage
             currentStage.setScene(newScene);

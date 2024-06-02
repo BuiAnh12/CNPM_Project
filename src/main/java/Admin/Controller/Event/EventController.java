@@ -42,6 +42,8 @@ public class EventController implements Initializable {
     @FXML
     private Button GoLoginButton;
 
+    private  int permissionId = 0;
+
     private int user;
 
     public int getUser() {
@@ -51,6 +53,8 @@ public class EventController implements Initializable {
     public void setUser(int user) {
         this.user = user;
     }
+
+    public void setPermissionId(int permissionId) {this.permissionId = permissionId;}
 
     @FXML
     private AnchorPane Containner;
@@ -63,7 +67,7 @@ public class EventController implements Initializable {
 
             // Get the controller after loading
             MainController controller = fxmlLoader.getController();
-
+            controller.setPermissionId(permissionId);
             // Now set the user
             controller.setSetUser(1);
 

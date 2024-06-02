@@ -1,7 +1,7 @@
 package Admin.Controller;
 
-import Admin.Controller.UserDetail.UserDetailController;
-import Admin.Controller.NewStaff.MainController;
+
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.control.Button;
@@ -26,6 +27,12 @@ public class ChuyenViewController {
         this.username = username;
         loadInitialView();
        // loadUserDetail();
+    }
+
+    private int permissionId = 0;
+
+    public void setPermission(int permission) {
+        this.permissionId = permission;
     }
 
     @FXML
@@ -62,15 +69,19 @@ public class ChuyenViewController {
 //        }
     }
 
-    private void loadInitialView() {
-        loadView("/Admin/Event/EventForm/EventMainForm.fxml");
+    public void loadInitialView() {
+        FXMLLoader view = loadView("/Admin/Event/EventForm/MainForm.fxml");
+        Admin.Controller.Event.MainController controller = view.getController();
+        controller.setPermissionId(permissionId);
     }
 
 
 
     @FXML
     void handleGoEventDetailsButtonAction(ActionEvent event) {
-        loadView("/Admin/Event/EventForm/EventMainForm.fxml");
+        FXMLLoader view = loadView("/Admin/Event/EventForm/MainForm.fxml");
+        Admin.Controller.Event.MainController controller = view.getController();
+        controller.setPermissionId(permissionId);
     }
 
     @FXML
@@ -101,9 +112,18 @@ public class ChuyenViewController {
     @FXML
     void handleGoStaffButtonAction(ActionEvent event) {
         try{
+            if (permissionId != 1){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Phân quyền");
+                alert.setHeaderText(null);
+                alert.setContentText("Bạn không có quyền truy cập");
+                alert.showAndWait();
+                return;
+            }
             FXMLLoader loader = loadView("/Admin/NewStaff/StaffForm/MainForm.fxml");
-            MainController controller = loader.getController();
+            Admin.Controller.NewStaff.MainController controller = loader.getController();
             controller.setUser(this.username);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -114,7 +134,17 @@ public class ChuyenViewController {
 
     @FXML
     void handleGoStudentButtonAction(ActionEvent event) {
-        loadView("/Admin/Student/StudentForm/MainForm.fxml");
+        if (permissionId != 1 && permissionId != 2){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Phân quyền");
+            alert.setHeaderText(null);
+            alert.setContentText("Bạn không có quyền truy cập");
+            alert.showAndWait();
+            return;
+        }
+        FXMLLoader view = loadView("/Admin/Student/StudentForm/MainForm.fxml");
+        Admin.Controller.Student.MainController mainController = view.getController();
+        mainController.setPermissionId(permissionId);
     }
 
     public FXMLLoader loadView(String fxmlFile) {
@@ -130,7 +160,7 @@ public class ChuyenViewController {
     }
 
 
-    private UserDetailController getLastLoadedController() {
+    private Admin.Controller.UserDetail.UserDetailController getLastLoadedController() {
         // Lấy danh sách các node trong StackPane
         ObservableList<Node> children = contentPane.getChildren();
 
@@ -145,7 +175,7 @@ public class ChuyenViewController {
                 Parent userDetailRoot = loader.load();
 
                 // Lấy controller của UserDetail.fxml sau khi nó được tải
-                UserDetailController userDetailController = loader.getController();
+                Admin.Controller.UserDetail.UserDetailController userDetailController = loader.getController();
                 userDetailController.setUsername(username); // Truyền username vào UserDetailController
 
                 // Thêm UserDetail vào contentPane hoặc pane cần thiết

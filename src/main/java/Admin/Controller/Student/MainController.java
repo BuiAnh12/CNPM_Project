@@ -73,8 +73,11 @@ public class MainController implements Initializable {
     private StudentDAO studentDAO;
     private StudentModel StudentModels;
 
-//    @FXML
-//    private TableView<StudentModel> table;
+    private int permissionId = 0;
+
+    public void setPermissionId(int permissionId) {
+        this.permissionId = permissionId;
+    }
 
     private String jdbcUrl = "jdbc:sqlserver://localhost:1433;databaseName=EventManagement;encrypt=true;trustServerCertificate=true";
     private String dbUsername = "cnpm";

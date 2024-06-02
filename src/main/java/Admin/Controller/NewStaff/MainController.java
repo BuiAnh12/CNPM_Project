@@ -34,6 +34,8 @@ public class MainController implements Initializable {
     private ComboBox<String> Filter;
 
     private String user = "";
+
+    private int permissionId = 0;
     @FXML
     private ImageView SearchBtn;
 
@@ -70,6 +72,8 @@ public class MainController implements Initializable {
     public void setUser(String user) {
         this.user = user;
     }
+
+    public void setPermissionId(int permissionId){this.permissionId = permissionId;}
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -116,6 +120,15 @@ public class MainController implements Initializable {
     }
     @FXML
     void DeleteBtnClickEvent(MouseEvent event) {
+        if (permissionId != 1){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Phân quyền");
+            alert.setHeaderText(null);
+            alert.setContentText("Bạn không có quyền thực hiện chức năng này");
+            System.out.println("Permission: " + permissionId);
+            alert.showAndWait();
+            return;
+        }
         if (mainTable.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -140,7 +153,7 @@ public class MainController implements Initializable {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            staffDao.deleteStaff(selectedStaff.getId()); // Truyền studentId thay vì selectedStudent
+            staffDao.deleteStaff(selectedStaff.getId());
             mainTable.getItems().remove(selectedStaff);
         }
 
@@ -148,7 +161,15 @@ public class MainController implements Initializable {
 
     @FXML
     void EditBtnClickEvent(MouseEvent event) {
-        // Check if any item is selected in the table
+        if (permissionId != 1){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Phân quyền");
+            alert.setHeaderText(null);
+            alert.setContentText("Bạn không có quyền thực hiện chức năng này");
+            System.out.println("Permission: " + permissionId);
+            alert.showAndWait();
+            return;
+        }
         if (mainTable.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -183,6 +204,15 @@ public class MainController implements Initializable {
 
     @FXML
     void InsertBtnClickEvent(MouseEvent event) {
+        if (permissionId != 1){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Phân quyền");
+            alert.setHeaderText(null);
+            alert.setContentText("Bạn không có quyền thực hiện chức năng này");
+            System.out.println("Permission: " + permissionId);
+            alert.showAndWait();
+            return;
+        }
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/NewStaff/StaffForm/InsertForm.fxml"));
             Parent page = fxmlLoader.load();
