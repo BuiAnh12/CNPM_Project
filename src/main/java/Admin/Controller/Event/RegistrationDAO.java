@@ -59,12 +59,12 @@ public class RegistrationDAO {
         }
     }
 
-    public boolean isAttend(int eventId, String studentId){
+    public boolean isAttend(int eventId, String studentId, int staffId){
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
-            try (CallableStatement cs = connection.prepareCall("{call sp_isAttend(?,?)}")) {
+            try (CallableStatement cs = connection.prepareCall("{call sp_isAttend(?,?,?)}")) {
                 cs.setInt(1, eventId);
                 cs.setString(2,studentId);
-
+                cs.setInt(3, staffId);
                 // Execute the stored procedure
                 cs.execute();
 
@@ -77,11 +77,12 @@ public class RegistrationDAO {
         }
     }
 
-    public boolean isNotAttend(int eventId, String studentId){
+    public boolean isNotAttend(int eventId, String studentId, int staffId){
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
-            try (CallableStatement cs = connection.prepareCall("{call sp_isNotAttend(?,?)}")) {
+            try (CallableStatement cs = connection.prepareCall("{call sp_isNotAttend(?,?, ?)}")) {
                 cs.setInt(1, eventId);
                 cs.setString(2,studentId);
+                cs.setInt(3, staffId);
 
                 // Execute the stored procedure
                 cs.execute();

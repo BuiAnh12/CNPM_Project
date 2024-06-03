@@ -1,6 +1,7 @@
 package Admin.Controller.Event;
 
 import Admin.Model.Event.Organization;
+import Admin.Model.Staff.StaffModel;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -49,24 +50,16 @@ public class InsertCotroller {
     private TextField txtPlace;
     private InputHandle inputHandle = new InputHandle();
 
-    private int user;
+    private StaffModel user;
 
-    public int getUser() {
+    public StaffModel getUser() {
         return user;
     }
 
-    public void setUser(int user) {
+    public void setUser(StaffModel user) {
         this.user = user;
     }
 
-    public Scene getPreviousScene() {
-        return previousScene;
-    }
-
-    public void setPreviousScene(Scene previousScene) {
-        this.previousScene = previousScene;
-        System.out.println(previousScene);
-    }
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -116,7 +109,7 @@ public class InsertCotroller {
         String detail = txtDetail.getText();
 
         EventDAO eventDAO = new EventDAO();
-        boolean success = eventDAO.insertOrUpdateEvent(null, name, occurDate, place, organizationId, maxSlot, deadline, detail, true, true, this.user, null);
+        boolean success = eventDAO.insertOrUpdateEvent(null, name, occurDate, place, organizationId, maxSlot, deadline, detail, true, true, this.user.getId(), null);
 
         if (success) {
             try {

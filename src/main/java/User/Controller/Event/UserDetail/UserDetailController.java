@@ -1,7 +1,9 @@
 package User.Controller.Event.UserDetail;
 
 import Admin.Controller.ChuyenViewController;
+import Admin.Model.Student.StudentModel;
 import User.Controller.Event.ChuyenViewControllerUser;
+import User.Controller.Event.MainController;
 import User.Controller.Event.UserDetail.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,6 +43,15 @@ public class UserDetailController {
 
     private String username;
 
+    private StudentModel user = new StudentModel();
+
+    public StudentModel getUser() {
+        return user;
+    }
+
+    public void setUser(StudentModel user) {
+        this.user = user;
+    }
 
     public void setUsernameUser(String username) {
         this.username = username;
@@ -86,10 +97,13 @@ public class UserDetailController {
 
             // Lấy controller của ViewChinh
             ChuyenViewControllerUser controllerUser = loader.getController();
+            controllerUser.setUser(user);
+            System.out.println("New user = "+ user);
 
             // Gọi phương thức loadView của controller để hiển thị EventMainForm
-            controllerUser.loadViewUser("/User/Event/EventForm/MainForm.fxml");
-
+            FXMLLoader MainLoader = controllerUser.loadViewUser("/User/Event/EventForm/MainForm.fxml");
+            MainController mainController = MainLoader.getController();
+            mainController.setSetUser(user);
             // Tạo một Scene mới từ StackPane
             Scene scene = new Scene(root);
 

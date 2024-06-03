@@ -2,6 +2,7 @@ package Admin.Controller.Event;
 
 import Admin.Model.Event.RegistrationModel;
 
+import Admin.Model.Staff.StaffModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -81,6 +82,16 @@ public class AttendaceController implements Initializable {
         loadData(eventId,"");
     }
 
+    private StaffModel user;
+
+    public StaffModel getUser() {
+        return user;
+    }
+
+    public void setUser(StaffModel user) {
+        this.user = user;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         attendaceColumn.setCellValueFactory(new PropertyValueFactory<RegistrationModel, Boolean>("statusCheckBox"));
@@ -152,10 +163,10 @@ public class AttendaceController implements Initializable {
             // Loop through the items
             for (RegistrationModel item : items) {
                 if (item.isStatus()){
-                    registrationDAO.isAttend(eventId,item.getStudentId());
+                    registrationDAO.isAttend(eventId,item.getStudentId(), user.getId());
                 }
                 else{
-                    registrationDAO.isNotAttend(eventId,item.getStudentId());
+                    registrationDAO.isNotAttend(eventId,item.getStudentId(), user.getId());
                 }
             }
         }

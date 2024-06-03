@@ -87,7 +87,7 @@ public class EventDAO {
                         // Retrieve data from the result set and create Event objects
 
                         String fullname = rs.getString("Fullname");
-                        String className = rs.getString("Name");
+                        String className = rs.getString("ClassId");
                         String studentId = rs.getString("StudentId");
 
 

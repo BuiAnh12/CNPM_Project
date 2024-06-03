@@ -3,6 +3,7 @@ package Admin.Controller.Event;
 import Admin.Controller.ChuyenViewController;
 import Admin.Model.Event.EventModel;
 import Admin.Model.Event.StudentEventModel;
+import Admin.Model.Staff.StaffModel;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -79,11 +80,14 @@ public class EventDetailController implements Initializable{
     @FXML
     private TableColumn<StudentEventModel, String> colStudentId;
     @FXML
-    private int permissionId = 0;
+    private StaffModel user;
 
-    public void setPermissionId(int permissionId) {
-        this.permissionId = permissionId;
-        System.out.println("Just set permission: " + permissionId);
+    public StaffModel getUser() {
+        return user;
+    }
+
+    public void setUser(StaffModel user) {
+        this.user = user;
     }
 
     public void setPreviousStage(Scene scene) {
@@ -152,6 +156,7 @@ public class EventDetailController implements Initializable{
             Parent page = loader.load();
             AttendaceController attendaceController = loader.getController();
             attendaceController.seteventId(object.getEventId());
+            attendaceController.setUser(user);
             // Create a new stage for the dialog
             Stage dialogStage = new Stage();
             dialogStage.initModality(Modality.APPLICATION_MODAL);
@@ -177,13 +182,14 @@ public class EventDetailController implements Initializable{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
             StackPane root = loader.load();
             ChuyenViewController chuyenViewController = loader.getController();
-            chuyenViewController.setPermission(permissionId);
+            chuyenViewController.setLoginStaff(user);
+
             // Lấy controller của ViewChinh
             // Gọi phương thức loadView của controller để hiển thị EventMainForm
 
             FXMLLoader view = chuyenViewController.loadView("/Admin/Event/EventForm/MainForm.fxml");
             Admin.Controller.Event.MainController mainController = view.getController();
-            mainController.setPermissionId(permissionId);
+            mainController.setSetUser(user);
             // Tạo một Scene mới từ StackPane
             Scene scene = new Scene(root);
 

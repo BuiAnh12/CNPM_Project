@@ -2,6 +2,7 @@ package Admin.Controller.Event;
 
 import Admin.Controller.Student.StudentController;
 import Admin.Model.Event.EventModel;
+import Admin.Model.Staff.StaffModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -44,15 +45,6 @@ public class EventController implements Initializable {
 
     private  int permissionId = 0;
 
-    private int user;
-
-    public int getUser() {
-        return user;
-    }
-
-    public void setUser(int user) {
-        this.user = user;
-    }
 
     public void setPermissionId(int permissionId) {this.permissionId = permissionId;}
 
@@ -67,9 +59,7 @@ public class EventController implements Initializable {
 
             // Get the controller after loading
             MainController controller = fxmlLoader.getController();
-            controller.setPermissionId(permissionId);
             // Now set the user
-            controller.setSetUser(1);
 
             // Add the loaded page to the container
             Containner.getChildren().add(page);

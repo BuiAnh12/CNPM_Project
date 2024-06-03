@@ -2,6 +2,7 @@ package Admin.Controller.Event;
 
 import Admin.Model.Event.EventModel;
 import Admin.Model.Event.Organization;
+import Admin.Model.Staff.StaffModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -57,7 +58,7 @@ public class UpdateController {
     @FXML
     private TextField txtPlace;
 
-    private int user;
+    private StaffModel user;
 
     @FXML
     private ComboBox<String> cmbStatus;
@@ -66,11 +67,11 @@ public class UpdateController {
     private TextField txtEnable;
 
 
-    public int getUser() {
+    public StaffModel getUser() {
         return user;
     }
 
-    public void setUser(int user) {
+    public void setUser(StaffModel user) {
         this.user = user;
     }
 
@@ -156,7 +157,7 @@ public class UpdateController {
 
         // Call the insertEvent method
         EventDAO eventDAO = new EventDAO();
-        boolean success = eventDAO.insertOrUpdateEvent(object.getEventId(), name, occurDate, place, organizationName, maxSlot, deadline, detail,status, enable,user, null);
+        boolean success = eventDAO.insertOrUpdateEvent(object.getEventId(), name, occurDate, place, organizationName, maxSlot, deadline, detail,status, enable,user.getId(), object.getCheckBy());
         if (success) {
             try {
                 // Get the stage of the current AnchorPane

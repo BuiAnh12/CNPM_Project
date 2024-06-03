@@ -2,6 +2,7 @@ package Admin.Controller.Event;
 
 import Admin.Controller.Event.InsertCotroller;
 import Admin.Model.Event.EventModel;
+import Admin.Model.Staff.StaffModel;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,21 +60,16 @@ public class MainController implements Initializable {
 
     @FXML
     private TableView<EventModel> table;
+    
 
-    private int permissionId = 0;
+    private StaffModel user = new StaffModel();
 
-    private int setUser = 1;
-
-    public int getSetUser() {
-        return setUser;
+    public StaffModel getSetUser() {
+        return user;
     }
 
-    public void setSetUser(int setUser) {
-        this.setUser = setUser;
-    }
-
-    public void setPermissionId(int permissionId) {
-        this.permissionId = permissionId;
+    public void setSetUser(StaffModel setUser) {
+        this.user = setUser;
     }
 
     public void showAlert(String title, String message) {
@@ -86,12 +82,12 @@ public class MainController implements Initializable {
 
     @FXML
     void DeleteBtnClickEvent(MouseEvent event) {
-        if (permissionId != 1 && permissionId != 2){
+        if (user.getPermissionId() != 1 && user.getPermissionId() != 2){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Phân quyền");
             alert.setHeaderText(null);
             alert.setContentText("Bạn không có quyền thực hiện chức năng này");
-            System.out.println("Permission: " + permissionId);
+            System.out.println("Permission: " + user.getPermissionId());
             alert.showAndWait();
             return;
         }
@@ -136,12 +132,12 @@ public class MainController implements Initializable {
 
     @FXML
     void EditBtnClickEvent(MouseEvent event) {
-        if (permissionId != 1 && permissionId != 2){
+        if (user.getPermissionId() != 1 && user.getPermissionId() != 2){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Phân quyền");
             alert.setHeaderText(null);
             alert.setContentText("Bạn không có quyền thực hiện chức năng này");
-            System.out.println("Permission: " + permissionId);
+            System.out.println("Permission: " + user.getPermissionId());
             alert.showAndWait();
             return;
         }
@@ -198,12 +194,12 @@ public class MainController implements Initializable {
 
     @FXML
     void InsertBtnClickEvent(MouseEvent event) {
-        if (permissionId != 1 && permissionId != 2){
+        if (user.getPermissionId() != 1 && user.getPermissionId() != 2){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Phân quyền");
             alert.setHeaderText(null);
             alert.setContentText("Bạn không có quyền thực hiện chức năng này");
-            System.out.println("Permission: " + permissionId);
+            System.out.println("Permission: " + user.getPermissionId());
             alert.showAndWait();
             return;
         }
@@ -281,7 +277,7 @@ public class MainController implements Initializable {
             Scene newScene = new Scene(page, 1200, 800);
 
             EventDetailController eventDetailController = fxmlLoader.getController();
-            eventDetailController.setPermissionId(permissionId);
+            eventDetailController.setUser(user);
             eventDetailController.setPreviousStage(currentScene);
             // Set the id for function to show
             eventDetailController.setObject(object);
