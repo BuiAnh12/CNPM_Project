@@ -28,7 +28,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="GoStaffButton" layoutX="18.0" layoutY="670.0" mnemonicParsing="false" onAction="#handleGoStaffButtonAction" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@Admin/Event/CSS/EventMainForm.css">
+            <Button fx:id="GoStaffButton" layoutX="18.0" layoutY="407.0" mnemonicParsing="false" onAction="#handleGoStaffButtonAction" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@Admin/Event/CSS/EventMainForm.css">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -37,11 +37,29 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="GoEventDetails" layoutX="18.0" layoutY="291.0" mnemonicParsing="false" onAction="#handleGoEventDetailsButtonAction" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@Admin/Event/CSS/EventMainForm.css">
+            <Button fx:id="GoEventForm" layoutX="18.0" layoutY="291.0" mnemonicParsing="false" onAction="#handleGoEventForm" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@Admin/Event/CSS/EventMainForm.css">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/Circled%20Menu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="GoDashboardForm" layoutX="18.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoDashBoardForm" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@Admin/Event/CSS/EventMainForm.css">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Dashboar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="GoUserDetailForm" layoutX="18.0" layoutY="669.0" mnemonicParsing="false" onAction="#GoUserDetailForm" prefHeight="58.0" prefWidth="50.0" styleClass="grey-form" stylesheets="@Admin/Event/CSS/EventMainForm.css">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/UserDetail.png" />
                      </image>
                   </ImageView>
                </graphic>

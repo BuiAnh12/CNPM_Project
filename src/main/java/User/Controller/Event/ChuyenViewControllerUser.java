@@ -19,9 +19,9 @@ public class ChuyenViewControllerUser {
 
     private String username;
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+//    public void setUsername(String username) {
+//        this.username = username;
+//    }
 
     private StudentModel user = new StudentModel();
 
@@ -41,8 +41,20 @@ public class ChuyenViewControllerUser {
 
     @FXML
     private StackPane contentPane;
+
+    public void setUsernameUser(String username) {
+        this.username = username;
+        loadInitialView();
+        // loadUserDetail();
+    }
+
+    public void loadInitialView() {
+        FXMLLoader view = loadViewUser("/Admin/Event/EventForm/Dashboard.fxml");
+//        Admin.Controller.DashboardController controller = view.getController();
+//        controller.setSetUser(loginStaff);
+    }
     @FXML
-    void handleGoStudentButtonAction(ActionEvent event) {
+    void handleGoEventButtonAction(ActionEvent event) {
         System.out.println("Main user: " + user);
         FXMLLoader loader = loadViewUser("/User/Event/EventForm/MainForm.fxml");
         MainController controller =  loader.getController();
@@ -116,6 +128,18 @@ public class ChuyenViewControllerUser {
             e.printStackTrace();
             // Xử lý nếu có lỗi khi mở cửa sổ mới
         }
+    }
+
+    @FXML
+    void GoDashboardForm (ActionEvent event){
+
+        FXMLLoader view = loadViewUser("/Admin/Event/EventForm/Dashboard.fxml");
+    }
+
+    @FXML
+    void GoUserDetail(ActionEvent event){
+        FXMLLoader view = loadViewUser("/User/Event/UserDetail.fxml");
+        loadUserDetail();
     }
 
 

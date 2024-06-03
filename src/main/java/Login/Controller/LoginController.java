@@ -58,14 +58,16 @@ public class LoginController {
 
                 // Lấy controller từ loader
                 ChuyenViewControllerUser chuyenViewControllerUser = loader.getController();
-                chuyenViewControllerUser.setUsername(username);
+                chuyenViewControllerUser.loadInitialView();
+                chuyenViewControllerUser.setUsernameUser(username);
                 chuyenViewControllerUser.setUser(loginUser);
-                chuyenViewControllerUser.loadUserDetail();
+                //chuyenViewControllerUser.loadUserDetail();
                 // Hiển thị ViewChinh
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) si_loginForm.getScene().getWindow();
                 stage.setScene(scene);
-                stage.setResizable(true);
+                stage.setResizable(false);
+                stage.centerOnScreen();
                 stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -97,6 +99,7 @@ public class LoginController {
                 Stage stage = (Stage) si_loginForm.getScene().getWindow();
                 stage.setScene(scene);
                 stage.setResizable(false);
+                stage.centerOnScreen();
                 stage.show();
 
 

@@ -11,7 +11,7 @@
     <children>
         <AnchorPane prefHeight="75.0" prefWidth="1110.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css" AnchorPane.topAnchor="0.0">
             <children>
-                <Label prefHeight="75.0" prefWidth="130.0" text="Dashboard">
+                <Label layoutX="14.0" prefHeight="75.0" prefWidth="130.0" text="Dashboard">
                     <font>
                         <Font size="24.0" />
                     </font>

@@ -31,11 +31,17 @@ public class ChuyenViewController {
     }
 
 
+
+    @FXML
+    private Button GoDashboardForm;
+
+    @FXML
+    private Button GoEventDetails;
     @FXML
     private StackPane contentPane;
 
     @FXML
-    private Button GoEventDetails;
+    private Button GoEventForm;
 
     @FXML
     private Button GoLoginButton;
@@ -75,15 +81,15 @@ public class ChuyenViewController {
     }
 
     public void loadInitialView() {
-        FXMLLoader view = loadView("/Admin/Event/EventForm/MainForm.fxml");
-        Admin.Controller.Event.MainController controller = view.getController();
-        controller.setSetUser(loginStaff);
+        FXMLLoader view = loadView("/Admin/Event/EventForm/Dashboard.fxml");
+//        Admin.Controller.DashboardController controller = view.getController();
+//        controller.setSetUser(loginStaff);
     }
 
 
 
     @FXML
-    void handleGoEventDetailsButtonAction(ActionEvent event) {
+    void handleGoEventForm(ActionEvent event) {
         FXMLLoader view = loadView("/Admin/Event/EventForm/MainForm.fxml");
         Admin.Controller.Event.MainController controller = view.getController();
         controller.setSetUser(loginStaff);
@@ -164,14 +170,24 @@ public class ChuyenViewController {
         }
     }
 
+    @FXML
+    void GoDashBoardForm(ActionEvent event){
+        FXMLLoader view = loadView("/Admin/Event/EventForm/Dashboard.fxml");
+//        Admin.Controller.Event.MainController controller = view.getController();
+//        controller.setSetUser(loginStaff);
 
-    private Admin.Controller.UserDetail.UserDetailController getLastLoadedController() {
-        // Lấy danh sách các node trong StackPane
-        ObservableList<Node> children = contentPane.getChildren();
-
-        // Lấy controller của node cuối cùng trong danh sách (đó chính là UserDetail.fxml)
-        return ((FXMLLoader) children.get(children.size() - 1).getUserData()).getController();
     }
+
+
+//    private Admin.Controller.UserDetail.UserDetailController getLastLoadedController() {
+//        // Lấy danh sách các node trong StackPane
+//        ObservableList<Node> children = contentPane.getChildren();
+//
+//        // Lấy controller của node cuối cùng trong danh sách (đó chính là UserDetail.fxml)
+//        return ((FXMLLoader) children.get(children.size() - 1).getUserData()).getController();
+//    }
+
+
 
     private void loadUserDetail() {
         if (username != null) {
@@ -189,5 +205,10 @@ public class ChuyenViewController {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void GoUserDetailForm(ActionEvent event) {
+        FXMLLoader view = loadView("/Admin/UserDetail/UserDetail.fxml");
+        loadUserDetail();
     }
 }

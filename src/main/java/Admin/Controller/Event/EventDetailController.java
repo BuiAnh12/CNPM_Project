@@ -197,7 +197,7 @@ public class EventDetailController implements Initializable{
     }
 
 
-    public void handleGoBack(MouseEvent mouseEvent) {
+    public void handleGoBack(MouseEvent event) {
         try {
             // Load FXML của ViewChinh.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));

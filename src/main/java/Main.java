@@ -4,9 +4,11 @@ import Admin.Controller.Event.MainController;
 //import Admin.Controller.Staff.StaffIpml;
 //import Admin.Model.Staff.Staff;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -43,10 +45,22 @@ public class Main extends Application {
 
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login/Login.fxml"));
-            Scene scene = new Scene(loader.load(), 1200, 800);
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
             stage.setScene(scene);
-            stage.setTitle("JavaFX Application");
+            stage.setTitle("Event Management");
+            stage.setResizable(false);
+
+            // Show the stage and then center it
             stage.show();
+
+            // Center the stage on the screen
+            Platform.runLater(() -> {
+                stage.setX((Screen.getPrimary().getVisualBounds().getWidth() - stage.getWidth()) / 2);
+                stage.setY((Screen.getPrimary().getVisualBounds().getHeight() - stage.getHeight()) / 2);
+            });
+
 
 
 

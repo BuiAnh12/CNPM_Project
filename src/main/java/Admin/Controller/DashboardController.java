@@ -76,6 +76,7 @@ public class DashboardController implements Initializable {
             // Get next events from database
             eventList.addAll(dashboardDAO.getNextEvents());
         } catch (Exception e) {
+            System.out.println("Lỗi ở đây");
             e.printStackTrace();
         }
         // Set the items of the Event TableView
@@ -95,24 +96,5 @@ public class DashboardController implements Initializable {
         reportTable.setItems(reportList);
     }
 
-    @FXML
-    private void handleBackMainButtonAction(ActionEvent event) {
-        try {
-            // Load file fxml mới
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
-            AnchorPane root = loader.load();
 
-            // Tạo scene mới với root là node gốc của file fxml mới
-            Scene scene = new Scene(root);
-
-            // Lấy stage từ event
-            Stage stage = (Stage) BackMain.getScene().getWindow();
-
-            // Đặt scene mới cho stage
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
