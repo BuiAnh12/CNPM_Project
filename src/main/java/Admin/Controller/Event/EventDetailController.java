@@ -3,6 +3,7 @@ package Admin.Controller.Event;
 import Admin.Controller.ChuyenViewController;
 import Admin.Model.Event.EventModel;
 import Admin.Model.Event.StudentEventModel;
+import Admin.Model.Staff.StaffModel;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -79,7 +80,17 @@ public class EventDetailController implements Initializable{
     @FXML
     private TableColumn<StudentEventModel, String> colStudentId;
     @FXML
+    private StaffModel user;
+
+    public StaffModel getUser() {
+        return user;
+    }
+    @FXML
     private int permissionId = 0;
+
+    public void setUser(StaffModel user) {
+        this.user = user;
+    }
 
     public void setPermissionId(int permissionId) {
         this.permissionId = permissionId;
@@ -154,8 +165,9 @@ public class EventDetailController implements Initializable{
             // Gọi phương thức loadView của controller để hiển thị EventMainForm
 
             FXMLLoader view = controller.loadView("/Admin/Event/EventForm/MainForm.fxml");
-            Admin.Controller.Event.MainController mainController = view.getController();
-            mainController.setPermissionId(permissionId);
+//            Admin.Controller.Event.MainController mainController = view.getController();
+//            mainController.setPermissionId(permissionId);
+            setPermissionId(permissionId);
             // Tạo một Scene mới từ StackPane
             Scene scene = new Scene(root);
 
@@ -218,8 +230,9 @@ public class EventDetailController implements Initializable{
             // Gọi phương thức loadView của controller để hiển thị EventMainForm
 
             FXMLLoader view = controller.loadView("/Admin/Event/EventForm/MainForm.fxml");
-            Admin.Controller.Event.MainController mainController = view.getController();
-            mainController.setPermissionId(permissionId);
+//            Admin.Controller.Event.MainController mainController = view.getController();
+//            mainController.setPermissionId(permissionId);
+            setPermissionId(permissionId);
             // Tạo một Scene mới từ StackPane
             Scene scene = new Scene(root);
 
