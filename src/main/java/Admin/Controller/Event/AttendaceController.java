@@ -61,6 +61,7 @@ public class AttendaceController implements Initializable {
 
     public void seteventId(int eventId) {
         this.eventId = eventId;
+        loadData(eventId,"");
     }
 
     @Override
@@ -108,8 +109,6 @@ public class AttendaceController implements Initializable {
                 };
             }
         });
-
-        loadData(eventId,"");
 
     }
 

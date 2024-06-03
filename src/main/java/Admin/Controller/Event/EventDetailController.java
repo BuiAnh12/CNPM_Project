@@ -83,6 +83,7 @@ public class EventDetailController implements Initializable{
 
     public void setPermissionId(int permissionId) {
         this.permissionId = permissionId;
+        System.out.println("Just set permission: " + permissionId);
     }
 
     public void setPreviousStage(Scene scene) {
@@ -142,18 +143,45 @@ public class EventDetailController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
+
     @FXML
-    void handleGoBack(ActionEvent event) {
+    void GoCheckAttendance(MouseEvent mouseEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/attendanceCheck.fxml"));
+            Parent page = loader.load();
+            AttendaceController attendaceController = loader.getController();
+            attendaceController.seteventId(object.getEventId());
+            // Create a new stage for the dialog
+            Stage dialogStage = new Stage();
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            dialogStage.setTitle("Checking Attendance");
+
+            // Set the scene
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            dialogStage.showAndWait();
+            System.out.println("Open Successfull");
+
+        }
+        catch (IOException e) {
+            System.out.println("Open Fail");
+            e.printStackTrace();
+        }
+    }
+
+
+    public void handleGoBack(MouseEvent mouseEvent) {
         try {
             // Load FXML của ViewChinh.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
             StackPane root = loader.load();
-
+            ChuyenViewController chuyenViewController = loader.getController();
+            chuyenViewController.setPermission(permissionId);
             // Lấy controller của ViewChinh
-            ChuyenViewController controller = loader.getController();
             // Gọi phương thức loadView của controller để hiển thị EventMainForm
 
-            FXMLLoader view = controller.loadView("/Admin/Event/EventForm/MainForm.fxml");
+            FXMLLoader view = chuyenViewController.loadView("/Admin/Event/EventForm/MainForm.fxml");
             Admin.Controller.Event.MainController mainController = view.getController();
             mainController.setPermissionId(permissionId);
             // Tạo một Scene mới từ StackPane
@@ -172,38 +200,4 @@ public class EventDetailController implements Initializable{
             // Xử lý nếu có lỗi khi chuyển đổi
         }
     }
-
-    @FXML
-    void GoCheckAttendance(MouseEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Admin/Event/EventForm/attendanceCheck.fxml"));
-            Parent page = fxmlLoader.load();
-            AttendaceController attendaceController = fxmlLoader.getController();
-            attendaceController.seteventId(object.getEventId());
-            // Create a new stage for the dialog
-            Stage dialogStage = new Stage();
-            dialogStage.initModality(Modality.APPLICATION_MODAL);
-            dialogStage.setTitle("Checking Attendance");
-
-            // Set the scene
-            Scene scene = new Scene(page);
-            dialogStage.setScene(scene);
-            dialogStage.setOnHiding(eventS -> {
-                // Call updateTableView() when the dialog is closed
-                handleGoBack(null);
-            });
-            dialogStage.setOnCloseRequest(events -> {
-                // Call the updateTableView() function
-                handleGoBack(null);
-            });
-            dialogStage.showAndWait();
-
-        }
-        catch (IOException e) {
-            System.out.println("Open Fail");
-            e.printStackTrace();
-        }
-    }
-
-
 }
