@@ -11,17 +11,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1110.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.Event.MainController">
+<AnchorPane minHeight="-Infinity" prefHeight="800.0" prefWidth="1110.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.Event.MainController">
    <children>
-      <AnchorPane fx:id="DashbaordForm" layoutX="67.0" layoutY="122.0" prefHeight="610.0" prefWidth="980.0">
+      <AnchorPane fx:id="DashbaordForm" layoutX="67.0" layoutY="119.0" prefHeight="610.0" prefWidth="980.0">
          <children>
-            <TableView fx:id="table" layoutY="64.0" onMouseClicked="#TblClickEvent" prefHeight="543.0" prefWidth="900.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/EventMainForm.css">
+            <TableView fx:id="table" layoutY="64.0" onMouseClicked="#TblClickEvent" prefHeight="543.0" prefWidth="980.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/EventMainForm.css">
                <columns>
                   <TableColumn fx:id="colName" prefWidth="218.40000915527344" text="Name" />
                   <TableColumn fx:id="colOrg" prefWidth="182.4000244140625" text="Organization" />
                   <TableColumn fx:id="colPlace" prefWidth="210.40008544921875" text="Place" />
                   <TableColumn fx:id="colNum" prefWidth="165.59991455078125" text="Number of attendace" />
-                  <TableColumn fx:id="colDeadline" prefWidth="132.0" text="Deadline" />
+                  <TableColumn fx:id="colDeadline" prefWidth="199.0" text="Deadline" />
                </columns>
             </TableView>
             <TextField fx:id="SearchField" onKeyTyped="#SearchTxtType" prefHeight="39.0" prefWidth="263.0" promptText="Search" style="-fx-background-radius: 9;" styleClass="label" stylesheets="@../CSS/EventMainForm.css">
@@ -57,9 +57,9 @@
             <ChoiceBox fx:id="FilterSort" layoutX="518.0" onMouseClicked="#GetFilterOrder" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="75.0" prefWidth="1110.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
+      <AnchorPane prefHeight="75.0" prefWidth="1110.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
          <children>
-            <Label layoutX="14.0" prefHeight="75.0" prefWidth="1110.0" text="Event">
+            <Label layoutX="11.0" prefHeight="75.0" prefWidth="1110.0" text="Event" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font size="24.0" />
                </font>

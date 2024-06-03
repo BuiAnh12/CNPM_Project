@@ -23,7 +23,7 @@
                   <Font size="96.0" />
                </font>
             </Text>
-            <Button fx:id="GoBackBtn" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="90.0" layoutY="691.0" mnemonicParsing="false" onMouseClicked="#handleGoBack" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #5c9ae9;" textAlignment="CENTER">
+            <Button fx:id="GoBackBtn" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="90.0" layoutY="691.0" mnemonicParsing="false" onAction="#handleGoBack" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #5c9ae9;" textAlignment="CENTER">
                <graphic>
                   <AnchorPane>
                      <children>
@@ -46,7 +46,7 @@
                   </AnchorPane>
                </graphic>
             </Button>
-            <Button fx:id="CheckingBtn" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="90.0" layoutY="623.0" mnemonicParsing="false" onAction="#handleGoBack" onMouseClicked="#GoCheckAttendance" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #5c9ae9;" textAlignment="CENTER">
+            <Button fx:id="CheckingBtn" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="90.0" layoutY="623.0" mnemonicParsing="false" onMouseClicked="#GoCheckAttendance" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #5c9ae9;" textAlignment="CENTER">
                <graphic>
                   <AnchorPane>
                      <children>

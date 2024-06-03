@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="-Infinity" prefHeight="800.0" prefWidth="1110.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.Student.MainController">
+<AnchorPane minHeight="-Infinity" prefHeight="800.0" prefWidth="1110.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.Student.MainController">
     <children>
         <AnchorPane fx:id="DashbaordForm" layoutX="67.0" layoutY="119.0" prefHeight="620.0" prefWidth="980.0">
             <children>
@@ -15,7 +21,7 @@
                         <TableColumn fx:id="idColumn" prefWidth="162.0" text="StudentID" />
                         <TableColumn fx:id="classColumn" prefWidth="147.0" text="Class" />
                         <TableColumn fx:id="phoneColumn" prefWidth="201.0" text="Phonenumber" />
-                        <TableColumn fx:id="dobColumn" prefWidth="201.0" text="DOB" />
+                        <TableColumn fx:id="dobColumn" prefWidth="205.60003662109375" text="DOB" />
                     </columns>
                 </TableView>
                 <TextField fx:id="SearchField" onKeyTyped="#SearchTxtType" prefHeight="39.0" prefWidth="263.0" promptText="Search" style="-fx-background-radius: 9;" styleClass="label" stylesheets="@../CSS/MainAdminForm.css">
@@ -57,7 +63,7 @@
         </AnchorPane>
       <AnchorPane prefHeight="75.0" prefWidth="1110.0" styleClass="grey-form" stylesheets="@../../Event/CSS/EventMainForm.css">
          <children>
-            <Label layoutX="14.0" prefHeight="75.0" prefWidth="108.0" text="Student">
+            <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="1110.0" text="Student" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font size="24.0" />
                </font>

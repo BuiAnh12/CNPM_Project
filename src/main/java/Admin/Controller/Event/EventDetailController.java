@@ -143,7 +143,7 @@ public class EventDetailController implements Initializable{
 
     }
     @FXML
-    void handleGoBack(ActionEvent event) {
+    void handleGoBack1(ActionEvent event) {
         try {
             // Load FXML của ViewChinh.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
@@ -176,7 +176,7 @@ public class EventDetailController implements Initializable{
     @FXML
     void GoCheckAttendance(MouseEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Admin/Event/EventForm/attendanceCheck.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/attendanceCheck.fxml"));
             Parent page = fxmlLoader.load();
             AttendaceController attendaceController = fxmlLoader.getController();
             attendaceController.seteventId(object.getEventId());
@@ -206,4 +206,34 @@ public class EventDetailController implements Initializable{
     }
 
 
+    public void handleGoBack(javafx.event.ActionEvent actionEvent) {
+
+        try {
+            // Load FXML của ViewChinh.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
+            StackPane root = loader.load();
+
+            // Lấy controller của ViewChinh
+            ChuyenViewController controller = loader.getController();
+            // Gọi phương thức loadView của controller để hiển thị EventMainForm
+
+            FXMLLoader view = controller.loadView("/Admin/Event/EventForm/MainForm.fxml");
+            Admin.Controller.Event.MainController mainController = view.getController();
+            mainController.setPermissionId(permissionId);
+            // Tạo một Scene mới từ StackPane
+            Scene scene = new Scene(root);
+
+            // Lấy Stage từ ActionEvent
+            Stage stage = (Stage) GoBackBtn.getScene().getWindow();
+
+            // Đặt Scene mới cho Stage
+            stage.setScene(scene);
+
+            // Hiển thị Stage
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Xử lý nếu có lỗi khi chuyển đổi
+        }
+    }
 }
