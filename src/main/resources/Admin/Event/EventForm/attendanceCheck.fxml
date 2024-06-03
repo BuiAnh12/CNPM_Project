@@ -37,6 +37,11 @@
                         <Font size="14.0" />
                     </font>
                 </Button>
+            <Button fx:id="ExportBtn" layoutX="648.0" mnemonicParsing="false" onAction="#ExportBtnClick" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9; -fx-background-color: #41CA2F;" styleClass="blue-form" stylesheets="@../CSS/EventMainForm.css" text="Export" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
       <AnchorPane prefHeight="75.0" prefWidth="1110.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
