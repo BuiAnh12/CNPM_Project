@@ -1,6 +1,7 @@
 package Admin.Controller.Event;
 
 import Admin.Controller.ChuyenViewController;
+import Admin.Controller.NewStaff.StaffDAO;
 import Admin.Model.Event.EventModel;
 import Admin.Model.Event.StudentEventModel;
 import Admin.Model.Staff.StaffModel;
@@ -120,6 +121,20 @@ public class EventDetailController implements Initializable{
         colStudentId.setCellValueFactory(new PropertyValueFactory<StudentEventModel, String>("studentId"));
         colClass.setCellValueFactory(new PropertyValueFactory<StudentEventModel, String>("studentClass"));
         StudentTable.setItems(FXCollections.observableArrayList(tableList));
+        StaffDAO staffDAO = new StaffDAO();
+        List<StaffModel> staffs = staffDAO.getAllStaffs("",1);
+        for (StaffModel staff : staffs){
+            if (staff.getId() == object.getCheckBy()){
+                txtCheckBy.setText(staff.getName());
+            }
+            if (staff.getId() == object.getCreateBy()){
+                txtCreateBy.setText(staff.getName());
+            }
+        }
+        if (txtCheckBy.getText().isEmpty()){
+            txtCheckBy.setText("None");
+        }
+
     }
 
 
@@ -157,16 +172,22 @@ public class EventDetailController implements Initializable{
             AttendaceController attendaceController = loader.getController();
             attendaceController.seteventId(object.getEventId());
             attendaceController.setUser(user);
-            // Create a new stage for the dialog
+
             Stage dialogStage = new Stage();
             dialogStage.initModality(Modality.APPLICATION_MODAL);
             dialogStage.setTitle("Checking Attendance");
 
-            // Set the scene
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+
+            dialogStage.setOnHidden(event -> {
+                System.out.println("Modal closed, refreshing...");
+                refresh();
+            });
+
+// Show the modal window and wait
             dialogStage.showAndWait();
-            System.out.println("Open Successfull");
+            System.out.println("Open Successful");
 
         }
         catch (IOException e) {
