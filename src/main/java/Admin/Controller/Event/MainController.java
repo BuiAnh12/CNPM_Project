@@ -222,8 +222,8 @@ public class MainController implements Initializable {
 
             // Get the controller and set necessary data
             InsertCotroller insertController = fxmlLoader.getController();
-            insertController.updateFields();
             insertController.setUser(this.getSetUser());
+            System.out.println("Userset: " + this.getSetUser());
 
             dialogStage.setOnHiding(eventS -> {
                 // Call updateTableView() when the dialog is closed

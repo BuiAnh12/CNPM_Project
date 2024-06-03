@@ -37,7 +37,7 @@ public class InsertCotroller {
     private TextField txtName;
 
     @FXML
-    private ComboBox<Organization> cmbOrganization;
+    private TextField txtOgranization;
 
     @FXML
     private DatePicker dateDeadline;
@@ -51,7 +51,6 @@ public class InsertCotroller {
 
     private int user;
 
-    List<Organization> organizationList = new ArrayList<Organization>();
     public int getUser() {
         return user;
     }
@@ -77,35 +76,6 @@ public class InsertCotroller {
         alert.showAndWait();
     }
 
-    public void updateFields() {
-        cmbOrganization.setConverter(new StringConverter<Organization>() {
-            @Override
-            public String toString(Organization organization) {
-                return organization.getName(); // Display organization name
-            }
-
-            @Override
-            public Organization fromString(String string) {
-                // Not needed for ComboBox
-                return null;
-            }
-        });
-        EventDAO dao = new EventDAO();
-        try {
-            organizationList = dao.getAllOrganizations();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        for (Organization organization : organizationList) {
-            cmbOrganization.getItems().add(organization);
-        }
-
-        // Optionally, set a default value for the ComboBox
-        if (!organizationList.isEmpty()) {
-            cmbOrganization.setValue(organizationList.getFirst()); // Set the first organization as default
-        }
-    }
 
     @FXML
     void AcceptClickBtn(MouseEvent event) {
@@ -129,7 +99,7 @@ public class InsertCotroller {
             showAlert("Lỗi", "Trường số lượng sinh viên tối đa đang trống");
             return;
         }
-        if (inputHandle.isNumber(txtMaxSlot.getText())){
+        if (!inputHandle.isNumber(txtMaxSlot.getText())){
             showAlert("Lỗi", "Trường số lượng slot tối đa không phải là số");
             return;
         }
@@ -141,7 +111,7 @@ public class InsertCotroller {
         }
         String name = txtName.getText();
         String place = txtPlace.getText();
-        int organizationId = cmbOrganization.getSelectionModel().getSelectedItem().getId();
+        String organizationId = txtOgranization.getText();
         int maxSlot = Integer.parseInt(txtMaxSlot.getText());
         String detail = txtDetail.getText();
 

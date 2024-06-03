@@ -164,7 +164,6 @@ public class MainController implements Initializable {
 
             // Get the controller and set necessary data
             InsertCotroller insertController = fxmlLoader.getController();
-            insertController.updateFields();
             insertController.setUser(this.getSetUser());
 
             dialogStage.setOnHiding(eventS -> {

@@ -143,9 +143,9 @@ public class AttendaceController implements Initializable {
     @FXML
     void SaveBtnClick(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirm Delete");
+        alert.setTitle("Confirm save");
         alert.setHeaderText(null);
-        alert.setContentText("Bạn có muốn xóa sự kiện này không?");
+        alert.setContentText("Bạn có muốn lưu điểm danh?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             ObservableList<RegistrationModel> items = mainTable.getItems();
@@ -244,7 +244,7 @@ public class AttendaceController implements Initializable {
         // Save the file
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Excel Files", "*.xlsx"));
-        fileChooser.setInitialFileName("registrations.xlsx");
+        fileChooser.setInitialFileName("diemdanhsukien_"+ eventId + ".xlsx");
         var file = fileChooser.showSaveDialog(mainTable.getScene().getWindow());
 
         if (file != null) {

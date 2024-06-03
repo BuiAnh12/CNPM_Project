@@ -51,7 +51,11 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <ComboBox fx:id="cmbOrganization" layoutY="40.0" prefHeight="40.0" prefWidth="220.0" />
+            <TextField fx:id="txtOgranization" layoutY="40.0" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: E4E4E4; -fx-background-radius: 9;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="60.0" layoutY="400.0" prefHeight="79.0" prefWidth="250.0">
@@ -110,21 +114,17 @@
       </AnchorPane>
       <AnchorPane layoutX="321.0" layoutY="300.0" prefHeight="80.0" prefWidth="250.0">
          <children>
-            <TextField fx:id="txtStatus" layoutY="39.0" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: E4E4E4; -fx-background-radius: 9;">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
             <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="200.00000000000023">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
+            <ComboBox fx:id="cmbStatus" layoutY="40.0" prefHeight="40.0" prefWidth="220.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="313.0" layoutY="400.0" prefHeight="80.0" prefWidth="250.0">
          <children>
-            <TextField fx:id="txtEnable" layoutY="39.0" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: E4E4E4; -fx-background-radius: 9;">
+            <TextField fx:id="txtEnable" editable="false" layoutY="39.0" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: E4E4E4; -fx-background-radius: 9;">
                <font>
                   <Font size="18.0" />
                </font>
