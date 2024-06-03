@@ -2,6 +2,7 @@ package Admin.Controller;
 
 
 
+import Admin.Model.Staff.StaffModel;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -29,11 +30,6 @@ public class ChuyenViewController {
        // loadUserDetail();
     }
 
-    private int permissionId = 0;
-
-    public void setPermission(int permission) {
-        this.permissionId = permission;
-    }
 
     @FXML
     private StackPane contentPane;
@@ -50,6 +46,15 @@ public class ChuyenViewController {
     @FXML
     private Button GoStudentForm;
 
+    private StaffModel loginStaff = new StaffModel();
+
+    public StaffModel getLoginStaff() {
+        return loginStaff;
+    }
+
+    public void setLoginStaff(StaffModel loginStaff) {
+        this.loginStaff = loginStaff;
+    }
 
     @FXML
     private void initialize() {
@@ -72,7 +77,7 @@ public class ChuyenViewController {
     public void loadInitialView() {
         FXMLLoader view = loadView("/Admin/Event/EventForm/MainForm.fxml");
         Admin.Controller.Event.MainController controller = view.getController();
-        controller.setPermissionId(permissionId);
+        controller.setSetUser(loginStaff);
     }
 
 
@@ -81,7 +86,7 @@ public class ChuyenViewController {
     void handleGoEventDetailsButtonAction(ActionEvent event) {
         FXMLLoader view = loadView("/Admin/Event/EventForm/MainForm.fxml");
         Admin.Controller.Event.MainController controller = view.getController();
-        controller.setPermissionId(permissionId);
+        controller.setSetUser(loginStaff);
     }
 
     @FXML
@@ -112,7 +117,7 @@ public class ChuyenViewController {
     @FXML
     void handleGoStaffButtonAction(ActionEvent event) {
         try{
-            if (permissionId != 1){
+            if (loginStaff.getPermissionId() != 1){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Phân quyền");
                 alert.setHeaderText(null);
@@ -134,7 +139,7 @@ public class ChuyenViewController {
 
     @FXML
     void handleGoStudentButtonAction(ActionEvent event) {
-        if (permissionId != 1 && permissionId != 2){
+        if (loginStaff.getPermissionId()  != 1 && loginStaff.getPermissionId()  != 2){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Phân quyền");
             alert.setHeaderText(null);
@@ -144,7 +149,7 @@ public class ChuyenViewController {
         }
         FXMLLoader view = loadView("/Admin/Student/StudentForm/MainForm.fxml");
         Admin.Controller.Student.MainController mainController = view.getController();
-        mainController.setPermissionId(permissionId);
+        mainController.setPermissionId(loginStaff.getPermissionId() );
     }
 
     public FXMLLoader loadView(String fxmlFile) {

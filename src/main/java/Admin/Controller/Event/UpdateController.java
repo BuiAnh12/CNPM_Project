@@ -2,6 +2,7 @@ package Admin.Controller.Event;
 
 import Admin.Model.Event.EventModel;
 import Admin.Model.Event.Organization;
+import Admin.Model.Staff.StaffModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -52,26 +53,25 @@ public class UpdateController {
     private TextField txtName;
 
     @FXML
-    private ComboBox<Organization> cmbOrganization;
+    private TextField txtOgranization;
 
     @FXML
     private TextField txtPlace;
 
-    private int user;
+    private StaffModel user;
 
     @FXML
-    private TextField txtStatus;
+    private ComboBox<String> cmbStatus;
 
     @FXML
     private TextField txtEnable;
 
-    List<Organization> organizationList = new ArrayList<Organization>();
 
-    public int getUser() {
+    public StaffModel getUser() {
         return user;
     }
 
-    public void setUser(int user) {
+    public void setUser(StaffModel user) {
         this.user = user;
     }
 
@@ -89,45 +89,15 @@ public class UpdateController {
             txtDetail.setText(object.getDetail());
             txtMaxSlot.setText(String.valueOf(object.getMaxSlot()));
             txtName.setText(object.getEventName());
-            cmbOrganization.setConverter(new StringConverter<Organization>() {
-                @Override
-                public String toString(Organization organization) {
-                    return organization.getName(); // Display organization name
-                }
-
-                @Override
-                public Organization fromString(String string) {
-                    // Not needed for ComboBox
-                    return null;
-                }
-            });
-            EventDAO dao = new EventDAO();
-            try {
-                organizationList = dao.getAllOrganizations();
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-            for (Organization organization : organizationList) {
-                cmbOrganization.getItems().add(organization);
-            }
-
-            // Optionally, set a default value for the ComboBox
-            if (!organizationList.isEmpty()) {
-                String organizationName = object.getOrganizationName();
-
-                // Find the Organization object with the specified name
-                Organization selectedOrganization = organizationList.stream()
-                        .filter(org -> org.getName().equals(organizationName))
-                        .findFirst()
-                        .orElse(null);
-
-                // Set the selected Organization as the value of the ComboBox
-                cmbOrganization.setValue(selectedOrganization);
-
-            }
+            txtOgranization.setText(object.getOrganizationName());
             txtPlace.setText(object.getPlace());
-            txtStatus.setText(Boolean.toString(object.isStatus()));
+            cmbStatus.getItems().addAll("Mở", "Đã hủy");
+            if (object.isStatus()){
+                cmbStatus.setValue("Mở");
+            }
+            else {
+                cmbStatus.setValue("Đã hủy");
+            }
             txtEnable.setText("Enable");
         }
     }
@@ -155,7 +125,7 @@ public class UpdateController {
             showAlert("Lỗi", "Trường số lượng sinh viên tối đa đang trống");
             return;
         }
-        if (inputHandle.isNumber(txtMaxSlot.getText())){
+        if (!inputHandle.isNumber(txtMaxSlot.getText())){
             showAlert("Lỗi", "Trường số lượng slot tối đa không phải là số");
             return;
         }
@@ -167,10 +137,13 @@ public class UpdateController {
         }
         String name = txtName.getText();
         String place = txtPlace.getText();
-        int organizationId = cmbOrganization.getSelectionModel().getSelectedItem().getId();
+        String organizationName = txtOgranization.getText();
         int maxSlot = Integer.parseInt(txtMaxSlot.getText());
         String detail = txtDetail.getText();
-        boolean status = Boolean.parseBoolean(txtStatus.getText());
+        boolean status = false;
+        if (cmbStatus.getValue().equals("Mở")){
+            status = true;
+        }
         String text = txtEnable.getText();
         boolean enable;
 
@@ -184,7 +157,7 @@ public class UpdateController {
 
         // Call the insertEvent method
         EventDAO eventDAO = new EventDAO();
-        boolean success = eventDAO.insertOrUpdateEvent(object.getEventId(), name, occurDate, place, organizationId, maxSlot, deadline, detail,status, enable,user, null);
+        boolean success = eventDAO.insertOrUpdateEvent(object.getEventId(), name, occurDate, place, organizationName, maxSlot, deadline, detail,status, enable,user.getId(), object.getCheckBy());
         if (success) {
             try {
                 // Get the stage of the current AnchorPane

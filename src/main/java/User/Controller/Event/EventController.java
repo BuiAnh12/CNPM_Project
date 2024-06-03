@@ -1,5 +1,6 @@
 package User.Controller.Event;
 
+import Admin.Model.Student.StudentModel;
 import User.Controller.Event.MainController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,13 +14,13 @@ import java.util.ResourceBundle;
 
 public class EventController implements Initializable {
 
-    private int user;
+    private StudentModel user;
 
-    public int getUser() {
+    public StudentModel getUser() {
         return user;
     }
 
-    public void setUser(int user) {
+    public void setUser(StudentModel user) {
         this.user = user;
     }
 
@@ -34,10 +35,7 @@ public class EventController implements Initializable {
 
             // Get the controller after loading
             MainController controller = fxmlLoader.getController();
-
-            // Now set the user
-            controller.setSetUser(1);
-
+            controller.setSetUser(user);
             // Add the loaded page to the container
             Containner.getChildren().add(page);
 

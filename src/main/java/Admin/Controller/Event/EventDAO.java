@@ -87,7 +87,7 @@ public class EventDAO {
                         // Retrieve data from the result set and create Event objects
 
                         String fullname = rs.getString("Fullname");
-                        String className = rs.getString("Name");
+                        String className = rs.getString("ClassId");
                         String studentId = rs.getString("StudentId");
 
 
@@ -105,14 +105,14 @@ public class EventDAO {
         }
     }
 
-    public boolean insertOrUpdateEvent(Integer eventId, String name, LocalDate occurDate, String place, int organizationId, int maxSlot, LocalDate deadline, String detail, boolean status, boolean enable, Integer createBy, Integer checkBy) {
+    public boolean insertOrUpdateEvent(Integer eventId, String name, LocalDate occurDate, String place, String organizationName, int maxSlot, LocalDate deadline, String detail, boolean status, boolean enable, Integer createBy, Integer checkBy) {
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
             try (CallableStatement cs = connection.prepareCall("{call sp_upsertEvent(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}")) {
                 cs.setObject(1, eventId, java.sql.Types.INTEGER);; // Pass eventId as the first parameter
                 cs.setString(2, name);
                 cs.setDate(3, java.sql.Date.valueOf(occurDate));
                 cs.setString(4, place);
-                cs.setInt(5, organizationId);
+                cs.setString(5, organizationName);
                 cs.setInt(6, maxSlot);
                 cs.setDate(7, java.sql.Date.valueOf(deadline));
                 cs.setString(8, detail);
@@ -134,40 +134,40 @@ public class EventDAO {
     }
 
 
-    public List<Organization> getAllOrganizations() {
-        List<Organization> organizations = new ArrayList<>();
+//    public List<Organization> getAllOrganizations() {
+//        List<Organization> organizations = new ArrayList<>();
+//
+//        try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword);
+//             CallableStatement statement = connection.prepareCall("{call sp_getAllOrganization()}")) {
+//
+//            // Execute the stored procedure
+//            ResultSet resultSet = statement.executeQuery();
+//
+//            // Process the result set
+//            while (resultSet.next()) {
+//                int id = resultSet.getInt("OrganizationId");
+//                String name = resultSet.getString("Name");
+//                String detail = resultSet.getString("Detail");
+//                Organization organization = new Organization(id, name,detail);
+//                organizations.add(organization);
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            // Handle exceptions appropriately
+//            throw new RuntimeException(e);
+//        }
+//
+//        return organizations;
+//    }
 
-        try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword);
-             CallableStatement statement = connection.prepareCall("{call sp_getAllOrganization()}")) {
-
-            // Execute the stored procedure
-            ResultSet resultSet = statement.executeQuery();
-
-            // Process the result set
-            while (resultSet.next()) {
-                int id = resultSet.getInt("OrganizationId");
-                String name = resultSet.getString("Name");
-                String detail = resultSet.getString("Detail");
-                Organization organization = new Organization(id, name,detail);
-                organizations.add(organization);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            // Handle exceptions appropriately
-            throw new RuntimeException(e);
-        }
-
-        return organizations;
-    }
-
-    public boolean updateEvent(int id, String name, LocalDate occurDate, String place, int organizationId, int maxSlot, LocalDate deadline, String detail) {
+    public boolean updateEvent(int id, String name, LocalDate occurDate, String place, String organizationName, int maxSlot, LocalDate deadline, String detail) {
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
             try (CallableStatement cs = connection.prepareCall("{call sp_updateEvent(?,?, ?, ?, ?, ?, ?, ?)}")) {
                 cs.setInt(1,id);
                 cs.setString(2, name);
                 cs.setDate(3, java.sql.Date.valueOf(occurDate));
                 cs.setString(4, place);
-                cs.setInt(5, organizationId);
+                cs.setString(5, organizationName);
                 cs.setInt(6, maxSlot);
                 cs.setDate(7, java.sql.Date.valueOf(deadline));
                 cs.setString(8, detail);

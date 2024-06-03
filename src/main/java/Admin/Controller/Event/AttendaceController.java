@@ -1,7 +1,8 @@
 package Admin.Controller.Event;
 
 import Admin.Model.Event.RegistrationModel;
-import Admin.Model.Event.StudentEventModel;
+
+import Admin.Model.Staff.StaffModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,7 +14,24 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Callback;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.stage.FileChooser;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Font;
+
+
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
@@ -61,6 +79,17 @@ public class AttendaceController implements Initializable {
 
     public void seteventId(int eventId) {
         this.eventId = eventId;
+        loadData(eventId,"");
+    }
+
+    private StaffModel user;
+
+    public StaffModel getUser() {
+        return user;
+    }
+
+    public void setUser(StaffModel user) {
+        this.user = user;
     }
 
     @Override
@@ -109,8 +138,6 @@ public class AttendaceController implements Initializable {
             }
         });
 
-        loadData(eventId,"");
-
     }
 
     void loadData(int eventId, String searchTxt){
@@ -127,23 +154,118 @@ public class AttendaceController implements Initializable {
     @FXML
     void SaveBtnClick(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirm Delete");
+        alert.setTitle("Confirm save");
         alert.setHeaderText(null);
-        alert.setContentText("Bạn có muốn xóa sự kiện này không?");
+        alert.setContentText("Bạn có muốn lưu điểm danh?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             ObservableList<RegistrationModel> items = mainTable.getItems();
             // Loop through the items
             for (RegistrationModel item : items) {
                 if (item.isStatus()){
-                    registrationDAO.isAttend(eventId,item.getStudentId());
+                    registrationDAO.isAttend(eventId,item.getStudentId(), user.getId());
                 }
                 else{
-                    registrationDAO.isNotAttend(eventId,item.getStudentId());
+                    registrationDAO.isNotAttend(eventId,item.getStudentId(), user.getId());
                 }
             }
         }
 
+    }
+
+    @FXML
+    void ExportBtnClick(ActionEvent event) {
+        exportToExcel();
+    }
+
+    public void exportToExcel() {
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Registrations");
+
+        // Create a bold font style for the header
+        Font headerFont = workbook.createFont();
+        headerFont.setBold(true);
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+        headerCellStyle.setBorderBottom(BorderStyle.THIN);
+        headerCellStyle.setBorderTop(BorderStyle.THIN);
+        headerCellStyle.setBorderLeft(BorderStyle.THIN);
+        headerCellStyle.setBorderRight(BorderStyle.THIN);
+
+        // Create a cell style for the phone numbers
+        CellStyle phoneCellStyle = workbook.createCellStyle();
+        phoneCellStyle.setDataFormat(workbook.createDataFormat().getFormat("@"));
+        phoneCellStyle.setBorderBottom(BorderStyle.THIN);
+        phoneCellStyle.setBorderTop(BorderStyle.THIN);
+        phoneCellStyle.setBorderLeft(BorderStyle.THIN);
+        phoneCellStyle.setBorderRight(BorderStyle.THIN);
+
+        // Create a default cell style with borders
+        CellStyle defaultCellStyle = workbook.createCellStyle();
+        defaultCellStyle.setBorderBottom(BorderStyle.THIN);
+        defaultCellStyle.setBorderTop(BorderStyle.THIN);
+        defaultCellStyle.setBorderLeft(BorderStyle.THIN);
+        defaultCellStyle.setBorderRight(BorderStyle.THIN);
+
+        // Create header row
+        Row headerRow = sheet.createRow(0);
+        for (int i = 0; i < mainTable.getColumns().size(); i++) {
+            var cell = headerRow.createCell(i);
+            cell.setCellValue(mainTable.getColumns().get(i).getText());
+            cell.setCellStyle(headerCellStyle);
+        }
+
+        // Create data rows
+        ObservableList<RegistrationModel> items = mainTable.getItems();
+        for (int i = 0; i < items.size(); i++) {
+            Row row = sheet.createRow(i + 1);
+            RegistrationModel item = items.get(i);
+            for (int j = 0; j < mainTable.getColumns().size(); j++) {
+                TableColumn<RegistrationModel, ?> column = mainTable.getColumns().get(j);
+                Object cellValue = column.getCellData(item);
+                Cell cell = row.createCell(j);
+                if (cellValue != null) {
+                    if (cellValue instanceof Boolean) {
+                        // Assuming the column with CheckBox uses Boolean type
+                        cell.setCellValue((Boolean) cellValue ? "Checked" : "Unchecked");
+                    } else if (cellValue instanceof CheckBox) {
+                        // In case a CheckBox object is directly used (not typical)
+                        cell.setCellValue(((CheckBox) cellValue).isSelected() ? "Checked" : "Unchecked");
+                    } else if (column.getText().equalsIgnoreCase("Phone Number")) {
+                        // Apply phone number style
+                        cell.setCellValue(cellValue.toString());
+                        cell.setCellStyle(phoneCellStyle);
+                    } else {
+                        cell.setCellValue(cellValue.toString());
+                    }
+                }
+                if (column.getText().equalsIgnoreCase("Phone Number")) {
+                    cell.setCellStyle(phoneCellStyle);
+                } else {
+                    cell.setCellStyle(defaultCellStyle);
+                }
+            }
+        }
+
+        // Auto-size all columns to fit the content
+        for (int i = 0; i < mainTable.getColumns().size(); i++) {
+            sheet.autoSizeColumn(i);
+        }
+
+        // Save the file
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Excel Files", "*.xlsx"));
+        fileChooser.setInitialFileName("diemdanhsukien_"+ eventId + ".xlsx");
+        var file = fileChooser.showSaveDialog(mainTable.getScene().getWindow());
+
+        if (file != null) {
+            try (FileOutputStream fileOut = new FileOutputStream(file)) {
+                workbook.write(fileOut);
+                workbook.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML

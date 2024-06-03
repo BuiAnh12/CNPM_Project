@@ -3,6 +3,7 @@ package User.Controller.Event;
 import Admin.Controller.Event.EventDAO;
 import Admin.Model.Event.EventModel;
 import Admin.Model.Event.StudentEventModel;
+import Admin.Model.Student.StudentModel;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -73,18 +74,19 @@ public class EventDetailController {
     @FXML
     private TextField txtTime;
 
-    private String user = "S12345678";
+    private StudentModel user = new StudentModel();
 
-    public String getUser() {
+    public StudentModel getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(StudentModel user) {
         this.user = user;
     }
 
     @FXML
     void registerBtnClickEvent(MouseEvent event) {
+        System.out.println("User: " + this.user);
         LocalDate today = LocalDate.now();
 
         if (Integer.parseInt(txtAvailableSlot.getText()) <= 0){
@@ -105,7 +107,7 @@ public class EventDetailController {
         }
         else{
             EventDAO eventDAO = new EventDAO();
-            boolean registrationSuccessful = eventDAO.insertRegistration(today, object.getEventId(), user);
+            boolean registrationSuccessful = eventDAO.insertRegistration(today, object.getEventId(), user.getStudentId());
 
             if (registrationSuccessful) {
                 System.out.println("Registration successful.");
@@ -123,10 +125,11 @@ public class EventDetailController {
 
     @FXML
     void unregisterBtnClickEvent(MouseEvent event) {
+        System.out.println("User: " + this.user);
         // Assuming you have access to the eventId and studentId variables
         LocalDate today = LocalDate.now();
         int eventId = object.getEventId();
-        String studentId = user; // Example student ID
+        String studentId = user.getStudentId(); // Example student ID
         if (object.getDeadline().compareTo(today) < 0){
             System.out.println("Out of ReDate");
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -190,7 +193,7 @@ public class EventDetailController {
         boolean isRegister = false;
         for (StudentEventModel element : tableList) {
             System.out.println("Element StudentId: " + element.getStudentId() + ", User: " + user);
-            if (element.getStudentId().trim().equals(user.trim())) { // Trim whitespace before comparison
+            if (element.getStudentId().trim().equals(user.getStudentId().trim())) { // Trim whitespace before comparison
                 isRegister = true;
                 break;
             }

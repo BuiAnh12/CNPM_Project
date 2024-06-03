@@ -16,7 +16,7 @@ public class EventModel {
 
     private int checkBy =  -1;
 
-    private int createBy;
+    private int createBy = - 1;
 
 
     public boolean isStatus() {

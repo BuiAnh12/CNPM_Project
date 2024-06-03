@@ -1,5 +1,6 @@
 package User.Controller.Event;
 
+import Admin.Model.Student.StudentModel;
 import User.Controller.Event.UserDetail.UserDetailController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,7 +21,16 @@ public class ChuyenViewControllerUser {
 
     public void setUsername(String username) {
         this.username = username;
-        loadUserDetail();
+    }
+
+    private StudentModel user = new StudentModel();
+
+    public StudentModel getUser() {
+        return user;
+    }
+
+    public void setUser(StudentModel user) {
+        this.user = user;
     }
 
     @FXML
@@ -33,7 +43,11 @@ public class ChuyenViewControllerUser {
     private StackPane contentPane;
     @FXML
     void handleGoStudentButtonAction(ActionEvent event) {
-        loadViewUser("/User/Event/EventForm/MainForm.fxml");
+        System.out.println("Main user: " + user);
+        FXMLLoader loader = loadViewUser("/User/Event/EventForm/MainForm.fxml");
+        MainController controller =  loader.getController();
+        controller.setSetUser(user);
+
     }
 
 //    public FXMLLoader loadView(String fxmlFile) {
@@ -48,16 +62,17 @@ public class ChuyenViewControllerUser {
 //        }
 //    }
 
-    private void loadUserDetail() {
+    public void loadUserDetail() {
         if (username != null) {
             try {
+                System.out.println("Main user: "+ user);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/Event/UserDetail.fxml"));
                 Parent userDetailRoot = loader.load();
 
                 // Lấy controller của UserDetail.fxml sau khi nó được tải
                 UserDetailController userDetailController = loader.getController();
                 userDetailController.setUsernameUser(username); // Truyền username vào UserDetailController
-
+                userDetailController.setUser(user);
                 // Thêm UserDetail vào contentPane hoặc pane cần thiết
                 contentPane.getChildren().add(userDetailRoot);
             } catch (IOException e) {

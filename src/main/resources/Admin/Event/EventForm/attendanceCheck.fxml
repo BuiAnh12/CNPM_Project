@@ -12,7 +12,7 @@
     <children>
         <AnchorPane fx:id="DashbaordForm" layoutX="67.0" layoutY="119.0" prefHeight="620.0" prefWidth="980.0">
             <children>
-                <TableView fx:id="mainTable" layoutY="64.0" onMouseClicked="#TblClickEvent" prefHeight="543.0" prefWidth="967.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/MainAdminForm.css">
+                <TableView fx:id="mainTable" layoutY="64.0" onMouseClicked="#TblClickEvent" prefHeight="543.0" prefWidth="967.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/EventMainForm.css">
                     <columns>
                         <TableColumn fx:id="nameColumn" prefWidth="251.2000274658203" text="Name" />
                         <TableColumn fx:id="idColumn" prefWidth="173.60003662109375" text="StudentID" />
@@ -22,21 +22,26 @@
                   <TableColumn fx:id="attendaceColumn" prefWidth="108.79998779296875" style="fx-alignment: center;" text="Attendance" />
                     </columns>
                 </TableView>
-                <TextField fx:id="SearchField" onKeyTyped="#SearchTxtType" prefHeight="40.0" prefWidth="483.0" promptText="Search by name" style="-fx-background-radius: 9;" styleClass="label" stylesheets="@../CSS/MainAdminForm.css">
+                <TextField fx:id="SearchField" onKeyTyped="#SearchTxtType" prefHeight="40.0" prefWidth="483.0" promptText="Search by name" style="-fx-background-radius: 9;" styleClass="label" stylesheets="@../CSS/EventMainForm.css">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </TextField>
-                <Button fx:id="saveBtn" layoutX="764.0" mnemonicParsing="false" onAction="#SaveBtnClick" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9; -fx-background-color: #41CA2F;" styleClass=".green-form" stylesheets="@../CSS/MainAdminForm.css" text="Save" textFill="WHITE">
+                <Button fx:id="saveBtn" layoutX="764.0" mnemonicParsing="false" onAction="#SaveBtnClick" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9; -fx-background-color: #41CA2F;" styleClass=".green-form" stylesheets="@../CSS/EventMainForm.css" text="Save" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
-                <Button fx:id="revertBtn" layoutX="875.0" mnemonicParsing="false" onAction="#RevertBtnClick" onMouseClicked="#EditBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9; -fx-background-color: #2FBACA;" styleClass="blue-form" stylesheets="@../CSS/MainAdminForm.css" text="Revert" textFill="WHITE">
+                <Button fx:id="revertBtn" layoutX="875.0" mnemonicParsing="false" onAction="#RevertBtnClick" onMouseClicked="#EditBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9; -fx-background-color: #2FBACA;" styleClass="blue-form" stylesheets="@../CSS/EventMainForm.css" text="Revert" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
+            <Button fx:id="ExportBtn" layoutX="648.0" mnemonicParsing="false" onAction="#ExportBtnClick" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9; -fx-background-color: #41CA2F;" styleClass="blue-form" stylesheets="@../CSS/EventMainForm.css" text="Export" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
       <AnchorPane prefHeight="75.0" prefWidth="1110.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">

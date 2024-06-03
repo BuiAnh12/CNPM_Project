@@ -1,5 +1,6 @@
 package User.Controller.Event;
 
+import Admin.Model.Student.StudentModel;
 import User.Controller.Event.EventDAO;
 import User.Controller.Event.EventDetailController;
 import Admin.Controller.Event.InsertCotroller;
@@ -62,13 +63,13 @@ public class MainController implements Initializable {
     @FXML
     private TableView<EventModel> table;
 
-    private int setUser = 1;
+    private StudentModel setUser = new StudentModel();
 
-    public int getSetUser() {
+    public StudentModel getSetUser() {
         return setUser;
     }
 
-    public void setSetUser(int setUser) {
+    public void setSetUser(StudentModel setUser) {
         this.setUser = setUser;
     }
 
@@ -118,7 +119,6 @@ public class MainController implements Initializable {
             UpdateController updateController = fxmlLoader.getController();
             updateController.setObject(table.getSelectionModel().getSelectedItem());
             updateController.updateFields();
-            updateController.setUser(this.getSetUser());
             dialogStage.setOnHiding(eventS -> {
                 // Call updateTableView() when the dialog is closed
                 updateTableView();
@@ -164,8 +164,6 @@ public class MainController implements Initializable {
 
             // Get the controller and set necessary data
             InsertCotroller insertController = fxmlLoader.getController();
-            insertController.updateFields();
-            insertController.setUser(this.getSetUser());
 
             dialogStage.setOnHiding(eventS -> {
                 // Call updateTableView() when the dialog is closed
@@ -224,7 +222,7 @@ public class MainController implements Initializable {
 
             EventDetailController eventDetailController = fxmlLoader.getController();
             eventDetailController.setPreviousStage(currentScene);
-
+            eventDetailController.setUser(setUser);
             // Set the id for function to show
             eventDetailController.setObject(object);
             eventDetailController.refresh();

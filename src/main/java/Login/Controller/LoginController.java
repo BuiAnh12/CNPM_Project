@@ -1,5 +1,7 @@
 package Login.Controller;
 import Admin.Controller.ChuyenViewController;
+import Admin.Model.Staff.StaffModel;
+import Admin.Model.Student.StudentModel;
 import Login.Model.CheckLoginDAO;
 import User.Controller.Event.ChuyenViewControllerUser;
 import javafx.event.ActionEvent;
@@ -49,13 +51,16 @@ public class LoginController {
             alert.showAndWait();
 
             try {
+                StudentModel loginUser = checkLoginDAO.getLoginStudent(username);
+                System.out.println("Login user: "+loginUser);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/ViewChinh.fxml"));
                 Parent root = loader.load();
 
                 // Lấy controller từ loader
                 ChuyenViewControllerUser chuyenViewControllerUser = loader.getController();
                 chuyenViewControllerUser.setUsername(username);
-
+                chuyenViewControllerUser.setUser(loginUser);
+                chuyenViewControllerUser.loadUserDetail();
                 // Hiển thị ViewChinh
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) si_loginForm.getScene().getWindow();
@@ -75,17 +80,18 @@ public class LoginController {
             alert.setContentText("Staff đăng nhập thành công!");
             alert.showAndWait();
             try {
-                Integer permissionID = checkLoginDAO.getPermissionIDForStaff(username);
+                StaffModel loginUser = checkLoginDAO.getLoginStaff(username);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
                 Parent root = loader.load();
 
                 // Lấy controller từ loader
                 ChuyenViewController chuyenViewController = loader.getController();
                 chuyenViewController.setUsername(username);
-                chuyenViewController.setPermission(permissionID);
+                chuyenViewController.setLoginStaff(loginUser);
                 chuyenViewController.loadInitialView();
                 System.out.println("User: " + username);
-                System.out.println("Permission: " + permissionID);
+                System.out.println("Permission: " + loginUser.getPermissionId());
+                System.out.println("Staff: " + loginUser);
                 // Hiển thị ViewChinh
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) si_loginForm.getScene().getWindow();

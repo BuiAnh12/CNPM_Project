@@ -1,6 +1,7 @@
 package Admin.Controller.Event;
 
 import Admin.Model.Event.Organization;
+import Admin.Model.Staff.StaffModel;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,7 +38,7 @@ public class InsertCotroller {
     private TextField txtName;
 
     @FXML
-    private ComboBox<Organization> cmbOrganization;
+    private TextField txtOgranization;
 
     @FXML
     private DatePicker dateDeadline;
@@ -49,25 +50,16 @@ public class InsertCotroller {
     private TextField txtPlace;
     private InputHandle inputHandle = new InputHandle();
 
-    private int user;
+    private StaffModel user;
 
-    List<Organization> organizationList = new ArrayList<Organization>();
-    public int getUser() {
+    public StaffModel getUser() {
         return user;
     }
 
-    public void setUser(int user) {
+    public void setUser(StaffModel user) {
         this.user = user;
     }
 
-    public Scene getPreviousScene() {
-        return previousScene;
-    }
-
-    public void setPreviousScene(Scene previousScene) {
-        this.previousScene = previousScene;
-        System.out.println(previousScene);
-    }
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -77,35 +69,6 @@ public class InsertCotroller {
         alert.showAndWait();
     }
 
-    public void updateFields() {
-        cmbOrganization.setConverter(new StringConverter<Organization>() {
-            @Override
-            public String toString(Organization organization) {
-                return organization.getName(); // Display organization name
-            }
-
-            @Override
-            public Organization fromString(String string) {
-                // Not needed for ComboBox
-                return null;
-            }
-        });
-        EventDAO dao = new EventDAO();
-        try {
-            organizationList = dao.getAllOrganizations();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        for (Organization organization : organizationList) {
-            cmbOrganization.getItems().add(organization);
-        }
-
-        // Optionally, set a default value for the ComboBox
-        if (!organizationList.isEmpty()) {
-            cmbOrganization.setValue(organizationList.getFirst()); // Set the first organization as default
-        }
-    }
 
     @FXML
     void AcceptClickBtn(MouseEvent event) {
@@ -129,7 +92,7 @@ public class InsertCotroller {
             showAlert("Lỗi", "Trường số lượng sinh viên tối đa đang trống");
             return;
         }
-        if (inputHandle.isNumber(txtMaxSlot.getText())){
+        if (!inputHandle.isNumber(txtMaxSlot.getText())){
             showAlert("Lỗi", "Trường số lượng slot tối đa không phải là số");
             return;
         }
@@ -141,12 +104,12 @@ public class InsertCotroller {
         }
         String name = txtName.getText();
         String place = txtPlace.getText();
-        int organizationId = cmbOrganization.getSelectionModel().getSelectedItem().getId();
+        String organizationId = txtOgranization.getText();
         int maxSlot = Integer.parseInt(txtMaxSlot.getText());
         String detail = txtDetail.getText();
 
         EventDAO eventDAO = new EventDAO();
-        boolean success = eventDAO.insertOrUpdateEvent(null, name, occurDate, place, organizationId, maxSlot, deadline, detail, true, true, this.user, null);
+        boolean success = eventDAO.insertOrUpdateEvent(null, name, occurDate, place, organizationId, maxSlot, deadline, detail, true, true, this.user.getId(), null);
 
         if (success) {
             try {

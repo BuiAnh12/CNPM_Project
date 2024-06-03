@@ -14,8 +14,8 @@ public class StudentModel {
     private String username; // Thêm trường username
 
     // Constructors
-    public StudentModel(String studentId, String fullname, String className) {
-        // Default constructor
+    public StudentModel() {
+
     }
 
     public StudentModel(String studentId, String username, int classId) {
