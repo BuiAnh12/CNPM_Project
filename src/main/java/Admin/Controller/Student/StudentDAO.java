@@ -168,7 +168,7 @@ public class StudentDAO {
 //        }
 //    }
 
-    public void insertStudentWithAccount(String username, String password, String fullName, LocalDate dateOfBirth, String phoneNumber, String studentId, Integer studentClass) throws SQLException {
+    public void insertStudentWithAccount(String username, String password, String fullName, LocalDate dateOfBirth, String phoneNumber, String studentId, String studentClass) throws SQLException {
         Connection conn = null;
         CallableStatement statement = null;
 
@@ -182,7 +182,7 @@ public class StudentDAO {
             statement.setDate(4, Date.valueOf(dateOfBirth));
             statement.setString(5, phoneNumber);
             statement.setString(6, studentId);
-            statement.setInt(7, studentClass);
+            statement.setString(7, studentClass);
             statement.execute();
         } finally {
             // Close all resources
@@ -196,7 +196,7 @@ public class StudentDAO {
     }
 
 
-    public void updateStudent(String studentId, int classId, String phoneNumber, LocalDate dob, boolean enable, String fullName, String username, String password) {
+    public void updateStudent(String studentId, String classId, String phoneNumber, LocalDate dob, boolean enable, String fullName, String username, String password) {
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
             try (CallableStatement cs = connection.prepareCall("{call UpdateStudentAndAccount(?, ?, ?, ?, ?, ?, ?)}")) {
                 cs.setString(1, studentId);
@@ -205,7 +205,7 @@ public class StudentDAO {
                 cs.setString(4, phoneNumber);
                 cs.setString(5, username);
                 cs.setString(6, password);
-                cs.setInt(7, classId);
+                cs.setString(7, classId);
 
 
 

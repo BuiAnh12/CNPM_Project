@@ -76,8 +76,7 @@ public class InsertController {
             LocalDate dateOfBirth = txtDateOfBirth.getValue();
             String phoneNumber = txtPhoneNumber.getText();
             String studentId = txtStudentId.getText();
-            Integer studentClass = Integer.
-                    parseInt(txtClass.getText());
+            String studentClass =txtClass.getText();
 
             if (username.isEmpty() || password.isEmpty() || fullName.isEmpty() || dateOfBirth == null ||
                     phoneNumber.isEmpty() || studentId.isEmpty() || txtClass.getText().isEmpty()) {

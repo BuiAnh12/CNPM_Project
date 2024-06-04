@@ -76,7 +76,7 @@ public class UpdateController implements Initializable {
 
     public void updateFields(StudentModel object) {
         if (object != null) {
-            txtClass.setText(String.valueOf(object.getClassId()));
+            txtClass.setText(object.getClassId());
             txtDateOfBirth.setValue(object.getDob());
             txtFullName.setText(object.getFullName());
             txtPassword.setText(object.getPassword());
@@ -100,7 +100,7 @@ public class UpdateController implements Initializable {
         try {
             // Lấy dữ liệu mới từ các trường nhập liệu
             String studentId = txtStudentId.getText();
-            Integer studentClass = Integer.parseInt(txtClass.getText());
+            String studentClass = txtClass.getText();
             String phoneNumber = txtPhoneNumber.getText();
             LocalDate dob = txtDateOfBirth.getValue();
             String fullName = txtFullName.getText();
