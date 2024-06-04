@@ -111,6 +111,7 @@ public class MainController implements Initializable {
             else{
                 System.out.println("Xóa thất bại!");
             }
+            updateTableView();
         }
 
 
@@ -160,6 +161,7 @@ public class MainController implements Initializable {
             });
             // Show the dialog
             dialogStage.showAndWait();
+            updateTableView();
 
         } catch (IOException e) {
             System.out.println("Open Fail");
@@ -219,6 +221,7 @@ public class MainController implements Initializable {
 
             // Show the dialog
             dialogStage.showAndWait();
+            updateTableView();
 
         } catch (IOException e) {
             System.out.println("Open Fail");

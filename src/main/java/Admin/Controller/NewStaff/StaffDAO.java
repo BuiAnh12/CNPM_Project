@@ -75,8 +75,8 @@ public class StaffDAO {
                 } else {
                     cs.setNull(7, Types.DATE); // Handle null date of birth
                 }
-                cs.setInt(8, staff.getAccountId());
-                cs.setBoolean(9, staff.isEnable());
+                cs.setBoolean(8, staff.isEnable());
+                cs.setInt(9, staff.getAccountId());
                 // Execute the stored procedure
                 int rowsAffected = cs.executeUpdate();
 

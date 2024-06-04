@@ -197,7 +197,7 @@ void AcceptClickBtn() {
             txtUsername.requestFocus();
             return;
         }
-
+        System.out.println("Updated Object: " + object.getAccountId());
 
         object.setId(id);
         object.setPhoneNumber(phoneNumber);

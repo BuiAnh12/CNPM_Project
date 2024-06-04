@@ -196,7 +196,7 @@ public class MainController implements Initializable {
 
 
             modalStage.showAndWait();
-
+            updateTableView();
 
         } catch (IOException e) {
             System.out.println("Lỗi khi mở giao diện cập nhật!");
@@ -238,7 +238,7 @@ public class MainController implements Initializable {
             modalStage.initOwner(currentStage);
             modalStage.setScene(new Scene(page));
             modalStage.showAndWait();
-
+            updateTableView();
 
         } catch (IOException e) {
             System.out.println("Open Fail");
