@@ -2,6 +2,7 @@ package Admin.Controller.UserDetail;
 import Admin.Controller.ChuyenViewController;
 import Admin.Controller.UserDetail.UserDetailDAO;
 import Admin.Controller.UserDetail.User;
+import Admin.Model.Staff.StaffModel;
 import Login.Controller.LoginController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -53,10 +54,19 @@ public class UserDetailController {
 
     private String username;
 
+    private StaffModel user = new StaffModel();
+
+    public StaffModel getUser() {
+        return user;
+    }
+
+    public void setUser(StaffModel user) {
+        this.user = user;
+    }
+
     public void setUsername(String username) {
         this.username = username;
-        initializeUserDetails();
-        // Gọi hàm khởi tạo thông tin người dùng với username
+        initializeUserDetails(); // Gọi hàm khởi tạo thông tin người dùng với username
     }
 
 
@@ -133,10 +143,12 @@ public class UserDetailController {
 
             // Lấy controller của ViewChinh
             ChuyenViewController controller = loader.getController();
+            controller.setLoginStaff(user);
 
             // Gọi phương thức loadView của controller để hiển thị EventMainForm
-            controller.loadView("/Admin/Event/EventForm/MainForm.fxml");
-
+            FXMLLoader view = controller.loadView("/Admin/Event/EventForm/MainForm.fxml");
+            Admin.Controller.Event.MainController mainController = view.getController();
+            mainController.setSetUser(user);
             // Tạo một Scene mới từ StackPane
             Scene scene = new Scene(root);
 
@@ -161,7 +173,6 @@ public class UserDetailController {
         alert.setContentText(content);
         alert.showAndWait();
     }
-
 
 
 }

@@ -72,6 +72,44 @@ public class EventDAO {
 
     }
 
+    public EventModel getSingleEvent(int id) {
+        String sql = "{call sp_getSingleEvent(?)}";
+
+        try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword);
+             CallableStatement cs = connection.prepareCall(sql)) {
+
+            // Set the input parameter
+            cs.setInt(1, id);
+
+            // Execute the stored procedure
+            try (ResultSet rs = cs.executeQuery()) {
+                if (rs.next()) {
+                    // Retrieve data from the result set
+                    int eventId = rs.getInt("EventId");
+                    String eventName = rs.getString("event_name");
+                    String place = rs.getString("place");
+                    String organizationName = rs.getString("organization_name");
+                    int numberOfAttendance = rs.getInt("number_of_attendance");
+                    LocalDate deadline = rs.getDate("deadline").toLocalDate();
+                    LocalDate occurDate = rs.getDate("OccurDate").toLocalDate();
+                    int maxSlot = rs.getInt("MaxSlot");
+                    String detail = rs.getString("Detail");
+                    boolean status = rs.getBoolean("Status");
+                    int createBy = rs.getInt("CreateBy");
+                    int checkBy = rs.getInt("CheckBy");
+
+                    // Create EventModel object
+                    return new EventModel(eventId, eventName, place, organizationName, numberOfAttendance, deadline, occurDate, maxSlot, status, createBy, checkBy, detail);
+                } else {
+                    return null; // No event found with the given ID
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
     public ArrayList<StudentEventModel> getTable(int id) {
         ArrayList<StudentEventModel> tableList = new ArrayList<>();
 

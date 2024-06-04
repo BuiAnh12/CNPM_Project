@@ -164,6 +164,9 @@ public class EventDetailController implements Initializable{
 
             dialogStage.setOnHidden(event -> {
                 System.out.println("Modal closed, refreshing...");
+                EventDAO eventDAO = new EventDAO();
+                this.object = eventDAO.getSingleEvent(object.getEventId());
+                System.out.println(this.object);
                 refresh();
             });
 

@@ -63,7 +63,6 @@ public class ChuyenViewController {
         this.loginStaff = loginStaff;
     }
 
-
     @FXML
     private void initialize() {
 //        try {
@@ -81,10 +80,6 @@ public class ChuyenViewController {
 //            e.printStackTrace();
 //        }
     }
-
-
-
-
 
     public void loadInitialView() {
         FXMLLoader view = loadView("/Admin/Event/EventForm/Dashboard.fxml");
@@ -129,7 +124,7 @@ public class ChuyenViewController {
     @FXML
     void handleGoStaffButtonAction(ActionEvent event) {
         try{
-            if (loginStaff.getPermissionId() != 1){
+            if (loginStaff.getPermissionId() != 1 && loginStaff.getPermissionId() != 2){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Phân quyền");
                 alert.setHeaderText(null);
@@ -139,7 +134,8 @@ public class ChuyenViewController {
             }
             FXMLLoader loader = loadView("/Admin/NewStaff/StaffForm/MainForm.fxml");
             Admin.Controller.NewStaff.MainController controller = loader.getController();
-            controller.setUser(this.username);
+            controller.setUser(loginStaff);
+            controller.setPermissionId(loginStaff.getPermissionId());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -162,6 +158,7 @@ public class ChuyenViewController {
         FXMLLoader view = loadView("/Admin/Student/StudentForm/MainForm.fxml");
         Admin.Controller.Student.MainController mainController = view.getController();
         mainController.setPermissionId(loginStaff.getPermissionId() );
+
     }
 
     public FXMLLoader loadView(String fxmlFile) {
@@ -195,7 +192,7 @@ public class ChuyenViewController {
 
 
 
-    public void loadUserDetail() {
+    private void loadUserDetail() {
         if (username != null) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/UserDetail/UserDetail.fxml"));
@@ -204,7 +201,7 @@ public class ChuyenViewController {
                 // Lấy controller của UserDetail.fxml sau khi nó được tải
                 Admin.Controller.UserDetail.UserDetailController userDetailController = loader.getController();
                 userDetailController.setUsername(username); // Truyền username vào UserDetailController
-
+                userDetailController.setUser(loginStaff);
                 // Thêm UserDetail vào contentPane hoặc pane cần thiết
                 contentPane.getChildren().add(userDetailRoot);
             } catch (IOException e) {
@@ -214,10 +211,6 @@ public class ChuyenViewController {
     }
 
     public void GoUserDetailForm(ActionEvent event) {
-
-        FXMLLoader view = loadView("/Admin/UserDetail/UserDetail.fxml");
         loadUserDetail();
-
-
     }
 }
