@@ -20,9 +20,9 @@
         </AnchorPane>
         <AnchorPane fx:id="Containner" layoutY="75.0" prefHeight="718.0" prefWidth="1110.0" styleClass="white-form" stylesheets="@../CSS/EventMainForm.css">
             <children>
-                <TableView layoutX="728.0" layoutY="44.0" prefHeight="278.0" prefWidth="364.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/EventMainForm.css">
+                <TableView fx:id="recentRegisterTable" layoutX="728.0" layoutY="44.0" prefHeight="278.0" prefWidth="364.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/EventMainForm.css">
                     <columns>
-                        <TableColumn prefWidth="358.0" text="Recent Register" />
+                        <TableColumn fx:id="recentRegisterColumn" prefWidth="363.20001220703125" text="Recent Register" />
                     </columns>
                 </TableView>
                 <AnchorPane layoutX="31.0" layoutY="44.0" prefHeight="553.0" prefWidth="651.0" styleClass="white-form" stylesheets="@../CSS/EventMainForm.css">
@@ -57,9 +57,8 @@
                         </AnchorPane>
                         <TableView fx:id="reportTable" layoutY="50.0" prefHeight="61.0" prefWidth="364.0">
                             <columns>
-                                <TableColumn fx:id="totalEventColumn" prefWidth="123.0" text="Total Event" />
-                                <TableColumn fx:id="totalStudentColumn" prefWidth="120.800048828125" text="Total Student" />
-                                <TableColumn prefWidth="118.4000244140625" text="Pending" />
+                                <TableColumn fx:id="totalEventColumn" prefWidth="189.60003662109375" text="Total Event" />
+                                <TableColumn fx:id="totalStudentColumn" prefWidth="173.5999755859375" text="Total Student" />
                             </columns>
                         </TableView>
                     </children>

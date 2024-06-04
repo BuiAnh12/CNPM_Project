@@ -1,23 +1,21 @@
 package Admin.Controller;
 
 import Admin.Model.Event.EventModelDashboard;
-import Admin.Model.Event.ReportModel ;
+import Admin.Model.Event.ReportModel;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
+import javafx.util.Callback;
 
-import java.io.IOException;
 import java.net.URL;
-import java.sql.*;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
@@ -32,6 +30,12 @@ public class DashboardController implements Initializable {
     private TableColumn<EventModelDashboard, String> timeColumn;
 
     @FXML
+    private TableView<String> recentRegisterTable;
+
+    @FXML
+    private TableColumn<String, String> recentRegisterColumn;
+
+    @FXML
     private TableView<ReportModel> reportTable;
 
     @FXML
@@ -39,12 +43,6 @@ public class DashboardController implements Initializable {
 
     @FXML
     private TableColumn<ReportModel, Integer> totalStudentColumn;
-
-    @FXML
-    private AnchorPane eventMainAnchorPane;
-
-    @FXML
-    private Button BackMain;
 
     private DashboardDAO dashboardDAO;
 
@@ -62,12 +60,32 @@ public class DashboardController implements Initializable {
         loadEventDataFromDatabase();
 
         dashboardDAO = new DashboardDAO();
+
         // Khởi tạo cột cho bảng báo cáo
         totalEventColumn.setCellValueFactory(cellData -> cellData.getValue().totalEventProperty().asObject());
         totalStudentColumn.setCellValueFactory(cellData -> cellData.getValue().totalStudentProperty().asObject());
 
+        // Initialize Recent Register Table column
+        //if (recentRegisterColumn != null) {
+        recentRegisterColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+
+        // }
+
+
+
+
         // Load dữ liệu báo cáo
         loadReportData();
+
+        // Set up double-click event handler for nextEventTable
+        nextEventTable.setOnMouseClicked(event -> {
+            if (event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2) {
+                EventModelDashboard selectedEvent = nextEventTable.getSelectionModel().getSelectedItem();
+                if (selectedEvent != null) {
+                    loadRecentRegisterData(selectedEvent.getName());
+                }
+            }
+        });
     }
 
     private void loadEventDataFromDatabase() {
@@ -96,5 +114,16 @@ public class DashboardController implements Initializable {
         reportTable.setItems(reportList);
     }
 
-
+    private void loadRecentRegisterData(String eventName) {
+        ObservableList<String> recentRegisterList = FXCollections.observableArrayList();
+        try {
+            // Get student full names registered for the event from database
+            List<String> studentNames = dashboardDAO.getStudentNamesByEvent(eventName);
+            recentRegisterList.addAll(studentNames);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // Set the items of the Recent Register TableView
+        recentRegisterTable.setItems(recentRegisterList);
+    }
 }
