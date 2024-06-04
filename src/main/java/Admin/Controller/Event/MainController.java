@@ -107,20 +107,6 @@ public class MainController implements Initializable {
             boolean success = eventDAO.deleteEvent(selected.getEventId());
             if (success){
                 System.out.println("Delete Success!");
-                try{
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/MainForm.fxml"));
-                    Parent page = fxmlLoader.load();
-
-                    Scene currentScene = table.getScene();
-                    Stage currentStage = (Stage) table.getScene().getWindow();
-
-                    AnchorPane Container = (AnchorPane) DashbaordForm.getParent();
-                    Container.getChildren().clear();
-                    Container.getChildren().add(page);
-                } catch (IOException e) {
-                    System.out.println("Open Fail");
-                    e.printStackTrace();
-                }
             }
             else{
                 System.out.println("Delete Fail");

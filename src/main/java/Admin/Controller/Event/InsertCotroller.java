@@ -73,7 +73,7 @@ public class InsertCotroller {
     @FXML
     void AcceptClickBtn(MouseEvent event) {
         if (txtName.getText().isEmpty()){
-            showAlert("Lỗi", "Trường tên sự kiện đang trống");
+            showAlert("admin", "Trường tên sự kiện đang trống");
             return;
         }
         if (txtPlace.getText().isEmpty()){

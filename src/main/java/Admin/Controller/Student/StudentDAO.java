@@ -276,7 +276,7 @@ public class StudentDAO {
     public ArrayList<StudentModel> getTable(int filterCategory, String searchWords, String typeRange) {
         ArrayList<StudentModel> tableList = new ArrayList<>();
 
-        try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) { String sql = "SELECT * FROM Student WHERE RIGHT(FullName, CHARINDEX(' ', REVERSE(FullName)) - 1) LIKE ? " + typeRange;
+        try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) { String sql = "SELECT * FROM Student WHERE Fullname LIKE ? " + typeRange;
 
             try (CallableStatement cs = connection.prepareCall(sql)){
 

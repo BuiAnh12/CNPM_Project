@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class MainController implements Initializable {
     @FXML
     private ComboBox<String> Filter;
 
-    private String user = "";
+    private StaffModel user = new StaffModel();
 
     private int permissionId = 0;
     @FXML
@@ -65,11 +66,11 @@ public class MainController implements Initializable {
 
     StaffDAO staffDao = new StaffDAO();
 
-    public String getUser() {
+    public StaffModel getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(StaffModel user) {
         this.user = user;
     }
 
@@ -138,7 +139,7 @@ public class MainController implements Initializable {
             return; // Exit the method
         }
         StaffModel selectedStaff = mainTable.getSelectionModel().getSelectedItem();
-        if (selectedStaff.getUsername().equals(this.user)){
+        if (selectedStaff.getUsername().equals(this.user.getUsername())){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -185,10 +186,17 @@ public class MainController implements Initializable {
 
             UpdateController updateController = fxmlLoader.getController();
             updateController.setObject(mainTable.getSelectionModel().getSelectedItem());
-            //updateController.updateFields();
-            AnchorPane Container = (AnchorPane) DashboardForm.getParent();
-            Container.getChildren().clear();
-            Container.getChildren().add(page);
+
+
+            Stage modalStage = new Stage();
+            modalStage.setTitle("Update Staff Form");
+            modalStage.initModality(Modality.APPLICATION_MODAL);
+            modalStage.initOwner(DashboardForm.getScene().getWindow());
+            modalStage.setScene(new Scene(page));
+
+
+            modalStage.showAndWait();
+
 
         } catch (IOException e) {
             System.out.println("Failed to open update form");
@@ -214,6 +222,7 @@ public class MainController implements Initializable {
             return;
         }
         try{
+            // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Admin/NewStaff/StaffForm/InsertForm.fxml"));
             Parent page = fxmlLoader.load();
 
@@ -223,9 +232,13 @@ public class MainController implements Initializable {
             InsertController insertController = fxmlLoader.getController();
             insertController.setPreviousScene(currentScene);
 
-            AnchorPane Container = (AnchorPane) DashboardForm.getParent();
-            Container.getChildren().clear();
-            Container.getChildren().add(page);
+            Stage modalStage = new Stage();
+            modalStage.setTitle("Insert Staff Form");
+            modalStage.initModality(Modality.APPLICATION_MODAL);
+            modalStage.initOwner(currentStage);
+            modalStage.setScene(new Scene(page));
+            modalStage.showAndWait();
+
 
         } catch (IOException e) {
             System.out.println("Open Fail");
