@@ -197,18 +197,18 @@ public class MainController implements Initializable {
                         fullName == null || username == null || password == null ||
                         studentId.isEmpty() || classId.isEmpty() || phoneNumber.isEmpty() ||
                         dob.isEmpty() || fullName.isEmpty() || username.isEmpty() || password.isEmpty()) {
-                    showAlert("Insert From Excel Error", "Lỗi thiếu dữ liệu tại dòng " + (row.getRowNum() + 1));
+                    showAlert("Thêm từ file Excel lỗi", "Lỗi thiếu dữ liệu tại dòng " + (row.getRowNum() + 1));
                     return;
                 }
 
                 if (phoneNumber.length() != 10) {
-                    showAlert("Insert From Excel Error", "Số điện thoại tại dòng " + (row.getRowNum() + 1) + " không đúng định dạng!");
+                    showAlert("Thêm từ file Excel lỗi", "Số điện thoại tại dòng " + (row.getRowNum() + 1) + " không đúng định dạng!");
                     return;
                 }
 
                 // Check for duplicates in the database
                 if (isDuplicateStudent(studentId, phoneNumber) || isDuplicateAccount(username)) {
-                    showAlert("Insert From Excel Error", "Dữ liệu tại dòng " + (row.getRowNum() + 1) + " đã tồn tại!");
+                    showAlert("Thêm từ file Excel lỗi", "Dữ liệu tại dòng " + (row.getRowNum() + 1) + " đã tồn tại!");
                     return;
                 }
 
@@ -396,7 +396,7 @@ public class MainController implements Initializable {
 
                 // Tạo một stage mới cho cửa sổ mới
                 Stage newStage = new Stage();
-                newStage.setTitle("Insert student");
+                newStage.setTitle("Thêm sinh viên mới");
 
                 // Lấy stage hiện tại từ sự kiện chuột
                 Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -437,7 +437,7 @@ public class MainController implements Initializable {
 
             // Tạo một stage mới cho cửa sổ mới
             Stage newStage = new Stage();
-            newStage.setTitle("Insert student");
+            newStage.setTitle("Thêm sinh viên mới");
 
             // Lấy stage hiện tại từ sự kiện chuột
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -485,7 +485,7 @@ public class MainController implements Initializable {
         StudentModel selectedStudent = mainTable.getSelectionModel().getSelectedItem();
         if (selectedStudent != null) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirm Delete");
+            alert.setTitle("Xác nhận xóa");
             alert.setHeaderText(null);
             alert.setContentText("Bạn có chắc rằng muốn xóa sinh viên này không?");
 
@@ -496,7 +496,7 @@ public class MainController implements Initializable {
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("No Selection");
+            alert.setTitle("Lỗi");
             alert.setHeaderText(null);
             alert.setContentText("Vui lòng chọn sinh viên bạn muốn xóa.");
             alert.showAndWait();

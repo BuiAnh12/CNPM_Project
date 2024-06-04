@@ -12,9 +12,9 @@
 
 <AnchorPane fx:id="updateForm" prefHeight="640.0" prefWidth="975.0" style="-fx-background-radius: 22; -fx-background-color: F3F3F3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.NewStaff.UpdateController">
     <children>
-        <Text fill="#1678f3" layoutX="60.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Student" wrappingWidth="289.79376220703125">
+        <Text fill="#1678f3" layoutX="60.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cập nhật nhân viên" wrappingWidth="289.79376220703125">
             <font>
-                <Font size="36.0" />
+                <Font size="33.0" />
             </font>
         </Text>
         <AnchorPane layoutX="60.0" layoutY="198.0" prefHeight="80.0" prefWidth="219.0">
@@ -24,7 +24,7 @@
                         <Font size="18.0" />
                     </font>
                 </TextField>
-                <Text layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name" wrappingWidth="200.00000000000023">
+                <Text layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ  và tên" wrappingWidth="200.00000000000023">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -33,7 +33,7 @@
         </AnchorPane>
         <AnchorPane layoutX="60.0" layoutY="298.0" prefHeight="80.0" prefWidth="219.0">
             <children>
-                <Text layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth" wrappingWidth="200.00000000000023">
+                <Text layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày sinh" wrappingWidth="200.00000000000023">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -48,7 +48,7 @@
                         <Font size="18.0" />
                     </font>
                 </TextField>
-                <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" wrappingWidth="200.00000000000023">
+                <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số điện thoại" wrappingWidth="200.00000000000023">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -56,12 +56,12 @@
             </children>
         </AnchorPane>
         <AnchorPane layoutX="566.0" layoutY="100.0" />
-        <Button fx:id="AcceptBtn" layoutX="297.0" layoutY="511.0" mnemonicParsing="false" onAction="#AcceptClickBtn" prefHeight="39.0" prefWidth="90.0" styleClass="green-form" stylesheets="@../CSS/MainAdminForm.css" text="Accept" textFill="WHITE">
+        <Button fx:id="AcceptBtn" layoutX="297.0" layoutY="511.0" mnemonicParsing="false" onAction="#AcceptClickBtn" prefHeight="39.0" prefWidth="90.0" styleClass="green-form" stylesheets="@../CSS/MainAdminForm.css" text="Cập nhật" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button layoutX="413.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#CancelClickBtn" prefHeight="39.0" prefWidth="99.0" styleClass="red-form" stylesheets="@../CSS/MainAdminForm.css" text="Cancle" textFill="WHITE">
+        <Button layoutX="413.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#CancelClickBtn" prefHeight="39.0" prefWidth="99.0" styleClass="red-form" stylesheets="@../CSS/MainAdminForm.css" text="Hủy" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
@@ -73,7 +73,7 @@
                         <Font size="18.0" />
                     </font>
                 </TextField>
-                <Text layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="200.00000000000023">
+                <Text layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên tài khoản" wrappingWidth="200.00000000000023">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -87,19 +87,19 @@
                         <Font size="18.0" />
                     </font>
                 </TextField>
-                <Text layoutX="-7.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="200.00000000000023">
+                <Text layoutX="-7.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mật khẩu" wrappingWidth="200.00000000000023">
                     <font>
                         <Font size="24.0" />
                     </font>
                 </Text>
             </children>
         </AnchorPane>
-        <Text layoutX="303.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Privilege" wrappingWidth="200.00000000000023">
+        <Text layoutX="303.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quyền" wrappingWidth="200.00000000000023">
             <font>
                 <Font size="24.0" />
             </font>
         </Text>
-        <Text layoutX="60.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Id" wrappingWidth="200.00000000000023">
+        <Text layoutX="60.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mã nhân viên" wrappingWidth="200.00000000000023">
             <font>
                 <Font size="24.0" />
             </font>

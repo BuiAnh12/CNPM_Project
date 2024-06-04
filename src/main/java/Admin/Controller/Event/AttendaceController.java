@@ -154,7 +154,7 @@ public class AttendaceController implements Initializable {
     @FXML
     void SaveBtnClick(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirm save");
+        alert.setTitle("Xác nhận lưu");
         alert.setHeaderText(null);
         alert.setContentText("Bạn có muốn lưu điểm danh?");
         Optional<ButtonType> result = alert.showAndWait();

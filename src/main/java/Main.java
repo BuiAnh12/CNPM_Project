@@ -49,7 +49,7 @@ public class Main extends Application {
             Scene scene = new Scene(root);
 
             stage.setScene(scene);
-            stage.setTitle("Event Management");
+            stage.setTitle("Phần mềm quản lý các hoạt động của sinh viên Học Viện Cơ Sở");
             stage.setResizable(false);
 
             // Show the stage and then center it

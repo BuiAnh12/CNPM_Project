@@ -15,7 +15,7 @@
         <Pane prefHeight="800.0" prefWidth="400.0">
             <children>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5c9ae9" height="800.0" stroke="#5c9ae9" strokeType="INSIDE" width="400.0" />
-                <Text fill="WHITE" layoutX="46.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Details" wrappingWidth="307.7367401123047">
+                <Text fill="WHITE" layoutX="46.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thông tin tài khoản" wrappingWidth="307.7367401123047">
                     <font>
                         <Font size="96.0" />
                     </font>
@@ -30,7 +30,7 @@
                             <font>
                                 <Font size="18.0" />
                             </font></TextField>
-                        <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name" wrappingWidth="200.00000000000023">
+                        <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ và tên" wrappingWidth="200.00000000000023">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -43,7 +43,7 @@
                             <font>
                                 <Font size="18.0" />
                             </font></TextField>
-                        <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" wrappingWidth="200.00000000000023">
+                        <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số điện thoại" wrappingWidth="200.00000000000023">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -56,7 +56,7 @@
                             <font>
                                 <Font size="18.0" />
                             </font></TextField>
-                        <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="200.00000000000023">
+                        <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên tài khoản" wrappingWidth="200.00000000000023">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -69,7 +69,7 @@
                             <font>
                                 <Font size="18.0" />
                             </font></TextField>
-                        <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" wrappingWidth="200.00000000000023">
+                        <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày sinh" wrappingWidth="200.00000000000023">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -103,7 +103,7 @@
             </AnchorPane>
             </children>
         </AnchorPane>
-        <Text layoutX="458.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detail" wrappingWidth="193.60009765625023">
+        <Text layoutX="458.0" layoutY="646.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chi tiết" wrappingWidth="193.60009765625023">
             <font>
                 <Font size="24.0" />
             </font>

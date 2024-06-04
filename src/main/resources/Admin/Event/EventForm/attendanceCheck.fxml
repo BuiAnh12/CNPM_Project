@@ -14,12 +14,12 @@
             <children>
                 <TableView fx:id="mainTable" layoutY="64.0" onMouseClicked="#TblClickEvent" prefHeight="543.0" prefWidth="967.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/EventMainForm.css">
                     <columns>
-                        <TableColumn fx:id="nameColumn" prefWidth="251.2000274658203" text="Name" />
-                        <TableColumn fx:id="idColumn" prefWidth="173.60003662109375" text="StudentID" />
-                        <TableColumn fx:id="classColumn" prefWidth="155.199951171875" text="Class" />
-                        <TableColumn fx:id="phoneColumn" prefWidth="148.800048828125" text="Phonenumber" />
-                        <TableColumn fx:id="dobColumn" prefWidth="128.800048828125" text="DOB" />
-                  <TableColumn fx:id="attendaceColumn" prefWidth="108.79998779296875" style="fx-alignment: center;" text="Attendance" />
+                        <TableColumn fx:id="nameColumn" prefWidth="251.2000274658203" text="Tên" />
+                        <TableColumn fx:id="idColumn" prefWidth="173.60003662109375" text="Mã sinh viên" />
+                        <TableColumn fx:id="classColumn" prefWidth="155.199951171875" text="Lớp" />
+                        <TableColumn fx:id="phoneColumn" prefWidth="148.800048828125" text="Số điện thoại" />
+                        <TableColumn fx:id="dobColumn" prefWidth="128.800048828125" text="Ngày sinh" />
+                  <TableColumn fx:id="attendaceColumn" prefWidth="108.79998779296875" style="fx-alignment: center;" text="Điểm danh" />
                     </columns>
                 </TableView>
                 <TextField fx:id="SearchField" onKeyTyped="#SearchTxtType" prefHeight="40.0" prefWidth="483.0" promptText="Search by name" style="-fx-background-radius: 9;" styleClass="label" stylesheets="@../CSS/EventMainForm.css">
@@ -27,17 +27,17 @@
                         <Font size="18.0" />
                     </font>
                 </TextField>
-                <Button fx:id="saveBtn" layoutX="764.0" mnemonicParsing="false" onAction="#SaveBtnClick" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9; -fx-background-color: #41CA2F;" styleClass=".green-form" stylesheets="@../CSS/EventMainForm.css" text="Save" textFill="WHITE">
+                <Button fx:id="saveBtn" layoutX="764.0" mnemonicParsing="false" onAction="#SaveBtnClick" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9; -fx-background-color: #41CA2F;" styleClass=".green-form" stylesheets="@../CSS/EventMainForm.css" text="Lưu" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
-                <Button fx:id="revertBtn" layoutX="875.0" mnemonicParsing="false" onAction="#RevertBtnClick" onMouseClicked="#EditBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9; -fx-background-color: #2FBACA;" styleClass="blue-form" stylesheets="@../CSS/EventMainForm.css" text="Revert" textFill="WHITE">
+                <Button fx:id="revertBtn" layoutX="875.0" mnemonicParsing="false" onAction="#RevertBtnClick" onMouseClicked="#EditBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9; -fx-background-color: #2FBACA;" styleClass="blue-form" stylesheets="@../CSS/EventMainForm.css" text="Quay lại" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
-            <Button fx:id="ExportBtn" layoutX="648.0" mnemonicParsing="false" onAction="#ExportBtnClick" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9; -fx-background-color: #41CA2F;" styleClass="blue-form" stylesheets="@../CSS/EventMainForm.css" text="Export" textFill="WHITE">
+            <Button fx:id="ExportBtn" layoutX="648.0" mnemonicParsing="false" onAction="#ExportBtnClick" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9; -fx-background-color: #41CA2F;" styleClass="blue-form" stylesheets="@../CSS/EventMainForm.css" text="Xuất file" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -46,9 +46,9 @@
         </AnchorPane>
       <AnchorPane prefHeight="75.0" prefWidth="1110.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
          <children>
-            <Label layoutX="14.0" prefHeight="75.0" prefWidth="186.0" text="Event Attendance">
+            <Label layoutX="14.0" prefHeight="75.0" prefWidth="186.0" text="Điểm danh">
                <font>
-                  <Font size="24.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
          </children>

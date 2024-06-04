@@ -231,9 +231,9 @@ public class StudentController implements Initializable {
         StudentModel selectedStudent = mainTable.getSelectionModel().getSelectedItem();
         if (selectedStudent != null) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirm Delete");
+            alert.setTitle("Xác nhận xóa");
             alert.setHeaderText(null);
-            alert.setContentText("Are you sure you want to delete this student?");
+            alert.setContentText("Bạn có chắc rằng muốn xóa sinh viên này không?");
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -242,9 +242,9 @@ public class StudentController implements Initializable {
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("No Selection");
+            alert.setTitle("Lỗi");
             alert.setHeaderText(null);
-            alert.setContentText("Please select a student to delete.");
+            alert.setContentText("Vui lòng chọn sinh viên bạn muốn xóa.");
             alert.showAndWait();
         }
 }

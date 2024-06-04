@@ -17,11 +17,11 @@
          <children>
             <TableView fx:id="table" layoutY="64.0" onMouseClicked="#TblClickEvent" prefHeight="543.0" prefWidth="980.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/EventMainForm.css">
                <columns>
-                  <TableColumn fx:id="colName" prefWidth="218.40000915527344" text="Name" />
-                  <TableColumn fx:id="colOrg" prefWidth="182.4000244140625" text="Organization" />
-                  <TableColumn fx:id="colPlace" prefWidth="210.40008544921875" text="Place" />
-                  <TableColumn fx:id="colNum" prefWidth="165.59991455078125" text="Number of attendace" />
-                  <TableColumn fx:id="colDeadline" prefWidth="199.0" text="Deadline" />
+                  <TableColumn fx:id="colName" prefWidth="218.40000915527344" text="Tên sự kiện" />
+                  <TableColumn fx:id="colOrg" prefWidth="182.4000244140625" text="Đơn vị tổ chức" />
+                  <TableColumn fx:id="colPlace" prefWidth="210.40008544921875" text="Địa điểm" />
+                  <TableColumn fx:id="colNum" prefWidth="165.59991455078125" text="Số lượng tham gia" />
+                  <TableColumn fx:id="colDeadline" prefWidth="199.0" text="Ngày hết hạn" />
                </columns>
             </TableView>
             <TextField fx:id="SearchField" onKeyTyped="#SearchTxtType" prefHeight="39.0" prefWidth="263.0" promptText="Search" style="-fx-background-radius: 9;" styleClass="label" stylesheets="@../CSS/EventMainForm.css">
@@ -38,17 +38,17 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="610.0" mnemonicParsing="false" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="green-form" stylesheets="@../CSS/EventMainForm.css" text="Insert " textFill="WHITE">
+            <Button layoutX="610.0" mnemonicParsing="false" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="green-form" stylesheets="@../CSS/EventMainForm.css" text="Thêm" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="806.0" mnemonicParsing="false" onMouseClicked="#DeleteBtnClickEvent" prefHeight="39.0" prefWidth="99.0" style="-fx-background-radius: 9;" styleClass="red-form" stylesheets="@../CSS/EventMainForm.css" text="Delete" textFill="WHITE">
+            <Button layoutX="806.0" mnemonicParsing="false" onMouseClicked="#DeleteBtnClickEvent" prefHeight="39.0" prefWidth="99.0" style="-fx-background-radius: 9;" styleClass="red-form" stylesheets="@../CSS/EventMainForm.css" text="Xóa" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="709.0" mnemonicParsing="false" onMouseClicked="#EditBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="blue-form" stylesheets="@../CSS/EventMainForm.css" text="Edit" textFill="WHITE">
+            <Button layoutX="709.0" mnemonicParsing="false" onMouseClicked="#EditBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="blue-form" stylesheets="@../CSS/EventMainForm.css" text="Sửa" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -59,9 +59,9 @@
       </AnchorPane>
       <AnchorPane prefHeight="75.0" prefWidth="1110.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css">
          <children>
-            <Label layoutX="11.0" prefHeight="75.0" prefWidth="1110.0" text="Event" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label layoutX="11.0" prefHeight="75.0" prefWidth="1110.0" text="Danh sách sự kiện" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <font>
-                  <Font size="24.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
          </children>

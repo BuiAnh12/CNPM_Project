@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="insertForm" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-radius: 22; -fx-background-color: F3F3F3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.Event.InsertCotroller">
    <children>
-      <Text fill="#1678f3" layoutX="60.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Event">
+      <Text fill="#1678f3" layoutX="60.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tạo sự kiện">
          <font>
             <Font size="36.0" />
          </font>
@@ -22,7 +22,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Text layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Name" wrappingWidth="200.00000000000023">
+            <Text layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên sự kiện" wrappingWidth="200.00000000000023">
                <font>
                   <Font size="24.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Place" wrappingWidth="200.00000000000023">
+            <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Địa điểm" wrappingWidth="200.00000000000023">
                <font>
                   <Font size="24.0" />
                </font>
@@ -45,7 +45,7 @@
       </AnchorPane>
       <AnchorPane layoutX="60.0" layoutY="300.0" prefHeight="79.0" prefWidth="219.0">
          <children>
-            <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Organization" wrappingWidth="200.00000000000023">
+            <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đơn vị tổ chức" wrappingWidth="200.00000000000023">
                <font>
                   <Font size="24.0" />
                </font>
@@ -59,7 +59,7 @@
       </AnchorPane>
       <AnchorPane layoutX="60.0" layoutY="400.0" prefHeight="79.0" prefWidth="209.0">
          <children>
-            <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Date" wrappingWidth="200.00000000000023">
+            <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày diễn ra" wrappingWidth="200.00000000000023">
                <font>
                   <Font size="24.0" />
                </font>
@@ -69,7 +69,7 @@
       </AnchorPane>
       <AnchorPane layoutX="566.0" layoutY="100.0">
          <children>
-            <Text layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Detail" wrappingWidth="200.00000000000023">
+            <Text layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chi tiết sự kiện" wrappingWidth="200.00000000000023">
                <font>
                   <Font size="24.0" />
                </font>
@@ -77,12 +77,12 @@
             <TextArea fx:id="txtDetail" layoutY="40.0" prefHeight="336.0" prefWidth="379.0" style="-fx-background-color: E4E4E4;" />
          </children>
       </AnchorPane>
-      <Button layoutX="854.0" layoutY="514.0" mnemonicParsing="false" onMouseClicked="#AcceptClickBtn" prefHeight="39.0" prefWidth="90.0" styleClass="green-form" stylesheets="@../CSS/EventMainForm.css" text="Accept" textFill="WHITE">
+      <Button layoutX="854.0" layoutY="514.0" mnemonicParsing="false" onMouseClicked="#AcceptClickBtn" prefHeight="39.0" prefWidth="90.0" styleClass="green-form" stylesheets="@../CSS/EventMainForm.css" text="Tạo" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="734.0" layoutY="514.0" mnemonicParsing="false" onMouseClicked="#CancelClickBtn" prefHeight="39.0" prefWidth="99.0" styleClass="red-form" stylesheets="@../CSS/EventMainForm.css" text="Cancle" textFill="WHITE">
+      <Button layoutX="734.0" layoutY="514.0" mnemonicParsing="false" onMouseClicked="#CancelClickBtn" prefHeight="39.0" prefWidth="99.0" styleClass="red-form" stylesheets="@../CSS/EventMainForm.css" text="Hủy" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
@@ -94,7 +94,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Text layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Slot" wrappingWidth="200.00000000000023">
+            <Text layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số lượng tối đa" wrappingWidth="200.00000000000023">
                <font>
                   <Font size="24.0" />
                </font>
@@ -103,7 +103,7 @@
       </AnchorPane>
       <AnchorPane layoutX="303.0" layoutY="198.0" prefHeight="80.0" prefWidth="219.0">
          <children>
-            <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re. Deadline" wrappingWidth="200.00000000000023">
+            <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hạn đăng ký" wrappingWidth="200.00000000000023">
                <font>
                   <Font size="24.0" />
                </font>

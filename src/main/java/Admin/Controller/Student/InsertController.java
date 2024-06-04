@@ -95,9 +95,9 @@ public class InsertController {
 
             // Thông báo thành công
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
+            alert.setTitle("Thành công");
             alert.setHeaderText(null);
-            alert.setContentText("Student added successfully!");
+            alert.setContentText("Thêm sinh viên mới thành công!");
             alert.showAndWait();
 
             // Đóng cửa sổ hiện tại
@@ -108,9 +108,9 @@ public class InsertController {
         } catch (SQLException e) {
             // Thông báo lỗi
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
+            alert.setTitle("Lỗi");
             alert.setHeaderText(null);
-            alert.setContentText("Failed to add student!");
+            alert.setContentText("Thêm sinh viên thất bại!");
             alert.showAndWait();
             e.printStackTrace();
         }

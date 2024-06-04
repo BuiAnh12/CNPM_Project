@@ -93,11 +93,11 @@ public class MainController implements Initializable {
         }
         if (table.getSelectionModel().isEmpty()) {
             // Show an error message or handle the situation accordingly
-            showAlert("Error", "No event selected. Please select an event to delete.");
+            showAlert("Lỗi", "Vui lòng chọn một sự kiện để tiến hành xóa.");
             return;
         }
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirm Delete");
+        alert.setTitle("Xác nhận xóa");
         alert.setHeaderText(null);
         alert.setContentText("Bạn có muốn xóa sự kiện này không?");
         Optional<ButtonType> result = alert.showAndWait();
@@ -106,10 +106,10 @@ public class MainController implements Initializable {
             EventDAO eventDAO = new EventDAO();
             boolean success = eventDAO.deleteEvent(selected.getEventId());
             if (success){
-                System.out.println("Delete Success!");
+                System.out.println("Xóa thành công!");
             }
             else{
-                System.out.println("Delete Fail");
+                System.out.println("Xóa thất bại!");
             }
         }
 
@@ -129,7 +129,7 @@ public class MainController implements Initializable {
         }
         if (table.getSelectionModel().isEmpty()) {
             // Show an error message or handle the situation accordingly
-            showAlert("Error", "No event selected. Please select an event to update.");
+            showAlert("Lỗi", "Vui lòng chọn một sự kiện để tiến hành cập nhật.");
             return;
         }
         try {
@@ -139,7 +139,7 @@ public class MainController implements Initializable {
             // Create a new stage for the dialog
             Stage dialogStage = new Stage();
             dialogStage.initModality(Modality.APPLICATION_MODAL);
-            dialogStage.setTitle("Update Event");
+            dialogStage.setTitle("Cập nhật sự kiện");
 
             // Set the scene
             Scene scene = new Scene(page);
@@ -196,7 +196,7 @@ public class MainController implements Initializable {
             // Create a new stage for the dialog
             Stage dialogStage = new Stage();
             dialogStage.initModality(Modality.APPLICATION_MODAL);
-            dialogStage.setTitle("Insert Event");
+            dialogStage.setTitle("Thêm sự kiện");
 
             // Set the scene
             Scene scene = new Scene(page);

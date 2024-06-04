@@ -18,9 +18,9 @@
       <Pane prefHeight="800.0" prefWidth="400.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5c9ae9" height="800.0" stroke="#5c9ae9" strokeType="INSIDE" width="400.0" />
-            <Text fill="WHITE" layoutX="46.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Details" wrappingWidth="307.7367401123047">
+            <Text fill="WHITE" layoutX="46.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thông tin sự kiện" wrappingWidth="307.7367401123047">
                <font>
-                  <Font size="96.0" />
+                  <Font size="72.0" />
                </font>
             </Text>
             <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="90.0" layoutY="691.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #5c9ae9;" textAlignment="CENTER">
@@ -32,7 +32,7 @@
                               <Image url="@../../../Images/Rectangle%2035.png" />
                            </image>
                         </ImageView>
-                        <Text fill="#5c9ae9" layoutX="77.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Back">
+                        <Text fill="#5c9ae9" layoutX="77.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quay lại">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -56,9 +56,9 @@
                      <font>
                         <Font size="18.0" />
                      </font></TextField>
-                  <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="200.00000000000023">
+                  <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên sự kiện" wrappingWidth="200.00000000000023">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="17.0" />
                      </font>
                   </Text>
                </children>
@@ -69,9 +69,9 @@
                      <font>
                         <Font size="18.0" />
                      </font></TextField>
-                  <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Organization" wrappingWidth="200.00000000000023">
+                  <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đơn vị tổ chức" wrappingWidth="200.00000000000023">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="17.0" />
                      </font>
                   </Text>
                </children>
@@ -83,9 +83,9 @@
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Place" wrappingWidth="200.00000000000023">
+                  <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Địa điểm" wrappingWidth="200.00000000000023">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="17.0" />
                      </font>
                   </Text>
                </children>
@@ -96,9 +96,9 @@
                      <font>
                         <Font size="18.0" />
                      </font></TextField>
-                  <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" wrappingWidth="200.00000000000023">
+                  <Text layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thời gian" wrappingWidth="200.00000000000023">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="17.0" />
                      </font>
                   </Text>
                </children>
@@ -108,9 +108,9 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Text layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reg. Deadline" wrappingWidth="200.00000000000023">
+            <Text layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hạn đăng ký" wrappingWidth="200.00000000000023">
                <font>
-                  <Font size="24.0" />
+                  <Font size="17.0" />
                </font>
             </Text>
             <TextField fx:id="txtStatus" editable="false" layoutY="307.0" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
@@ -118,9 +118,9 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Text layoutX="3.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="81.60003662109398">
+            <Text layoutX="3.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trạng thái" wrappingWidth="81.60003662109398">
                <font>
-                  <Font size="24.0" />
+                  <Font size="17.0" />
                </font>
             </Text>
             <TextField fx:id="txtCheckBy" editable="false" layoutX="316.0" layoutY="215.0" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
@@ -128,9 +128,9 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Text layoutX="316.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check by " wrappingWidth="138.40002441406273">
+            <Text layoutX="316.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Người điểm danh" wrappingWidth="138.40002441406273">
                <font>
-                  <Font size="24.0" />
+                  <Font size="17.0" />
                </font>
             </Text>
             <TextField fx:id="txtAvailableSlot" editable="false" layoutX="316.0" layoutY="307.0" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;">
@@ -138,27 +138,27 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Text layoutX="316.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Slot" wrappingWidth="176.80004882812523">
+            <Text layoutX="316.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Còn trống" wrappingWidth="176.80004882812523">
                <font>
-                  <Font size="24.0" />
+                  <Font size="17.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
       <TableView fx:id="StudentTable" layoutX="466.0" layoutY="403.0" prefHeight="206.0" prefWidth="587.0">
         <columns>
-          <TableColumn fx:id="colName" editable="false" prefWidth="193.60003662109375" text="Name" />
-          <TableColumn fx:id="colStudentId" editable="false" prefWidth="213.5999755859375" text="StudentID" />
-            <TableColumn fx:id="colClass" editable="false" prefWidth="198.39996337890625" text="Class" />
+          <TableColumn fx:id="colName" editable="false" prefWidth="193.60003662109375" text="Tên" />
+          <TableColumn fx:id="colStudentId" editable="false" prefWidth="213.5999755859375" text="Mã sinh viên" />
+            <TableColumn fx:id="colClass" editable="false" prefWidth="198.39996337890625" text="Lớp" />
         </columns>
       </TableView>
-      <Text layoutX="466.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participant List">
+      <Text layoutX="466.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Danh sách tham gia">
          <font>
-            <Font size="24.0" />
+            <Font size="23.0" />
          </font>
       </Text>
       <AnchorPane layoutX="1077.0" layoutY="629.0" />
-      <Text layoutX="466.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detail" wrappingWidth="193.60009765625023">
+      <Text layoutX="466.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thông tin" wrappingWidth="193.60009765625023">
          <font>
             <Font size="24.0" />
          </font>
@@ -167,12 +167,12 @@
          <font>
             <Font size="18.0" />
          </font></TextArea>
-      <Button fx:id="btnRegister" layoutX="1010.0" layoutY="730.0" mnemonicParsing="false" onMouseClicked="#registerBtnClickEvent" prefHeight="39.0" prefWidth="73.0" style="-fx-background-radius: 9;" styleClass="green-form" stylesheets="@../CSS/EventMainForm.css" text="Register" textFill="WHITE">
+      <Button fx:id="btnRegister" layoutX="1010.0" layoutY="730.0" mnemonicParsing="false" onMouseClicked="#registerBtnClickEvent" prefHeight="39.0" prefWidth="73.0" style="-fx-background-radius: 9;" styleClass="green-form" stylesheets="@../CSS/EventMainForm.css" text="Đăng ký" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnUnregister" layoutX="1088.0" layoutY="730.0" mnemonicParsing="false" onMouseClicked="#unregisterBtnClickEvent" prefHeight="39.0" prefWidth="98.0" style="-fx-background-radius: 9;" styleClass="red-form" stylesheets="@../CSS/EventMainForm.css" text="Unregister" textFill="WHITE">
+      <Button fx:id="btnUnregister" layoutX="1088.0" layoutY="730.0" mnemonicParsing="false" onMouseClicked="#unregisterBtnClickEvent" prefHeight="39.0" prefWidth="98.0" style="-fx-background-radius: 9;" styleClass="red-form" stylesheets="@../CSS/EventMainForm.css" text="Hủy đăng ký" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

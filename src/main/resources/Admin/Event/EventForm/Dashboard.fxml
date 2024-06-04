@@ -11,9 +11,9 @@
     <children>
         <AnchorPane prefHeight="75.0" prefWidth="1110.0" styleClass="grey-form" stylesheets="@../CSS/EventMainForm.css" AnchorPane.topAnchor="0.0">
             <children>
-                <Label prefHeight="75.0" prefWidth="130.0" text="Dashboard">
+                <Label prefHeight="75.0" prefWidth="130.0" text="Quản lý">
                     <font>
-                        <Font size="24.0" />
+                        <Font size="36.0" />
                     </font>
                 </Label>
             </children>
@@ -22,15 +22,15 @@
             <children>
                 <TableView fx:id="recentRegisterTable" layoutX="728.0" layoutY="44.0" prefHeight="278.0" prefWidth="364.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/EventMainForm.css">
                     <columns>
-                        <TableColumn fx:id="recentRegisterColumn" prefWidth="238.4000244140625" text="Recent Register" />
-                  <TableColumn fx:id="classId" prefWidth="120.80010986328125" text="ClassID" />
+                        <TableColumn fx:id="recentRegisterColumn" prefWidth="238.4000244140625" text="Đăng ký gần đây" />
+                  <TableColumn fx:id="classId" prefWidth="120.80010986328125" text="Mã lớp" />
                     </columns>
                 </TableView>
                 <AnchorPane layoutX="31.0" layoutY="44.0" prefHeight="553.0" prefWidth="651.0" styleClass="white-form" stylesheets="@../CSS/EventMainForm.css">
                     <children>
                         <AnchorPane prefHeight="50.0" prefWidth="651.0" styleClass="grey1-form" stylesheets="@../CSS/EventMainForm.css">
                             <children>
-                                <Text layoutX="270.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NEXT EVENT" textAlignment="CENTER">
+                                <Text layoutX="270.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SẮP DIỄN RA" textAlignment="CENTER">
                                     <font>
                                         <Font size="20.0" />
                                     </font>
@@ -39,8 +39,8 @@
                         </AnchorPane>
                         <TableView fx:id="nextEventTable" layoutX="-1.0" layoutY="48.0" prefHeight="503.0" prefWidth="651.0">
                             <columns>
-                                <TableColumn fx:id="nameColumn" prefWidth="319.0" text="Name" />
-                                <TableColumn fx:id="timeColumn" prefWidth="329.0" text="Time" />
+                                <TableColumn fx:id="nameColumn" prefWidth="319.0" text="Tên sự kiện" />
+                                <TableColumn fx:id="timeColumn" prefWidth="329.0" text="Thời gian" />
                             </columns>
                         </TableView>
                     </children>
@@ -49,7 +49,7 @@
                     <children>
                         <AnchorPane prefHeight="50.0" prefWidth="364.0" styleClass="grey1-form" stylesheets="@../CSS/EventMainForm.css">
                             <children>
-                                <Text layoutX="147.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REPORT" textAlignment="CENTER">
+                                <Text layoutX="147.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Báo cáo" textAlignment="CENTER">
                                     <font>
                                         <Font size="20.0" />
                                     </font>
@@ -58,8 +58,8 @@
                         </AnchorPane>
                         <TableView fx:id="reportTable" layoutY="50.0" prefHeight="61.0" prefWidth="364.0">
                             <columns>
-                                <TableColumn fx:id="totalEventColumn" prefWidth="189.60003662109375" text="Total Event" />
-                                <TableColumn fx:id="totalStudentColumn" prefWidth="173.5999755859375" text="Total Student" />
+                                <TableColumn fx:id="totalEventColumn" prefWidth="189.60003662109375" text="Tổng sự kiện" />
+                                <TableColumn fx:id="totalStudentColumn" prefWidth="173.5999755859375" text="Sinh viên tham gia" />
                             </columns>
                         </TableView>
                     </children>

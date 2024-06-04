@@ -157,7 +157,7 @@ public class EventDetailController implements Initializable{
 
             Stage dialogStage = new Stage();
             dialogStage.initModality(Modality.APPLICATION_MODAL);
-            dialogStage.setTitle("Checking Attendance");
+            dialogStage.setTitle("Điểm danh");
 
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);

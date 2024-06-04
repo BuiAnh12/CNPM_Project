@@ -118,9 +118,9 @@ public class UpdateController implements Initializable {
             studentDAO.updateStudent(studentId, studentClass, phoneNumber, dob, studentEnable, fullName, username, password);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
+            alert.setTitle("Thành công");
             alert.setHeaderText(null);
-            alert.setContentText("Student update successfully!");
+            alert.setContentText("Cập nhật sinh viên thành công!");
             alert.showAndWait();
 
             // Đóng cửa sổ hiện tại

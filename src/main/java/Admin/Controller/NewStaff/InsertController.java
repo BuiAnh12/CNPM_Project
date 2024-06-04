@@ -162,9 +162,9 @@ public class InsertController implements Initializable {
 
             staffDAO.insertOrUpdateStaff(object);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
+            alert.setTitle("Thành công");
             alert.setHeaderText(null);
-            alert.setContentText("Student added successfully!");
+            alert.setContentText("Thêm nhân viên mới thành công!");
             alert.showAndWait();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
             Parent root = fxmlLoader.load();
@@ -187,9 +187,9 @@ public class InsertController implements Initializable {
         } catch (Exception e) {
             // Thông báo lỗi
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
+            alert.setTitle("Lỗi");
             alert.setHeaderText(null);
-            alert.setContentText("Failed to add staff!");
+            alert.setContentText("Thêm nhân viên mới thất bại!");
             alert.showAndWait();
             e.printStackTrace();
         }

@@ -17,11 +17,11 @@
             <children>
                 <TableView fx:id="mainTable" layoutY="64.0" onMouseClicked="#TblClickEvent" prefHeight="543.0" prefWidth="980.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/MainAdminForm.css">
                     <columns>
-                        <TableColumn fx:id="nameColumn" prefWidth="262.0" text="Name" />
-                        <TableColumn fx:id="idColumn" prefWidth="162.0" text="StudentID" />
-                        <TableColumn fx:id="classColumn" prefWidth="147.0" text="Class" />
-                        <TableColumn fx:id="phoneColumn" prefWidth="201.0" text="Phonenumber" />
-                        <TableColumn fx:id="dobColumn" prefWidth="205.60003662109375" text="DOB" />
+                        <TableColumn fx:id="nameColumn" prefWidth="262.0" text="Họ và tên" />
+                        <TableColumn fx:id="idColumn" prefWidth="162.0" text="Mẫ sinh viên" />
+                        <TableColumn fx:id="classColumn" prefWidth="147.0" text="Lớp" />
+                        <TableColumn fx:id="phoneColumn" prefWidth="201.0" text="Số điện thoại" />
+                        <TableColumn fx:id="dobColumn" prefWidth="205.60003662109375" text="Ngày sinh" />
                     </columns>
                 </TableView>
                 <TextField fx:id="SearchField" onKeyTyped="#SearchTxtType" prefHeight="39.0" prefWidth="263.0" promptText="Search" style="-fx-background-radius: 9;" styleClass="label" stylesheets="@../CSS/MainAdminForm.css">
@@ -38,23 +38,23 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button layoutX="610.0" mnemonicParsing="false" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="green-form" stylesheets="@../CSS/MainAdminForm.css" text="Insert" textFill="WHITE">
+                <Button layoutX="610.0" mnemonicParsing="false" onMouseClicked="#InsertBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="green-form" stylesheets="@../CSS/MainAdminForm.css" text="Thêm" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
-                <Button layoutX="806.0" mnemonicParsing="false" onMouseClicked="#DeleteBtnClickEvent" prefHeight="39.0" prefWidth="99.0" style="-fx-background-radius: 9;" styleClass="red-form" stylesheets="@../CSS/MainAdminForm.css" text="Delete" textFill="WHITE">
+                <Button layoutX="806.0" mnemonicParsing="false" onMouseClicked="#DeleteBtnClickEvent" prefHeight="39.0" prefWidth="99.0" style="-fx-background-radius: 9;" styleClass="red-form" stylesheets="@../CSS/MainAdminForm.css" text="Xóa" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
-                <Button layoutX="709.0" mnemonicParsing="false" onMouseClicked="#EditBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="blue-form" stylesheets="@../CSS/MainAdminForm.css" text="Edit" textFill="WHITE">
+                <Button layoutX="709.0" mnemonicParsing="false" onMouseClicked="#EditBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="blue-form" stylesheets="@../CSS/MainAdminForm.css" text="Sửa" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
                 <ComboBox fx:id="Filter" layoutX="317.0" onMouseClicked="#GetFilter" prefHeight="40.0" prefWidth="177.0" style="-fx-background-color: F3F3F3; -fx-background-radius: 9;" />
-            <Button fx:id="insertFile" layoutX="507.0" mnemonicParsing="false" onMouseClicked="#InsertFileBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="green-form" stylesheets="@../CSS/MainAdminForm.css" text="Insert File" textFill="WHITE">
+            <Button fx:id="insertFile" layoutX="507.0" mnemonicParsing="false" onMouseClicked="#InsertFileBtnClickEvent" prefHeight="39.0" prefWidth="90.0" style="-fx-background-radius: 9;" styleClass="green-form" stylesheets="@../CSS/MainAdminForm.css" text="Thêm file" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -63,9 +63,9 @@
         </AnchorPane>
       <AnchorPane prefHeight="75.0" prefWidth="1110.0" styleClass="grey-form" stylesheets="@../../Event/CSS/EventMainForm.css">
          <children>
-            <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="1110.0" text="Student" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="1110.0" text="Danh sách sinh viên" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <font>
-                  <Font size="24.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
          </children>

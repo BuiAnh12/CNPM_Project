@@ -132,7 +132,7 @@ public class MainController implements Initializable {
         }
         if (mainTable.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
+            alert.setTitle("Lỗi");
             alert.setHeaderText(null);
             alert.setContentText("Vui lòng chọn nhân viên để xóa");
             alert.showAndWait();
@@ -141,14 +141,14 @@ public class MainController implements Initializable {
         StaffModel selectedStaff = mainTable.getSelectionModel().getSelectedItem();
         if (selectedStaff.getUsername().equals(this.user.getUsername())){
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
+            alert.setTitle("Lỗi");
             alert.setHeaderText(null);
             alert.setContentText("Vui lòng không xóa chính mình");
             alert.showAndWait();
             return;
         }
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirm Delete");
+        alert.setTitle("Xác nận xóa");
         alert.setHeaderText(null);
         alert.setContentText("Bạn có muốn xóa nhân viên này không?");
 
@@ -173,7 +173,7 @@ public class MainController implements Initializable {
         }
         if (mainTable.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
+            alert.setTitle("Lỗi");
             alert.setHeaderText(null);
             alert.setContentText("Vui lòng chọn nhân viên để chỉnh sửa");
             alert.showAndWait();
@@ -189,7 +189,7 @@ public class MainController implements Initializable {
 
 
             Stage modalStage = new Stage();
-            modalStage.setTitle("Update Staff Form");
+            modalStage.setTitle("Giao diện cập nhật thông tin");
             modalStage.initModality(Modality.APPLICATION_MODAL);
             modalStage.initOwner(DashboardForm.getScene().getWindow());
             modalStage.setScene(new Scene(page));
@@ -199,7 +199,7 @@ public class MainController implements Initializable {
 
 
         } catch (IOException e) {
-            System.out.println("Failed to open update form");
+            System.out.println("Lỗi khi mở giao diện cập nhật!");
             e.printStackTrace();
         }
     }
@@ -233,7 +233,7 @@ public class MainController implements Initializable {
             insertController.setPreviousScene(currentScene);
 
             Stage modalStage = new Stage();
-            modalStage.setTitle("Insert Staff Form");
+            modalStage.setTitle("Giao diện thêm nhân viên mới");
             modalStage.initModality(Modality.APPLICATION_MODAL);
             modalStage.initOwner(currentStage);
             modalStage.setScene(new Scene(page));
