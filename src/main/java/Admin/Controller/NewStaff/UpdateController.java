@@ -209,26 +209,28 @@ void AcceptClickBtn() {
         object.setEnable(enalbe);
         staffDAO.insertOrUpdateStaff(object);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
-        Parent root = fxmlLoader.load();
 
-        // Lấy controller của ViewChinh
-        ChuyenViewController controller = fxmlLoader.getController();
 
-        // Gọi phương thức loadView của controller để hiển thị EventMainForm
-        controller.loadView("/Admin/NewStaff/StaffForm/MainForm.fxml");
-        // Lấy ra Scene của giao diện trước đó
-        Scene previousScene = new Scene(root);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Thành công");
+        alert.setHeaderText(null);
+        alert.setContentText("Chỉnh sửa nhân viên thành công!");
+        alert.showAndWait();
 
-        // Lấy ra Stage hiện tại
-        Stage stage = (Stage) updateForm.getScene().getWindow();
 
-        // Thiết lập Scene của giao diện trước đó vào Stage
-        stage.setScene(previousScene);
-        stage.show();
     } catch (Exception e) {
         e.printStackTrace();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Thất bại");
+        alert.setHeaderText(null);
+        alert.setContentText("Chỉnh sửa nhân viên thất bại!");
+        alert.showAndWait();
     }
+    // Get the stage of the current AnchorPane
+    Stage stage = (Stage) updateForm.getScene().getWindow();
+
+    // Close the stage to effectively close the modal dialog
+    stage.close();
 }
 
 
@@ -240,25 +242,11 @@ void AcceptClickBtn() {
         // Xử lý khi người dùng nhấn nút Cancel
         try {
             // Tạo một FXMLLoader cho giao diện trước đó
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
-            Parent root = fxmlLoader.load();
-
-            // Lấy controller của ViewChinh
-            ChuyenViewController controller = fxmlLoader.getController();
-
-            // Gọi phương thức loadView của controller để hiển thị EventMainForm
-            controller.loadView("/Admin/NewStaff/StaffForm/MainForm.fxml");
-            // Lấy ra Scene của giao diện trước đó
-            Scene previousScene = new Scene(root);
-
-            // Lấy ra Stage hiện tại
             Stage stage = (Stage) updateForm.getScene().getWindow();
-
-            // Thiết lập Scene của giao diện trước đó vào Stage
-            stage.setScene(previousScene);
-            stage.show();
-        } catch (IOException e) {
-            System.out.println("Open Fail");
+            // Close the stage to effectively close the modal dialog
+            stage.close();
+        } catch (Exception e) {
+            System.out.println("Close Fail");
             e.printStackTrace();
         }
     }

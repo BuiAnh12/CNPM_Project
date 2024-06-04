@@ -166,23 +166,7 @@ public class InsertController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Thêm nhân viên mới thành công!");
             alert.showAndWait();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
-            Parent root = fxmlLoader.load();
 
-            // Lấy controller của ViewChinh
-            ChuyenViewController controller = fxmlLoader.getController();
-
-            // Gọi phương thức loadView của controller để hiển thị EventMainForm
-            controller.loadView("/Admin/NewStaff/StaffForm/MainForm.fxml");
-            // Lấy ra Scene của giao diện trước đó
-            Scene previousScene = new Scene(root);
-
-            // Lấy ra Stage hiện tại
-            Stage stage = (Stage) insertForm.getScene().getWindow();
-
-            // Thiết lập Scene của giao diện trước đó vào Stage
-            stage.setScene(previousScene);
-            stage.show();
 
         } catch (Exception e) {
             // Thông báo lỗi
@@ -193,30 +177,21 @@ public class InsertController implements Initializable {
             alert.showAndWait();
             e.printStackTrace();
         }
+        Stage stage = (Stage) insertForm.getScene().getWindow();
+
+        // Close the stage to effectively close the modal dialog
+        stage.close();
     }
 
     @FXML
     void CancelClickBtn() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
-            Parent root = fxmlLoader.load();
-
-            // Lấy controller của ViewChinh
-            ChuyenViewController controller = fxmlLoader.getController();
-
-            // Gọi phương thức loadView của controller để hiển thị EventMainForm
-            controller.loadView("/Admin/NewStaff/StaffForm/MainForm.fxml");
-            // Lấy ra Scene của giao diện trước đó
-            Scene previousScene = new Scene(root);
-
-            // Lấy ra Stage hiện tại
+            // Tạo một FXMLLoader cho giao diện trước đó
             Stage stage = (Stage) insertForm.getScene().getWindow();
-
-            // Thiết lập Scene của giao diện trước đó vào Stage
-            stage.setScene(previousScene);
-            stage.show();
-        } catch (IOException e) {
-            System.out.println("Open Fail");
+            // Close the stage to effectively close the modal dialog
+            stage.close();
+        } catch (Exception e) {
+            System.out.println("Close Fail");
             e.printStackTrace();
         }
     }
