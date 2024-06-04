@@ -2,6 +2,7 @@ package Admin.Controller;
 
 
 
+import Admin.Controller.UserDetail.UserDetailController;
 import Admin.Model.Staff.StaffModel;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -62,6 +63,7 @@ public class ChuyenViewController {
         this.loginStaff = loginStaff;
     }
 
+
     @FXML
     private void initialize() {
 //        try {
@@ -79,6 +81,10 @@ public class ChuyenViewController {
 //            e.printStackTrace();
 //        }
     }
+
+
+
+
 
     public void loadInitialView() {
         FXMLLoader view = loadView("/Admin/Event/EventForm/Dashboard.fxml");
@@ -189,7 +195,7 @@ public class ChuyenViewController {
 
 
 
-    private void loadUserDetail() {
+    public void loadUserDetail() {
         if (username != null) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/UserDetail/UserDetail.fxml"));
@@ -208,7 +214,10 @@ public class ChuyenViewController {
     }
 
     public void GoUserDetailForm(ActionEvent event) {
+
         FXMLLoader view = loadView("/Admin/UserDetail/UserDetail.fxml");
         loadUserDetail();
+
+
     }
 }

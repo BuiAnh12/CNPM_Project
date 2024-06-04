@@ -18,6 +18,11 @@ public class StudentModel {
 
     }
 
+    public StudentModel(String fullName, int classId) {
+        this.fullName = fullName;
+        this.classId = classId;
+    }
+
     public StudentModel(String studentId, String username, int classId) {
         this.studentId = studentId;
         this.username = username;

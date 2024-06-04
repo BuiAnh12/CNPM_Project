@@ -138,25 +138,7 @@ public class EventDetailController implements Initializable{
     }
 
 
-//    @FXML
-//    public void handleGoBack(ActionEvent event) {
-//        try {
-//            // Tải FXML của EventMainForm
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Event/EventForm/EventMainForm.fxml"));
-//            Parent root = loader.load();
-//
-//            // Tạo một Scene mới từ FXML và lấy Stage hiện tại
-//            Scene scene = new Scene(root);
-//            Stage stage = (Stage) GoBackBtn.getScene().getWindow();
-//
-//            // Đặt Scene mới cho Stage
-//            stage.setScene(scene);
-//            stage.show();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            // Xử lý ngoại lệ khi tải FXML không thành công
-//        }
-//    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -196,35 +178,13 @@ public class EventDetailController implements Initializable{
         }
     }
 
+    @FXML
+    void handleGoBack(MouseEvent event) {
 
-    public void handleGoBack(MouseEvent event) {
-        try {
-            // Load FXML của ViewChinh.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ViewChinh.fxml"));
-            StackPane root = loader.load();
-            ChuyenViewController chuyenViewController = loader.getController();
-            chuyenViewController.setLoginStaff(user);
-
-            // Lấy controller của ViewChinh
-            // Gọi phương thức loadView của controller để hiển thị EventMainForm
-
-            FXMLLoader view = chuyenViewController.loadView("/Admin/Event/EventForm/MainForm.fxml");
-            Admin.Controller.Event.MainController mainController = view.getController();
-            mainController.setSetUser(user);
-            // Tạo một Scene mới từ StackPane
-            Scene scene = new Scene(root);
-
-            // Lấy Stage từ ActionEvent
-            Stage stage = (Stage) GoBackBtn.getScene().getWindow();
-
-            // Đặt Scene mới cho Stage
-            stage.setScene(scene);
-
-            // Hiển thị Stage
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Xử lý nếu có lỗi khi chuyển đổi
+        if (previousScene != null) {
+            Stage currentStage = (Stage) StudentTable.getScene().getWindow();
+            currentStage.setScene(previousScene);
         }
     }
+
 }

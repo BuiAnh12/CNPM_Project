@@ -2,6 +2,7 @@ package Admin.Controller;
 
 import Admin.Model.Event.EventModelDashboard;
 import Admin.Model.Event.ReportModel;
+import Admin.Model.Student.StudentModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -30,13 +31,17 @@ public class DashboardController implements Initializable {
     private TableColumn<EventModelDashboard, String> timeColumn;
 
     @FXML
-    private TableView<String> recentRegisterTable;
+    private TableView<StudentModel> recentRegisterTable;
 
     @FXML
-    private TableColumn<String, String> recentRegisterColumn;
+    private TableColumn<StudentModel, String> recentRegisterColumn;
+
+    @FXML
+    private TableColumn<StudentModel, Integer> classId;
 
     @FXML
     private TableView<ReportModel> reportTable;
+
 
     @FXML
     private TableColumn<ReportModel, Integer> totalEventColumn;
@@ -67,7 +72,8 @@ public class DashboardController implements Initializable {
 
         // Initialize Recent Register Table column
         //if (recentRegisterColumn != null) {
-        recentRegisterColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+        recentRegisterColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFullName()));
+        classId.setCellValueFactory(new PropertyValueFactory<>("classId"));
 
         // }
 
@@ -115,15 +121,13 @@ public class DashboardController implements Initializable {
     }
 
     private void loadRecentRegisterData(String eventName) {
-        ObservableList<String> recentRegisterList = FXCollections.observableArrayList();
+        ObservableList<StudentModel> recentRegisterList = FXCollections.observableArrayList();
         try {
-            // Get student full names registered for the event from database
-            List<String> studentNames = dashboardDAO.getStudentNamesByEvent(eventName);
-            recentRegisterList.addAll(studentNames);
+            List<StudentModel> studentModels = dashboardDAO.getStudentInfoByEvent(eventName);
+            recentRegisterList.addAll(studentModels);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // Set the items of the Recent Register TableView
         recentRegisterTable.setItems(recentRegisterList);
     }
 }

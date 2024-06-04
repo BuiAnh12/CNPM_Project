@@ -55,7 +55,8 @@ public class UserDetailController {
 
     public void setUsername(String username) {
         this.username = username;
-        initializeUserDetails(); // Gọi hàm khởi tạo thông tin người dùng với username
+        initializeUserDetails();
+        // Gọi hàm khởi tạo thông tin người dùng với username
     }
 
 
@@ -134,7 +135,7 @@ public class UserDetailController {
             ChuyenViewController controller = loader.getController();
 
             // Gọi phương thức loadView của controller để hiển thị EventMainForm
-            controller.loadView("/Admin/Event/EventForm/EventMainForm.fxml");
+            controller.loadView("/Admin/Event/EventForm/MainForm.fxml");
 
             // Tạo một Scene mới từ StackPane
             Scene scene = new Scene(root);
@@ -160,6 +161,7 @@ public class UserDetailController {
         alert.setContentText(content);
         alert.showAndWait();
     }
+
 
 
 }

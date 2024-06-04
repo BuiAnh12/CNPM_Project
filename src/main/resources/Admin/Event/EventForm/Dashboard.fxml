@@ -22,7 +22,8 @@
             <children>
                 <TableView fx:id="recentRegisterTable" layoutX="728.0" layoutY="44.0" prefHeight="278.0" prefWidth="364.0" style="-fx-background-radius: 9;" stylesheets="@../CSS/EventMainForm.css">
                     <columns>
-                        <TableColumn fx:id="recentRegisterColumn" prefWidth="363.20001220703125" text="Recent Register" />
+                        <TableColumn fx:id="recentRegisterColumn" prefWidth="238.4000244140625" text="Recent Register" />
+                  <TableColumn fx:id="classId" prefWidth="120.80010986328125" text="ClassID" />
                     </columns>
                 </TableView>
                 <AnchorPane layoutX="31.0" layoutY="44.0" prefHeight="553.0" prefWidth="651.0" styleClass="white-form" stylesheets="@../CSS/EventMainForm.css">
