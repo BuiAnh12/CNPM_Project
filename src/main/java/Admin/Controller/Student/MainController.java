@@ -213,7 +213,7 @@ public class MainController implements Initializable {
                 }
 
                 // Store the row data temporarily
-                validRowsStudent.add(new StudentModel(studentId,username, Integer.parseInt(classId), phoneNumber, LocalDate.parse(dob, DateTimeFormatter.ofPattern("yyyy-MM-dd")),true, fullName, 0, password));
+                validRowsStudent.add(new StudentModel(studentId,username, classId, phoneNumber, LocalDate.parse(dob, DateTimeFormatter.ofPattern("yyyy-MM-dd")),true, fullName, 0, password));
             }
 
             // If no errors, add all valid rows to the database

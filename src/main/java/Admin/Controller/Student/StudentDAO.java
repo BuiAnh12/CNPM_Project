@@ -33,7 +33,7 @@ public class StudentDAO {
             // Process the result set
             while (resultSet.next()) {
                 String studentId = resultSet.getString("StudentId");
-                int classId = resultSet.getInt("ClassId");
+                String classId = resultSet.getString("ClassId");
                 String phoneNumber = resultSet.getString("PhoneNumber");
                 LocalDate dob = resultSet.getDate("DOB").toLocalDate();
                 boolean enable = resultSet.getBoolean("Enable");
@@ -290,7 +290,7 @@ public class StudentDAO {
                 try (ResultSet resultSet = cs.getResultSet()) {
                     while (resultSet.next()) {
                         String studentId = resultSet.getString("StudentId");
-                        int classId = resultSet.getInt("ClassId");
+                        String classId = resultSet.getString("ClassId");
                         String phoneNumber = resultSet.getString("PhoneNumber");
                         LocalDate dob = resultSet.getDate("DOB").toLocalDate();
 
@@ -326,7 +326,7 @@ public class StudentDAO {
                         // Retrieve data from the result set and create Event objects
 
                         String studentId = resultSet.getString("StudentId");
-                        int classId = resultSet.getInt("ClassId");
+                        String classId = resultSet.getString("ClassId");
                         String phoneNumber = resultSet.getString("PhoneNumber");
                         LocalDate dob = resultSet.getDate("DOB").toLocalDate();
                         boolean enable = resultSet.getBoolean("Enable");

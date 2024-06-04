@@ -125,7 +125,7 @@ public class CheckLoginDAO {
 
             while (resultSet.next()) {
                 String studentId = resultSet.getString("StudentId");
-                int classId = resultSet.getInt("ClassId");
+                String classId = resultSet.getString("ClassId");
                 String phoneNumber = resultSet.getString("PhoneNumber");
                 LocalDate dob = resultSet.getDate("DOB").toLocalDate();
                 boolean enable = resultSet.getBoolean("Enable");

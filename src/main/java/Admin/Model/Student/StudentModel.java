@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class StudentModel {
     private String studentId;
-    private int classId;
+    private String classId;
     private String phoneNumber;
     private LocalDate dob; // Đã sửa thành LocalDate
     private boolean enable;
@@ -18,18 +18,18 @@ public class StudentModel {
 
     }
 
-    public StudentModel(String fullName, int classId) {
+    public StudentModel(String fullName, String classId) {
         this.fullName = fullName;
         this.classId = classId;
     }
 
-    public StudentModel(String studentId, String username, int classId) {
+    public StudentModel(String studentId, String username, String classId) {
         this.studentId = studentId;
         this.username = username;
         this.classId = classId;
     }
 
-    public StudentModel(String studentId, String username, int classId, String phoneNumber, LocalDate dob, boolean enable, String fullName, int accountId, String password) {
+    public StudentModel(String studentId, String username, String classId, String phoneNumber, LocalDate dob, boolean enable, String fullName, int accountId, String password) {
         this.studentId = studentId;
         this.username = username;
         this.classId = classId;
@@ -41,7 +41,7 @@ public class StudentModel {
         this.password = password;
     }
 
-    public StudentModel(String studentId, int classId, String phoneNumber, LocalDate dob, boolean enable, String fullName, int accountId) {
+    public StudentModel(String studentId, String classId, String phoneNumber, LocalDate dob, boolean enable, String fullName, int accountId) {
         this.studentId = studentId;
         this.classId = classId;
         this.phoneNumber = phoneNumber;
@@ -51,7 +51,7 @@ public class StudentModel {
         this.accountId = accountId;
     }
 
-    public StudentModel(String studentId, int classId, String phoneNumber, LocalDate dob, String fullName) {
+    public StudentModel(String studentId, String classId, String phoneNumber, LocalDate dob, String fullName) {
         this.studentId = studentId;
         this.classId = classId;
         this.phoneNumber = phoneNumber;
@@ -68,11 +68,11 @@ public class StudentModel {
         this.studentId = studentId;
     }
 
-    public int getClassId() {
+    public String getClassId() {
         return classId;
     }
 
-    public void setClassId(int classId) {
+    public void setClassId(String classId) {
         this.classId = classId;
     }
 

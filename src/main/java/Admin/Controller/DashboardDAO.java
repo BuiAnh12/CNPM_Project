@@ -98,7 +98,7 @@ public class DashboardDAO {
 
                     if (studentInfoResultSet.next()) {
                         String fullName = studentInfoResultSet.getString("FullName");
-                        int classId = studentInfoResultSet.getInt("ClassId");
+                        String classId = studentInfoResultSet.getString("ClassId");
                         studentModels.add(new StudentModel(fullName, classId));
                     }
                     getStudentInfoStmt.close();
