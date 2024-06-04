@@ -10,9 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.input.MouseEvent;
@@ -22,6 +20,9 @@ import java.io.IOException;
 
 public class UserDetailController {
 
+    public PasswordField oldPasswordCofirm;
+    public PasswordField newPassword;
+    public Button btn_DoiMatKhau;
     @FXML
     private Button backBtn1234;
 
@@ -40,6 +41,8 @@ public class UserDetailController {
     @FXML
     private TextField txtUserName;
 
+
+    private String oldPassword;
 
     private String username;
 
@@ -81,7 +84,9 @@ public class UserDetailController {
             txtPhoneNumber.setText(user.getPhoneNumber());
             txtDateOfBirth.setText(user.getDob());
             txtName.setText(user.getFullName());
+            oldPassword = user.getPassword();
 
+            btn_DoiMatKhau.setOnAction(event -> changePassword());
 
             System.out.println("Username: " + username);
         }
@@ -121,6 +126,45 @@ public class UserDetailController {
         }
 
 
+    }
+
+    public void changePassword () {
+        if(checkPassword(oldPassword)) {
+            Admin.Controller.UserDetail.UserDetailDAO userDetailDAO = new Admin.Controller.UserDetail.UserDetailDAO();
+            userDetailDAO.updatePassword(newPassword.getText(), username);
+            showAlert("Thành công", "Cập nhật mật khẩu thành công", Alert.AlertType.INFORMATION);
+            newPassword.setText("");
+            oldPasswordCofirm.setText("");
+        }
+    }
+
+    public boolean checkPassword(String oldPassword) {
+        String newPass = newPassword.getText();
+        String oldPassConfirm = oldPasswordCofirm.getText();
+
+
+
+        // Kiểm tra xem mật khẩu cũ có trùng với mật khẩu xác nhận không
+        if (!oldPassword.equals(oldPassConfirm)) {
+            showAlert("Lỗi", "Mật khẩu cũ không chính xác", Alert.AlertType.ERROR);
+            return false;
+        }
+
+        // Kiểm tra xem mật khẩu cũ có trùng với mật khẩu mới không
+        if (oldPassword.equals(newPass)) {
+            showAlert("Lỗi", "Mật khẩu mới không được giống mật khẩu cũ", Alert.AlertType.ERROR);
+            return false;
+        }
+
+        return true;
+    }
+
+    private void showAlert(String title, String content, Alert.AlertType alertType) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
 }
 
