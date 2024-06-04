@@ -88,7 +88,14 @@ public class EventDetailController {
     void registerBtnClickEvent(MouseEvent event) {
         System.out.println("User: " + this.user);
         LocalDate today = LocalDate.now();
-
+        if (txtStatus.getText().equals("Đã hủy")){
+            System.out.println("Cancel -> cannot do stuff ");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText(null);
+            alert.setContentText("Sự kiện đã bị hủy, vui lòng liên hệ ban quản trị");
+            alert.showAndWait();
+        }
         if (Integer.parseInt(txtAvailableSlot.getText()) <= 0){
             System.out.println("Out of slot");
             Alert alert = new Alert(Alert.AlertType.ERROR);
