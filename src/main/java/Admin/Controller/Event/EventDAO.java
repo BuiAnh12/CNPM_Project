@@ -250,7 +250,7 @@ public class EventDAO {
     public boolean insertRegistration(LocalDate occurDate, int eventId, String studentId) {
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword)) {
             try (CallableStatement cs = connection.prepareCall("{call sp_registerEvent(?, ?, ?)}")) {
-                cs.setObject(1, eventId, java.sql.Types.INTEGER);; // Pass eventId as the first parameter
+                cs.setObject(1, eventId, java.sql.Types.INTEGER);
                 cs.setString(2, studentId);
                 cs.setDate(3, java.sql.Date.valueOf(occurDate));
 

@@ -10,6 +10,7 @@
 
 <!--<?import javafx.scene.control.DatePicker?>-->
 
+<?import javafx.scene.control.PasswordField?>
 <AnchorPane fx:id="insertForm" prefHeight="640.0" prefWidth="975.0" style="-fx-background-radius: 22; -fx-background-color: F3F3F3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.Controller.NewStaff.InsertController">
     <children>
         <Text fill="#1678f3" layoutX="60.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thêm nhân viên mới">
@@ -82,11 +83,11 @@
         </AnchorPane>
         <AnchorPane layoutX="303.0" layoutY="198.0" prefHeight="80.0" prefWidth="219.0">
             <children>
-                <TextField fx:id="txtPassword" layoutY="39.0" prefHeight="40.0" prefWidth="219.0" style="-fx-background-color: E4E4E4; -fx-background-radius: 9;">
+                <PasswordField fx:id="txtPassword" layoutY="39.0" prefHeight="40.0" prefWidth="219.0" style="-fx-background-color: E4E4E4; -fx-background-radius: 9;">
                     <font>
                         <Font size="18.0" />
                     </font>
-                </TextField>
+                </PasswordField>
                 <Text layoutX="2.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mật khẩu" wrappingWidth="200.00000000000023">
                     <font>
                         <Font size="24.0" />
