@@ -95,14 +95,16 @@ public class EventDetailController {
             alert.setHeaderText(null);
             alert.setContentText("Sự kiện đã bị hủy, vui lòng liên hệ ban quản trị");
             alert.showAndWait();
+            return;
         }
-        if (Integer.parseInt(txtAvailableSlot.getText()) <= 0){
+        else if (Integer.parseInt(txtAvailableSlot.getText()) <= 0){
             System.out.println("Out of slot");
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Lỗi");
             alert.setHeaderText(null);
             alert.setContentText("Hiện tại đã hết suất. Xin vui lòng thử lại sau");
             alert.showAndWait();
+
         }
         else if (object.getDeadline().compareTo(today) < 0){
             System.out.println("Out of ReDate");
@@ -111,6 +113,7 @@ public class EventDetailController {
             alert.setHeaderText(null);
             alert.setContentText("Hết hạn đăng ký.");
             alert.showAndWait();
+
         }
         else{
             EventDAO eventDAO = new EventDAO();
